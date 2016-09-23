@@ -4,7 +4,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :name, null: false
       t.boolean :good
       t.integer :order
-      t.references :game 
+      t.integer :quest_chosen, default: 0
+      t.references :game
 
       t.timestamps
     end
