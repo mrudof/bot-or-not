@@ -3,7 +3,7 @@ class Character extends React.Component {
     return(
       <div>
         <h1>Your Card / info dump</h1>
-        <p style={color: 'red'}>You are EVIL!</p>
+        <p>You are EVIL!</p>
         <p>placeholder</p>
 
         <div className="btn-group">
