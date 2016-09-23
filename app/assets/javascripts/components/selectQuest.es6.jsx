@@ -24,7 +24,7 @@ nextUp() {
   return minRank
 }
 
-if (currentUser === )
+
 
   render () {
     return (
