@@ -7,9 +7,9 @@ class Game extends React.Component {
         <Rules />
         <SelectQuest />
         <VoteQuest />
-        <SucceedQuest />
-        <QuestResults/>
-        <GameOver />
+        {/* <SucceedQuest /> */}
+        {/* <QuestResults/> */}
+        {/* <GameOver /> */}
       </div>
     )
   }
