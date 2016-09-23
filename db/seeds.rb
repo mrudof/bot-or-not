@@ -4,4 +4,6 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   Character.create(name: 'Luke', movie: movies.fir
+user = User.create([{name: "Adam", good: true, order: 1, game_id: 1}, {name: "Matt", good: false, order: 2, game_id: 1}])
+game = Game.create()
