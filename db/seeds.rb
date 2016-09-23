@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.fir
 
 
-game1 = Game.create(creator_id: 1, key_code: "test")
+game1 = Game.create(key_code: "test")
 
-user1  = User.create(name: "Adam", good: true, order: 1, game: game1)
-user2  = User.create(name: "Matt", good: false, order: 2, game: game1)
+user1  = User.create(name: "Adam", good: true, creator: true, order: 1, game: game1)
+user2  = User.create(name: "Matt", good: false, creator: false, order: 2, game: game1)
 
 round1 = Round.create(game: game1, outcome: false, round_number: 1)
 

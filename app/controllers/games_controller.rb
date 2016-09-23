@@ -1,6 +1,12 @@
 class GamesController < ApplicationController
   def index
-    "Hello world"
   end
+
+  def create
+    game = Game.create()
+    user = User.create
+  end
+
+  private
 
 end
