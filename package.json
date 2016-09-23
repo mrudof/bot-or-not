@@ -1,0 +1,25 @@
+{
+  "name": "project-mama",
+  "version": "1.0.0",
+  "description": "Project Mama!",
+  "main": "./app/assets/javascript/components/",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyc-salamanders-2016/project-mama.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nyc-salamanders-2016/project-mama/issues"
+  },
+  "homepage": "https://github.com/nyc-salamanders-2016/project-mama#readme",
+  "devDependencies": {
+    "eslint": "^3.5.0",
+    "eslint-config-standard": "^6.0.1",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^2.0.0"
+  }
+}

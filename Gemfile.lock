@@ -51,15 +51,10 @@ GEM
     byebug (9.0.5)
     coderay (1.1.1)
     coffee-script-source (1.10.0)
-    colorize (0.8.1)
     concurrent-ruby (1.0.2)
     connection_pool (2.2.0)
     debug_inspector (0.0.2)
     erubis (2.7.0)
-    eslint-rails (1.1.0)
-      colorize
-      execjs
-      railties (>= 3.2)
     execjs (2.7.0)
     ffi (1.9.14)
     globalid (0.3.7)
@@ -177,7 +172,6 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   byebug
-  eslint-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

@@ -1,4 +1,4 @@
-class Game extends React.Component {
+class SucceedQuest extends React.Component {
   render () {
     return(
       <div>

@@ -1,7 +1,8 @@
-// class SelectQuest extends React.Component {
-//
-// //the nextUp method returns the id of the user who chooses the next quest
-// //I still need to define the user array
+class SelectQuest extends React.Component {
+
+//the nextUp method returns the id of the user who chooses the next quest
+//I still need to define the user array
+
 // nextUp() {
 //   var arr = [];
 //   var min = ssers[0].quests_chosen;
@@ -24,11 +25,13 @@
 //   return minRank
 // }
 //
-//
-//
-//   render () {
-//     return (
-//
-//       )
-//   }
-// }
+
+
+  render () {
+    return(
+      <div>
+        <h1>Select quest</h1>
+      </div>
+    )
+  }
+}
