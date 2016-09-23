@@ -5,15 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.fir
-users = ([{name: "Adam", good: true, order: 1, game_id: 1}, {name: "Matt", good: false, order: 2, game_id: 1}])
-User.create(users)
-games = ([{creator_id: 1, key_code: "test"}])
-Game.create(games)
-rounds = ([{game_id: 1, outcome: false, round_number: 1}])
-Round.create(rounds)
-quests = ([{round_id: 1}])
-Quest.create(quests)
-quest_members = ([{succeeded: true, user_id: 1, quest_id: 1}, {succeeded: false, user_id: 2, quest_id: 1}])
-QuestMember.create(quest_members)
-quest_votes = ([{passed: true, user_id: 1, quest_id: 1}, {passed: false, user_id: 2, quest_id: 1}])
-QuestVote.create(quest_votes)
+
+
+game1 = Game.create(creator_id: 1, key_code: "test")
+
+user1  = User.create(name: "Adam", good: true, order: 1, game: game1)
+user2  = User.create(name: "Matt", good: false, order: 2, game: game1)
+
+round1 = Round.create(game: game1, outcome: false, round_number: 1)
+
+quest1 = Quest.create(round: round1)
+
+quest_member1 = QuestMember.create(succeeded: true, user: user1, quest: quest1)
+quest_member2 = QuestMember.create(succeeded: false, user: user2, quest: quest1)
+
+quest_vote1 = QuestVote.create(passed: true, user: user1, quest: quest1)
+quest_vote2 = QuestVote.create(passed: false, user: user2, quest: quest1)
