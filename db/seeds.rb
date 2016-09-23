@@ -4,4 +4,20 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   Character.create(name: 'Luke', movie: movies.fir
+
+
+game1 = Game.create(creator_id: 1, key_code: "test")
+
+user1  = User.create(name: "Adam", good: true, order: 1, game: game1)
+user2  = User.create(name: "Matt", good: false, order: 2, game: game1)
+
+round1 = Round.create(game: game1, outcome: false, round_number: 1)
+
+quest1 = Quest.create(round: round1)
+
+quest_member1 = QuestMember.create(succeeded: true, user: user1, quest: quest1)
+quest_member2 = QuestMember.create(succeeded: false, user: user2, quest: quest1)
+
+quest_vote1 = QuestVote.create(passed: true, user: user1, quest: quest1)
+quest_vote2 = QuestVote.create(passed: false, user: user2, quest: quest1)
