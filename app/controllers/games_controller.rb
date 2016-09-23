@@ -5,7 +5,7 @@ class GamesController < ApplicationController
 
   def create
     game = Game.create
-    user = User.create(name: params[:name], creator: params[:creator])
+    user = User.create(name: params[:name], creator: params[:creator], game_id: game.id)
   end
 
   private
