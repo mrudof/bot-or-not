@@ -2,9 +2,11 @@ class GamesController < ApplicationController
   def index
     # for now, just giving the first user
     currentUser = User.first
-    currentGame = User.first.game
+    currentGame = currentUser.game
+    currentRound = currentUser.game.rounds.last
+    countRounds = currentUser.game.rounds.count
     # current_user = current_user.game_id
-    render component: 'Game', props: { currentUser: currentUser, currentGame: currentGame }
+    render component: 'Game', props: { currentUser: currentUser, currentGame: currentGame, currentRound: currentRound, countRounds: countRounds }
   end
 
   def new
