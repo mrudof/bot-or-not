@@ -58,14 +58,14 @@ ActiveRecord::Schema.define(version: 20160922221818) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",                     null: false
+    t.string   "name",                         null: false
     t.boolean  "good"
     t.boolean  "creator",      default: false
     t.integer  "order"
     t.integer  "quest_chosen", default: 0
     t.integer  "game_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.index ["game_id"], name: "index_users_on_game_id", using: :btree
   end
 

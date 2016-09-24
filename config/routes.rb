@@ -6,9 +6,12 @@ Rails.application.routes.draw do
       resources :quests
     end
     resources :users
-    put '/games/:game_id/users/update', to: 'users#update' 
+    put '/games/:game_id/users/update', to: 'users#update'
   end
   resources :quests do
     resources :quest_members
+    #route to update quests_chosen for a user
+    get '/users', to: 'quests#choose'
   end
+  
 end

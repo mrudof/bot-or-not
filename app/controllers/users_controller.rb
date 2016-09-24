@@ -17,15 +17,24 @@ class UsersController < ApplicationController
 
 
   def update
-    user = current_user
+    players = current_user.game.users
+    rand_array = (1..players.length).to_a.shuffle
+    players = players.shuffle
 
+    players.each_with_index do |player, i|
+      if (rand_array[i] < 3)
+        attrib = false
+      else
+        attrib = true
+      end
+      player.update(good: attrib)
+      player.update(order: (i + 1))
+
+    end
 
   end
 
 
   private
 
-  def random
-    game.users.length
-  end
 end
