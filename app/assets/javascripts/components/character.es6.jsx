@@ -1,9 +1,10 @@
 class Character extends React.Component {
   render () {
-
+    // console.log("this.props for Character are ", this.props)
+    // console.log("this.props.currentUser.good for Character is ", this.props.currentUser.good)
     // replace isGood with current_user.good
 
-    const isGood = true
+    const isGood = this.props.currentUser.good
 
     let characterCard
     if (isGood) {
