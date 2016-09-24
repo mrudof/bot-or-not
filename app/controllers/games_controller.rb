@@ -12,7 +12,8 @@ class GamesController < ApplicationController
 
   def create
     game = Game.create
-    binding.pry
+
+    round = Round.create(game_id: game.id)
     # Creator is created here instead of in user controller.
 
     user = User.new(name: params[:name], creator: params[:creator], game_id: game.id)
