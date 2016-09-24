@@ -8,14 +8,16 @@
 
 <% if current_user.creator == true && current_user.game.users.length < 5 %>
 <h5>Waiting for players.<h5>
-<% else current_user.creator == true && current_user.game.users.length > 4 %>
+<% end %>
+
+<% if current_user.creator == true && current_user.game.users.length > 4 %>
 <form method="POST" action="/games/:game_id/users/update">
   <input type='hidden', name='_method', value='put'>
   <input type="submit" value="Start game">
 </form>
 <% end %>
 
-<% if current_user.creator == false %>
+<% if current_user.creator != true %>
 <h5>Waiting Game to begin.<h5>
 <% end %>
 

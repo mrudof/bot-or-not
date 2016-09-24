@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     end
     if @user.save!
       create_session @user
-      redirect_to "/games/new"
+      redirect_to '/games/new'
     end
   end
 
@@ -42,9 +42,10 @@ class UsersController < ApplicationController
       player.update(good: attrib)
       player.update(order: (i + 1))
     end
+    if current_user.good != nil
+    redirect_to "/games"
+    end
   end
 
-
-  private
 
 end
