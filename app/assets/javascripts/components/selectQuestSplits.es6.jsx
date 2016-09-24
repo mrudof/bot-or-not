@@ -27,7 +27,7 @@ class SelectQuestSplits extends React.Component {
       if (currentUserID === minRank.id) {
         return (<SelectQuestForm currentQuest={this.props.currentQuest} numberOnQuest={1} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.props.users}/>)
       } else {
-        return (<QuestWait currentQuest={this.props.currentQuest} numberOnQuest={1}/>)
+        return (<QuestWait currentQuest={this.props.currentQuest} numberOnQuest={27}/>)
       }
     }
   }

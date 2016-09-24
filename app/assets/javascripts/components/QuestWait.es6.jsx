@@ -2,27 +2,43 @@ class QuestWait extends React.Component {
   constructor () {
     super ()
     this.state = {
-      members: []
+      members: [],
+      done: false
     }
   }
-  componentDidMount() {
-    questID = this.props.currentQuest.id;
-    setInterval(function() {
-    $.ajax({
-        url: `/quests/${questID}/quest_members`,
-        method: 'get'
-      }).done((response) => {
-        debugger
-        this.setState({
-          members: response
-        })
-      })
-    }, 10000);
+  componentWillMount() {
+    //need to reset later to this.props.currentQuest.id;
+    questID = 1
+    var that = this
+    var myTimer = setInterval(() => {
+      if (that.state.members.length < that.props.numberOnQuest) {
+        $.ajax({
+            url: `/quests/${questID}/quest_members`,
+            method: 'get'
+          }).done((response) => {
+            this.setState({
+              members: response
+            })
+          }.bind(this))
+        } else {
+          that.setState({
+            done: true
+          })
+          clearInterval(myTimer);
+        }
+      }, 1000);
   }
+  toDo(){
+    if (this.state.done === true) {
+      return(<VoteQuest/>)
+    }
+  }
+
+
   render () {
     return (
       <div>
-        <p>hi</p>
+        {this.toDo()}
       </div>
       )
   }
