@@ -23,4 +23,13 @@ class QuestMembersController < ApplicationController
     render json: @quest.quest_members.to_json
   end
 
+
+  def update
+    if params[:vote] == 'Succeed'
+        @quest_member = QuestMember.update(succeeded: true)
+    elsif params[:vote] == 'Fail'
+        @quest_member = QuestMember.update(succeeded: false)
+    end
+  end
+
 end

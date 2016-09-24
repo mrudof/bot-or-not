@@ -47,4 +47,3 @@ class QuestWait extends React.Component {
       )
   }
 }
-
