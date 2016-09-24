@@ -1,6 +1,4 @@
 class Character extends React.Component {
-
-
   render () {
 
     // replace isGood with current_user.good
