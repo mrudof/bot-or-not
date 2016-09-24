@@ -1,6 +1,6 @@
 module SessionsHelper
 
-  def join_game(user)
+  def create_session(user)
     session[:user_id] = user.id
   end
 

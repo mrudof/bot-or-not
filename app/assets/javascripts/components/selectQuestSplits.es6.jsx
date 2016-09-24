@@ -1,8 +1,10 @@
 class SelectQuestSplits extends React.Component {
   //the nextUp method returns the user who chooses the next quest
+
   nextUp() {
-    var users = this.props.users
-      if (users.length > 0) {
+    var users = this.props.users,
+    quest = this.props.currentQuest;
+    if (users.length > 0 && [quest].length > 0) {
         var arr = [];
         var min = users[0].quest_chosen;
         for (i=0; i < users.length; i++) {
@@ -23,9 +25,9 @@ class SelectQuestSplits extends React.Component {
         }
       currentUserID = this.props.currentUser.id;
       if (currentUserID === minRank.id) {
-        return (<SelectQuestForm currentQuestID = {1} numberOnQuest={1} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.props.users}/>)
+        return (<SelectQuestForm currentQuest={this.props.currentQuest} numberOnQuest={1} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.props.users}/>)
       } else {
-        return (<p>You are waiting.</p>)
+        return (<QuestWait currentQuest={this.props.currentQuest} numberOnQuest={27}/>)
       }
     }
   }
