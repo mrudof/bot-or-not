@@ -1,8 +1,10 @@
 class GamesController < ApplicationController
   def index
-    # binding.pry
-    current_game = current_user.game_id
-    render component: 'Game', props: { currentUser: current_user }
+    # for now, just giving the first user
+    currentUser = User.first
+    currentGame = User.first.game
+    # current_user = current_user.game_id
+    render component: 'Game', props: { currentUser: currentUser, currentGame: currentGame }
   end
 
   def new
@@ -11,8 +13,10 @@ class GamesController < ApplicationController
   def create
     game = Game.create
     binding.pry
+    # Creator is created here instead of in user controller.
+
     user = User.new(name: params[:name], creator: params[:creator], game_id: game.id)
-    if user.save
+    if user.save!
       session[:user_id] = user.id
       redirect_to '/games/new'
     end
