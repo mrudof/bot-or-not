@@ -1,9 +1,10 @@
 <h3>Your game code is:</h3>
+<h4><%= current_user.game.key_code %></h4>
+<h3><%= current_user.name %></h3>
 
-<h4>GX794</h4>
-
-<h5>0 Players have joined</h5>
-
+<h5><%= current_user.game.users.length%> Players have joined</h5>
+<% if current_user.creator == true %>
 <form method="POST" action="/games">
 <input type="submit" value="Start game">
 </form>
+<% end %>
