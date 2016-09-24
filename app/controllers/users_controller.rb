@@ -7,9 +7,9 @@ class UsersController < ApplicationController
            game_with_key_id = game.id
         end
     end
-    @user = User.create(name: params[:name], creator: params[:creator], game_id: game_with_key_id)
-    if @user.save
-      join_game @user
+    @user = User.new(name: params[:name], creator: params[:creator], game_id: game_with_key_id)
+    if @user.save!
+      create_session @user
 
       redirect_to "/games/new"
     end
