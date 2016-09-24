@@ -15,12 +15,13 @@ class UsersController < ApplicationController
     end
   end
 
-  # def update
-  #   user = current_user
-  #   users = []
-  #   user.game.users.all.each do |user|
-  #     users =
-  # end
+
+  def update
+    user = current_user
+
+
+  end
+
 
   private
 
