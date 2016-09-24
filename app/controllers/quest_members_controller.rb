@@ -16,4 +16,5 @@ class QuestMembersController < ApplicationController
       QuestMember.create(quest_id: @quest.id, user_id: @user.id)
     end
   end
+
 end
