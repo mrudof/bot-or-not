@@ -41,7 +41,8 @@ class SelectQuestForm extends React.Component {
         <h1>Please select {this.props.numberOnQuest} players to go on the quest!</h1>
           {this.props.users.map((user) => <label key={user.id}>{user.name}<input key={user.id} ref={(self) => this.boxes.push(self)} type="checkbox" name={user.name} /><br/></label>)}
         <input value="submit" type="submit"/>
-        </form> : <p>Now let's vote!</p>}
+        </form> : <VoteQuest/>}
+
       </section>
 
       </div>
@@ -49,4 +50,3 @@ class SelectQuestForm extends React.Component {
       )
   }
 }
-

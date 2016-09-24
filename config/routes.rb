@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :quests do
     resources :quest_members
   end
+  
 end
