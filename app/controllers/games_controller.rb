@@ -6,7 +6,9 @@ class GamesController < ApplicationController
     @currentRound = @currentUser.game.rounds.last
     @countRounds = @currentUser.game.rounds.count
     # current_user = current_user.game_id
+
     # render component: 'Game', props: { currentUser: currentUser, currentGame: currentGame, currentRound: currentRound, countRounds: countRounds }, {prerender: true})
+
   end
 
   def new

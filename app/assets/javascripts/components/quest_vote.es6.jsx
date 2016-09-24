@@ -1,30 +1,31 @@
 class QuestVote extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-    show_button: true,
-    members: []
-    }
-  }
+  // constructor() {
+  //   super()
+  //   this.state = {
+  //   show_button: true,
+  //   members: []
+  //   }
+  // }
 
-  componentDidMount(){
-    this.state({
-      members: this.props.members
-    })
-  }
+  // componentDidMount(){
+  //   this.state({
+  //     members: this.props.members
+  //   })
+  // }
 
-  handleSubmit(event){
-    event.preventDefault;
-    $.ajax({
-      url: `/quests/${questID}/quest_votes`,
-      method: 'POST',
-      data: { vote: this.refs.vote.value}
-    }).done((response) => {
-      this.setState({button: false})
-    })
-  }
+  // handleSubmit(event){
+  //   event.preventDefault;
+  //   $.ajax({
+  //     url: `/quests/${questID}/quest_votes`,
+  //     method: 'POST',
+  //     data: { vote: this.refs.vote.value}
+  //   }).done((response) => {
+  //     this.setState({button: false})
+  //   })
+  // }
 
   render () {
+
     let voteComplete;
       if (this.state.show_button === true){
         voteComplete = (
@@ -52,9 +53,10 @@ class QuestVote extends React.Component {
           <h3>Please wait while others complete their voting!</h3>
         )
       }
+
       return(
         <div>
-          {voteComplete}
+          // {voteComplete}
         </div>
     )
   }
