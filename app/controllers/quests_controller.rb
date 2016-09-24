@@ -2,7 +2,7 @@ class QuestsController < ApplicationController
 
   def index
     #used for testing
-    @current_user = User.find(2)
+    @current_user = User.first
     @current_game = Game.first
     @current_round = Round.first
   end
@@ -16,11 +16,15 @@ class QuestsController < ApplicationController
   def create
     @round = Round.find(params[:round_id])
     @quest = Quest.new(round_id: @round.id)
-    #update quests choosen
-    # qc = current_user.quest_chosen +=1
-    # current_user.update(quest_chosen: qc)
     @quest.save
     render json: @quest
+  end
+
+  def choose
+    #using this to update users who have chosen quests. Is there a better route for this?
+    quest = Quest.find(params[:quest_id])
+    game = quest.round.game
+    render json: game.next_up
   end
 
 end

@@ -49,7 +49,6 @@ class SelectQuestForm extends React.Component {
           )}
         <input value="submit" type="submit"/>
         </form> : <VoteQuest/>}
-
       </section>
       </div>
 
