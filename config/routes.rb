@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     end
     resources :users
   end
-
+  resources :quests do
+    resources :quest_members
+  end
 end
