@@ -9,7 +9,8 @@
 
 STILL IN PROGRESS
 <% if current_user.creator == true %>
-<form method="PUT" action="/games/:game_id/users/">
+<form method="POST" action="/games/:game_id/users/update">
+  <input type='hidden', name='_method', value='put'>
   <input type="submit" value="Start game">
 </form>
 <% end %>
