@@ -14,4 +14,17 @@ class UsersController < ApplicationController
       redirect_to "/games/new"
     end
   end
+
+  # def update
+  #   user = current_user
+  #   users = []
+  #   user.game.users.all.each do |user|
+  #     users =
+  # end
+
+  private
+
+  def random
+    game.users.length
+  end
 end
