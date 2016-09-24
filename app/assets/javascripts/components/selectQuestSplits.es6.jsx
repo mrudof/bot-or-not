@@ -2,39 +2,58 @@ class SelectQuestSplits extends React.Component {
   constructor () {
     super ()
     this.state = {
+      quest: "",
       questPicker: []
     }
   }
 
-  nextUp() {
-    //method to determine which user goes next
-    var users = this.props.users,
-    quest = this.props.currentQuest;
-    if (users.length > 0 && [quest].length > 0) {
-      questID = 1
-      $.ajax({
-        url: `/quests/${questID}/users`,
-        method: 'get'
-      }).done((response) => {
-        this.setState({
-        questPicker: response
-        })
+
+  componentWillMount() {
+    //creates the quest
+    const gameID = this.props.currentGame.id
+    const roundID = this.props.currentRound.id
+    $.ajax({
+      url: `/games/${gameID}/rounds/${roundID}/quests`,
+      method: 'POST'
+    }).done((response) => {
+      this.setState({
+        quest: response
       })
-      currentUserID = this.props.currentUser.id;
+    })
+  // }
+  //
+  // componentDidMount() {
+    // returns the user whose turn it is to pick the quest
+    // const gameID = this.props.currentGame.id
+    console.log(`the url: /games/${gameID}/users/choose`)
+    $.ajax({
+          url: `/games/${gameID}/users/choose`,
+          method: 'get'
+        })
+        .done((response) => {
+          this.setState({
+          questPicker: response
+          })
+        })
+  }
+
+
+  startQuestSelection() {
+      var currentUserID = this.props.currentUser.id;
       if (currentUserID === this.state.questPicker.id) {
-        return (<SelectQuestForm currentQuest={this.props.currentQuest} numberOnQuest={1} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.props.users}/>)
+        // numberOnQuest hardcoded for now
+        return (<SelectQuestForm currentQuest={this.state.quest} numberOnQuest={1} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.props.users}/>)
       } else {
-        return (<QuestWait currentQuest={this.props.currentQuest} numberOnQuest={27}/>)
+        return (<p>waiting for quest</p>)
+        // return (<QuestWait currentQuest={this.props.currentQuest} numberOnQuest={27}/>)
       }
     }
-  }
 
   render () {
     return (
       <div>
-        {this.nextUp()}
+        {this.startQuestSelection()}
       </div>
       )
   }
 }
-

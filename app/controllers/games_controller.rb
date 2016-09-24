@@ -1,12 +1,12 @@
 class GamesController < ApplicationController
   def index
-    # for now, just giving the first user
-    currentUser = User.first
-    currentGame = currentUser.game
-    currentRound = currentUser.game.rounds.last
-    countRounds = currentUser.game.rounds.count
+    # for now, just giving the first user to current user - change to session when this works
+    @currentUser = User.first
+    @currentGame = @currentUser.game
+    @currentRound = @currentUser.game.rounds.last
+    @countRounds = @currentUser.game.rounds.count
     # current_user = current_user.game_id
-    render component: 'Game', props: { currentUser: currentUser, currentGame: currentGame, currentRound: currentRound, countRounds: countRounds }
+    # render component: 'Game', props: { currentUser: currentUser, currentGame: currentGame, currentRound: currentRound, countRounds: countRounds }, {prerender: true})
   end
 
   def new
@@ -24,6 +24,7 @@ class GamesController < ApplicationController
       redirect_to '/games/new'
     end
   end
+
 
   private
 

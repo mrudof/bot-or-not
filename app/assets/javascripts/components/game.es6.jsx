@@ -7,8 +7,8 @@ class Game extends React.Component {
         <Character currentUser={this.props.currentUser} />
         <Board />
         <Rules />
-        {/* <SelectQuest currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} /> */}
-        <VoteQuest />
+        <SelectQuest currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
+        {/* <VoteQuest /> */}
         {/* <SucceedQuest /> */}
         {/* <QuestResults/> */}
         {/* <GameOver /> */}

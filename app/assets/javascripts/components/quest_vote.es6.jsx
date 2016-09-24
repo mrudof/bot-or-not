@@ -29,13 +29,14 @@ class QuestVote extends React.Component {
       if (this.state.show_button === true){
         voteComplete = (
         <div>
-        <h1>Vote for quest</h1>
-          <ul>{
-            this.state.members.map((member, idx) => {
-              return (<QuestMember key={idx} data={member}/>)
-            })
-          }
-          </ul>
+          <h1>Vote for quest</h1>
+            <ul>
+              {
+                this.state.members.map((member, idx) => {
+                  return (<QuestMember key={idx} data={member}/>)
+                })
+              }
+            </ul>
           <section>
             <form onSubmit={this.handleSubmit}>
               <label for="approve">Approve</label>

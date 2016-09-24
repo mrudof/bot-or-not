@@ -2,13 +2,16 @@ class SelectQuest extends React.Component {
   constructor () {
     super ()
     this.state = {
-      users: [],
-      quest: []
+      users: []
     }
   }
+
+// purpose of this page: get the users and create a quest
+
   componentWillMount() {
-    var gameID = this.props.currentGame.id,
-    roundID = this.props.currentRound.id;
+    // const $ = require ('jquery')
+    const gameID = this.props.currentGame.id
+    const roundID = this.props.currentRound.id
     //gets the users
     $.ajax({
       url: `/games/${gameID}/rounds/${roundID}/quests/new`,
@@ -17,27 +20,16 @@ class SelectQuest extends React.Component {
       this.setState({
         users: response
       })
+      console.log("the players of the game are:", this.state.users )
     })
-    //creates the quest
-    var gameID = this.props.currentGame.id,
-    roundID = this.props.currentRound.id;
-    $.ajax({
-      url: `/games/${gameID}/rounds/${roundID}/quests`,
-      method: 'Post'
-    }).done((response) => {
-      this.setState({
-        quest: response
-      })
-    })
-
   }
 
   render () {
+
     return (
       <div>
-        <SelectQuestSplits currentQuest={this.state.quest} currentGame={this.props.currentGame} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.state.users} />
+        <SelectQuestSplits currentGame={this.props.currentGame} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.state.users} />
       </div>
       )
   }
 }
-

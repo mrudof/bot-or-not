@@ -15,6 +15,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def choose
+    #using this to update users who have chosen quests. Is there a better route for this?
+    game = Game.find(params[:game_id])
+    render json: game.next_up
+  end
 
   def update
     players = current_user.game.users
