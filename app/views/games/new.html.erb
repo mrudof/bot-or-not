@@ -1,10 +1,15 @@
 <h3>Your game code is:</h3>
 <h4><%= current_user.game.key_code %></h4>
-<h3><%= current_user.name %></h3>
+<h3>Name: <%= current_user.name %></h3>
 
-<h5><%= current_user.game.users.length%> Players have joined</h5>
+<h5>Current number of players: <%= current_user.game.users.length%></h5><br>
+
+<%= %>
+
+
+
 <% if current_user.creator == true %>
-<form method="POST" action="/games">
-<input type="submit" value="Start game">
+<form method="PUT" action="/games/:game_id/users/">
+  <input type="submit" value="Start game">
 </form>
 <% end %>
