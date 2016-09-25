@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   def index
     # for now,  giving the first user to current user when session is not set
-    @currentUser = current_user || User.first
+    @currentUser = User.find(2)
     @currentGame = @currentUser.game
     @currentRound = @currentUser.game.rounds.last
     @countRounds = @currentUser.game.rounds.count

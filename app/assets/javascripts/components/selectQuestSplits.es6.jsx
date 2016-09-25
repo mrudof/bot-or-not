@@ -22,21 +22,22 @@ class SelectQuestSplits extends React.Component {
           })
         })
   }
-  startQuestSelection() {
+
+
+  render () {
+    let startQuestSelection
       var currentUserID = this.props.currentUser.id
       if (currentUserID === this.state.questPicker.id) {
         // numberOnQuest hardcoded for now
-        return (<CreateQuest questPicker={this.state.questPicker} numberOnQuest={1} currentRound={this.props.currentRound} currentGame= {this.props.currentGame} currentUser= {this.props.currentUser} users={this.props.users}/>)
-      } else {
-        return (<p>waiting..</p>)
-        // return (<QuestWait currentQuest={this.props.currentQuest} numberOnQuest={1}/>)
+        startQuestSelection = <CreateQuest questPicker={this.state.questPicker} numberOnQuest={1} currentRound={this.props.currentRound} currentGame= {this.props.currentGame} currentUser= {this.props.currentUser} users={this.props.users}/>
       }
-    }
-
-  render () {
+      else {
+        startQuestSelection = <p> waiting.. </p>
+        // <QuestWait numberOnQuest={1}/>
+      }
     return (
       <div>
-        {this.startQuestSelection()}
+        {startQuestSelection}
       </div>
       )
   }
