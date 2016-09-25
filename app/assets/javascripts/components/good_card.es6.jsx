@@ -4,7 +4,7 @@ class GoodCard extends React.Component {
 
     return(
       <div>
-        <h1>You are GOOD!!</h1>
+        <h2>... is GOOD!!</h2>
       </div>
     )
   }

@@ -14,11 +14,9 @@ class Character extends React.Component {
     }
 
     return(
-      <div>
-        <h1>Your Card / infodump</h1>
+      <div className="jumbotron">
+        <h1>{this.props.currentUser.name}</h1>
         {characterCard}
-        <p>placeholder</p>
-
         <div className="btn-group">
           <button type="button" className="btn btn-success">OK</button>
         </div>
