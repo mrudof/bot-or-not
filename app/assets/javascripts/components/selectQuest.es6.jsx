@@ -26,7 +26,7 @@ class SelectQuest extends React.Component {
   render () {
     return (
       <div>
-        <SelectQuestSplits currentGame={this.props.currentGame} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.state.users} />
+        <SelectQuestSplits updateGameStage={this.props.updateGameStage} currentGame={this.props.currentGame} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.state.users} />
       </div>
       )
   }
