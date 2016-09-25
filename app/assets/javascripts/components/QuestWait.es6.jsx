@@ -11,7 +11,6 @@ class QuestWait extends React.Component {
     //need to reset later to this.props.currentQuest.id;
     questID = 1
     var that = this
-    //timer for later
     var myTimer = setInterval(() => {
       if (that.state.members.length < that.props.numberOnQuest) {
         $.ajax({
