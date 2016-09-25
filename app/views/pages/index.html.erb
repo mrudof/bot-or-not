@@ -2,17 +2,16 @@
 
 
 <form method='POST' action="/games/:game_id/users">
-<label>Enter username for game:</label><br>
-  <input type="text" name="name" placeholder="Enter Username"><br><br>
 <label>Join game with code:</label><br>
   <input type="text" name="key_code" placeholder="Enter Game Code"><br>
-  <input type="submit" value="Join game">
+  <input type="text" name="name" placeholder="Enter Username"><br>
+  <input type="submit" value="JOIN GAME">
 </form><br>OR<br><br>
 
 <form method="POST" action="/games">
   <label>Generate game code:</label><br>
     <input type="text" name="name" placeholder="Enter Username">
     <input type="hidden" name="creator" value="true" ><br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="CREATE GAME">
 <!-- <a href="/games/new">Create a new game code</a> -->
 </form>

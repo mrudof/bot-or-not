@@ -1,17 +1,24 @@
 class UsersController < ApplicationController
+
   def create
     games = Game.all
     game_with_key_id = ""
+    user_key_code = params[:key_code]
+    @current_game = ""
+
     games.each do |game|
-        if game.key_code == params[:key_code]
+        if game.key_code == user_key_code
            game_with_key_id = game.id
+           @current_game = game
         end
     end
-    @user = User.new(name: params[:name], creator: params[:creator], game_id: game_with_key_id)
+
+    if @current_game.users.length < 10
+      @user = User.new(name: params[:name], creator: params[:creator], game_id: game_with_key_id)
+    end
     if @user.save!
       create_session @user
-
-      redirect_to "/games/new"
+      redirect_to '/games/new'
     end
   end
 
@@ -34,12 +41,11 @@ class UsersController < ApplicationController
       end
       player.update(good: attrib)
       player.update(order: (i + 1))
-
     end
-
+    if current_user.good != nil
+    redirect_to "/games"
+    end
   end
 
-
-  private
 
 end

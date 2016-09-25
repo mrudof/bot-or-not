@@ -1,16 +1,23 @@
 <h3>Your game code is:</h3>
-<h4><%= current_user.game.key_code %></h4>
+<h1><%= current_user.game.key_code %></h1>
 <h3>Name: <%= current_user.name %></h3>
 
 <h5>Current number of players: <%= current_user.game.users.length%></h5><br>
 
 
 
+<% if current_user.creator == true && current_user.game.users.length < 5 %>
+<h5>Waiting for players.<h5>
+<% end %>
 
-STILL IN PROGRESS
-<% if current_user.creator == true %>
+<% if current_user.creator == true && current_user.game.users.length > 4 %>
 <form method="POST" action="/games/:game_id/users/update">
   <input type='hidden', name='_method', value='put'>
   <input type="submit" value="Start game">
 </form>
 <% end %>
+
+<% if current_user.creator != true %>
+<h5>Waiting Game to begin.<h5>
+<% end %>
+

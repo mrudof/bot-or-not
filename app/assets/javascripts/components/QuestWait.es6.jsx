@@ -6,7 +6,7 @@ class QuestWait extends React.Component {
       done: false
     }
   }
-  componentWillMount() {
+  componentDidMount() {
     //need to reset later to this.props.currentQuest.id;
     questID = 1
     var that = this
@@ -30,7 +30,7 @@ class QuestWait extends React.Component {
   }
   toDo(){
     if (this.state.done === true) {
-      return(<VoteQuest/>)
+      return(<QuestVote/>)
     }
   }
 
