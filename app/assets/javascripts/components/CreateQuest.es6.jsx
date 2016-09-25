@@ -35,7 +35,7 @@ class CreateQuest extends React.Component {
       }
     return (
       <div>
-        return {showButton}
+        {showButton}
       </div>
       )
   }
