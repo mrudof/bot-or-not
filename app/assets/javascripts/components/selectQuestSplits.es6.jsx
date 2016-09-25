@@ -7,7 +7,6 @@ class SelectQuestSplits extends React.Component {
     }
   }
 
-
   componentWillMount() {
     //creates the quest
     const gameID = this.props.currentGame.id
@@ -20,11 +19,6 @@ class SelectQuestSplits extends React.Component {
         quest: response
       })
     })
-  // }
-  //
-  // componentDidMount() {
-    // returns the user whose turn it is to pick the quest
-    // const gameID = this.props.currentGame.id
     console.log(`the url: /games/${gameID}/users/choose`)
     $.ajax({
           url: `/games/${gameID}/users/choose`,
@@ -36,10 +30,8 @@ class SelectQuestSplits extends React.Component {
           })
         })
   }
-
-
   startQuestSelection() {
-      var currentUserID = this.props.currentUser.id;
+      var currentUserID = this.props.currentUser.id
       if (currentUserID === this.state.questPicker.id) {
         // numberOnQuest hardcoded for now
         return (<SelectQuestForm currentQuest={this.state.quest} numberOnQuest={1} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.props.users}/>)

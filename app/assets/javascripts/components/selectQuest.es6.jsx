@@ -7,7 +7,6 @@ class SelectQuest extends React.Component {
   }
 
 // purpose of this page: get the users and create a quest
-
   componentWillMount() {
     // const $ = require ('jquery')
     const gameID = this.props.currentGame.id
@@ -25,7 +24,6 @@ class SelectQuest extends React.Component {
   }
 
   render () {
-
     return (
       <div>
         <SelectQuestSplits currentGame={this.props.currentGame} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.state.users} />
