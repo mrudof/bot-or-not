@@ -3,6 +3,7 @@ class SelectQuestForm extends React.Component {
     super()
     this.state = {
       displayForm: true,
+      members: []
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.boxes = []
@@ -22,13 +23,18 @@ class SelectQuestForm extends React.Component {
       $('.create-quest').append(`<p class="error-message">Please select ${this.props.numberOnQuest}</p>`)
     } else {
         var questID = this.props.currentQuest.id;
+        var currentUserID = this.props.currentUser.id;
           $.ajax({
             url: `/quests/${questID}/quest_members`,
             method: 'Post',
-            data: {quest: votes}
+            data: {
+              quest: votes,
+              userID: currentUserID
+            }
           }).done((response) => {
-            this.setState({
-            displayForm: false
+            this.setState ({
+              displayForm: false,
+              members: response
             })
           })
         }
@@ -50,13 +56,12 @@ class SelectQuestForm extends React.Component {
             </form>
           </section>
       } else {
-        showForm = <QuestVote currentUser={this.props.currentUser} members={this.props.members}/>
+        showForm = <p> you voted </p>
+        //<QuestVote currentQuest={this.state.quest} currentUser={this.props.currentUser} users={this.props.users} members={this.state.members}/>
       }
     return (
       <div className="create-quest">
-
         {showForm}
-
       </div>
       )
   }
