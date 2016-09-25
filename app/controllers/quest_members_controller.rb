@@ -20,7 +20,8 @@ class QuestMembersController < ApplicationController
       @user = @game.users.find_by(name: quest)
       QuestMember.create(quest_id: @quest.id, user_id: @user.id)
     end
-    render json: @quest.quest_members.to_json
+    @quest_members = @quest.quest_members
+    render json: @quest_members.as_json(include: :user)
   end
 
 

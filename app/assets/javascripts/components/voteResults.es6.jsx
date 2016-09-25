@@ -10,16 +10,18 @@ class VoteResults extends React.Component {
   render(){
       let voteResults;
       if (this.state.results === true){
-        voteResults = (
+        voteResults =
           <div>
             <h2>The proposed quest has been approved!!</h2>
           </div>
-        )
+
       } else {
-        voteResults = (
+        voteResults =
+        <div>
           <h2>The proposed quest has been rejected!</h2>
           <QuestVote />
-        )
+        </div>
+
       }
 
       return(

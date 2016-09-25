@@ -2,30 +2,31 @@ class QuestVote extends React.Component {
   constructor() {
     super()
     this.state = {
-    show_button: true,
-    members: []
+      show_button: true
     }
+    this.handleVoteSubmit = this.handleVoteSubmit.bind(this)
   }
 
-  componentDidMount(){
-    this.state({
-      members: this.props.members
-    })
-  }
 
-  handleSubmit(event){
+  handleVoteSubmit(event){
     event.preventDefault;
+    var questID = this.props.currentQuest.id
     $.ajax({
       url: `/quests/${questID}/quest_votes`,
       method: 'POST',
       data: { vote: this.refs.vote.value}
     }).done((response) => {
-      this.setState({button: false})
+      this.setState({
+        show_button: false
+      })
     })
+
+
+
+
   }
 
   render () {
-
     let voteComplete;
       if (this.state.show_button === true){
         voteComplete = (
@@ -33,13 +34,13 @@ class QuestVote extends React.Component {
           <h1>Vote for quest</h1>
             <ul>
               {
-                this.state.members.map((member, idx) => {
+                this.props.members.map((member, idx) => {
                   return (<QuestMember key={idx} data={member}/>)
                 })
               }
             </ul>
           <section>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleVoteSubmit}>
               <label for="approve">Approve</label>
               <input ref="vote" type="submit" value="Approve" name="vote"/>
               <label for="reject">Reject</label>
@@ -49,14 +50,12 @@ class QuestVote extends React.Component {
         </div>
         )
       } else {
-        voteComplete = (
-          <h3>Please wait while others complete their voting!</h3>
-        )
+         voteComplete = <h3>Please wait while others complete their voting!</h3>
       }
 
       return(
         <div>
-          // {voteComplete}
+          {voteComplete}
         </div>
         // render YourFriendsLeftYouToQuest
         // OR render OnQuestVoting

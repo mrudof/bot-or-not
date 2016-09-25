@@ -6,13 +6,14 @@ class OnQuestVoting extends React.Component {
     }
   }
 
-  handleSubmit(event){
-      event.preventDefault;
-      $.ajax({})
-  }
+  // handleSubmit(event){
+  //     event.preventDefault;
+  //     $.ajax({})
+  // }
 
   render(){
     return(
+      <div>
       <h2>Time to succeed or fail this quest</h2>
       <form onSubmit={this.handleSubmit}>
         <label for="succeed">Succeed</label>
@@ -20,6 +21,7 @@ class OnQuestVoting extends React.Component {
         <label for="fail">Fail</label>
           <input type="submit" value="Fail" name="vote"/>
       </form>
+    </div>
     )
   }
 }
