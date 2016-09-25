@@ -14,6 +14,8 @@ class YourFriendsLeftYouToQuest extends React.Component {
         })
       }</ul>
       <h2>Are all on a quest and didn't take you. =( </h2>
+        // waiting for people to succeed or fail quest
+        // taken to next component once all voting has been done
     )
   }
 }
