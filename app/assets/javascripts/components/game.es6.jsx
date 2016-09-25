@@ -50,10 +50,17 @@ class Game extends React.Component {
         <span onClick={this.clickCard}>{card}</span>
         <span onClick={this.clickBoard}>{board}</span>
         <span onClick={this.clickRules}>{rules}</span>
+
         <SelectQuest currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
+
+
         {/* <VoteQuest /> */}
+
           {/* <SucceedQuest /> */}
+
+
             {/* <QuestResults/> */}
+
               {/* <GameOver /> */}
       </div>
     )
