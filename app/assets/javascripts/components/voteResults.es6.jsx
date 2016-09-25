@@ -3,9 +3,41 @@ class VoteResults extends React.Component {
     super()
     this.state = {
       members: [],
-      results: true
+      results: ""
     }
   }
+  componentWillMount() {
+    var gameID = this.props.currentGame.id
+    //hardcoded this questID
+    var questID = 1
+    $.ajax({
+      method: 'get',
+      url: `/quests/${questID}/quest_votes`
+    }).done((response) => {
+        this.setState({
+          results: false
+        })
+      }.bind(this))
+
+        var falses = 0;
+        var membs = this.state.members;
+        for (var i=0; i < membs.length; i++) {
+          if (membs.passed === false) {
+            falses++
+          }
+        }
+        if (falses >= membs.length/2) {
+          this.setState({
+            results: false
+          })
+        } else {
+          this.setState({
+            results: true
+          })
+        }
+  }
+
+
 
   render(){
       let voteResults;
@@ -19,7 +51,7 @@ class VoteResults extends React.Component {
         voteResults =
         <div>
           <h2>The proposed quest has been rejected!</h2>
-          <QuestVote />
+          {/* <QuestVote /> */}
         </div>
 
       }
@@ -28,10 +60,12 @@ class VoteResults extends React.Component {
         <div>
           {voteResults}
           <ul>{
-            this.state.members.map((member, idx) => {
-              <li>member.name</li>
-            })
-          }</ul>
+	    	  this.state.members.map((user,i) => {
+	          return (
+	           <li>user.quest_id</li>
+	          )
+	        })
+	    	}</ul>
         </div>
       )
   }

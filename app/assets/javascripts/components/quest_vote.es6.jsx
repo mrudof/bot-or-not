@@ -7,7 +7,6 @@ class QuestVote extends React.Component {
     this.handleVoteSubmit = this.handleVoteSubmit.bind(this)
   }
 
-
   handleVoteSubmit(event){
     event.preventDefault;
     var questID = this.props.currentQuest.id
@@ -21,9 +20,6 @@ class QuestVote extends React.Component {
         show_button: false
       })
     })
-
-
-
 
   }
 
