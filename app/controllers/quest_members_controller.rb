@@ -20,7 +20,17 @@ class QuestMembersController < ApplicationController
       @user = @game.users.find_by(name: quest)
       QuestMember.create(quest_id: @quest.id, user_id: @user.id)
     end
-    render json: @quest.quest_members.to_json
+    @quest_members = @quest.quest_members
+    render json: @quest_members.as_json(include: :user)
+  end
+
+
+  def update
+    if params[:vote] == 'Succeed'
+        @quest_member = QuestMember.update(succeeded: true)
+    elsif params[:vote] == 'Fail'
+        @quest_member = QuestMember.update(succeeded: false)
+    end
   end
 
 end

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   resources :quests do
     resources :quest_members
+    resources :quest_votes
     #route to update quests_chosen for a user
   end
 
