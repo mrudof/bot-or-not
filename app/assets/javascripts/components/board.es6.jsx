@@ -1,11 +1,12 @@
 class Board extends React.Component {
   render () {
+    console.log("this.props for Board are ", this.props)
     return(
       <div>
         <h1>Board</h1>
-        <p>(Placeholder)</p>
-        <p>Quest count: 1/5 </p>
-        <p>Vote count:  1/5 </p>
+        <p>Quests created: {this.props.countQuests} out of 5 </p>
+        <p>Round count: {this.props.currentRound.round_number} out of 5 </p>
+        <p>Click to hide!</p>
       </div>
     )
   }
