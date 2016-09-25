@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
     resources :users
     put '/games/:game_id/users/update', to: 'users#update'
+    get '/status', to: 'games#status'
   end
   resources :quests do
     resources :quest_members

@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   def index
     # for now,  giving the first user to current user when session is not set
-    @currentUser = User.find(4)
+    @currentUser = current_user || User.find(2)
     @currentGame = @currentUser.game
     @currentRound = @currentUser.game.rounds.last
     @countRounds = @currentUser.game.rounds.count
@@ -23,6 +23,21 @@ class GamesController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/games/new'
     end
+  end
+
+
+  def status
+    #eventually this will be dynamic
+    currentUser = current_user || User.find(1)
+    currentGame = Game.find(params[:game_id])
+    currentQuest = currentGame.rounds.last.quests.last
+    #if else for end game
+    if QuestVote.find_by(user_id: currentUser.id, quest_id: currentQuest.id)
+      @response = "questVoteDone"
+    else
+      @response = "questVoting"
+    end
+    render json: @response.to_json
   end
 
   private

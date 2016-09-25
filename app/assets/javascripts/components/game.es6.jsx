@@ -5,12 +5,25 @@ class Game extends React.Component {
     this.state = {
       cardShow: false,
       boardShow: false,
-      rulesShow: false
+      rulesShow: false,
+      gameStage: "questVoting"
     }
     this.clickCard = this.clickCard.bind(this)
     this.clickBoard = this.clickBoard.bind(this)
     this.clickRules = this.clickRules.bind(this)
+    this.updateGameStage = this.updateGameStage.bind(this)
   }
+
+  componentDidMount() {
+    var gameID = this.props.currentGame.id
+		$.ajax({
+			method: 'get',
+			url: `/games/${gameID}/status`
+		}).done((response) => {
+			this.setState({
+				gameStage: response
+			})}.bind(this))
+	}
 
   clickCard() {
     this.setState({cardShow: !this.state.cardShow})
@@ -22,6 +35,12 @@ class Game extends React.Component {
 
   clickRules() {
     this.setState({rulesShow: !this.state.rulesShow})
+  }
+
+  updateGameStage(response) {
+    this.setState ({
+      gameStage: response
+    })
   }
 
   render () {
@@ -45,23 +64,26 @@ class Game extends React.Component {
         <span className="glyphicon glyphicon-book" aria-hidden="true"></span> See Rules
       </button>
 
-    return(
+
+      let tree
+      if (this.state.gameStage === "questVoting" ) {
+        tree = <SelectQuest updateGameStage={this.updateGameStage} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
+      } else if (this.state.gameStage === "questVoteDone") {
+        tree = <p>hi</p>
+      }
+      return(
       <div>
         <span onClick={this.clickCard}>{card}</span>
         <span onClick={this.clickBoard}>{board}</span>
         <span onClick={this.clickRules}>{rules}</span>
-
-        <SelectQuest currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
-
+        {tree}
 
         {/* <VoteQuest /> */}
+        {/* <SucceedQuest /> */}
 
-          {/* <SucceedQuest /> */}
+        {/* <QuestResults/> */}
+        {/* <GameOver /> */}
 
-
-            {/* <QuestResults/> */}
-
-              {/* <GameOver /> */}
       </div>
     )
   }

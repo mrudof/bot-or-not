@@ -16,6 +16,7 @@ class QuestVote extends React.Component {
       method: 'POST',
       data: { vote: this.refs.vote.value}
     }).done((response) => {
+      this.props.updateGameStage("questVoteDone")
       this.setState({
         show_button: false
       })
