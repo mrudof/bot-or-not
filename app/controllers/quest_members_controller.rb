@@ -9,12 +9,18 @@ class QuestMembersController < ApplicationController
   end
 
   def create
+    #increases the quest_user count for the person making the quest
+    @user = User.find(params[:userID])
+    qc = @user.quest_chosen + 1
+    @user.update(quest_chosen: qc)
+   #makes new quest members
     @quest = Quest.find(params[:quest_id])
     @game = Game.find(@quest.round.game_id)
     params[:quest].each do |quest|
       @user = @game.users.find_by(name: quest)
       QuestMember.create(quest_id: @quest.id, user_id: @user.id)
     end
+    render json: @quest.quest_members.to_json
   end
 
 end
