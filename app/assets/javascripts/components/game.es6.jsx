@@ -69,7 +69,7 @@ class Game extends React.Component {
       if (this.state.gameStage === "questVoting" ) {
         tree = <SelectQuest updateGameStage={this.updateGameStage} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
       } else if (this.state.gameStage === "questVoteDone") {
-        tree = <p>hi</p>
+        tree = <VoteResults updateGameStage={this.updateGameStage} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
       }
       return(
       <div>

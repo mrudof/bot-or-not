@@ -11,6 +11,12 @@ class QuestVotesController < ApplicationController
     end
   end
 
+  def index
+    quest = Quest.find(params[:quest_id])
+    quest_votes = quest.quest_votes
+    render json: quest_votes.as_json(include: :user)
+  end
+
   #  def index
   #    @quest = Quest.find(params[:quest_id])
   #    @quest_votes = @quest.quest_votes
