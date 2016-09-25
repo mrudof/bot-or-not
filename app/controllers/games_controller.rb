@@ -10,6 +10,7 @@ class GamesController < ApplicationController
   end
 
   def new
+    redirect_to "/games" if current_user.good != nil
   end
 
   def create

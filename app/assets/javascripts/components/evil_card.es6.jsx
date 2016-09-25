@@ -4,7 +4,7 @@ class EvilCard extends React.Component {
 
     return(
       <div>
-        <h1>You are EVIL!!</h1>
+        <h2>... is EVIL!!</h2>
       </div>
     )
   }
