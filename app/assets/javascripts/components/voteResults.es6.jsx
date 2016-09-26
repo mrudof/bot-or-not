@@ -20,7 +20,6 @@ class VoteResults extends React.Component {
     }.bind(this))
 
     console.log(this.state.votes)
-
     let rejectedQuest = 0;
     const gameUsers = this.props.gameUsers;
     for (var i=0; i < gameUsers.length; i++) {
@@ -48,6 +47,7 @@ class VoteResults extends React.Component {
         voteResults =
           <div>
             <h2>The proposed quest has been approved!!</h2>
+            <OnQuestVoting/>
           </div>
 
       } else {
