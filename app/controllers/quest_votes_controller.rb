@@ -3,7 +3,6 @@ class QuestVotesController < ApplicationController
     currentQuest = Quest.find(params[:quest_id])
     #need to use a fake 'current_user' for now
     currentUser_id = current_user.id
-
     if params[:vote] == 'Approve'
       @quest_vote = QuestVote.create(passed: true, user_id: currentUser_id, quest_id: currentQuest.id)
     elsif params[:vote] == 'Reject'
