@@ -16,9 +16,10 @@ ActiveRecord::Schema.define(version: 20160922221818) do
   enable_extension "plpgsql"
 
   create_table "games", force: :cascade do |t|
-    t.string   "key_code",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "key_code",                       null: false
+    t.string   "stage",      default: "preGame"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "quest_members", force: :cascade do |t|

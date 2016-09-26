@@ -3,8 +3,10 @@ class VoteResults extends React.Component {
     super()
     this.state = {
       members: [],
-      results: ""
+      results: "",
+      buttonShow: true
     }
+    this.handleBadSubmit = this.handleBadSubmit.bind(this)
   }
   componentWillMount() {
     var gameID = this.props.currentGame.id
@@ -15,7 +17,7 @@ class VoteResults extends React.Component {
       url: `/quests/${questID}/quest_votes`
     }).done((response) => {
         this.setState({
-          results: false
+          members: response
         })
       }.bind(this))
 
@@ -37,35 +39,69 @@ class VoteResults extends React.Component {
         }
   }
 
+  handleBadSubmit(){
 
+      var gameID = this.props.currentGame.id
+      $.ajax({
+        method: 'get',
+        url: `/games/${gameID}/status`,
+        data: {
+          response: "questVoting"
+        }
+      })
+
+    this.setState({
+      buttonShow: false
+    })
+
+  }
 
   render(){
       let voteResults;
-      if (this.state.results === true){
-        voteResults =
+        if (this.state.results === true){
+          voteResults =
+            <div>
+              <h2>The proposed quest has been approved!!</h2>
+            </div>
+
+        } else {
+          voteResults =
           <div>
-            <h2>The proposed quest has been approved!!</h2>
+            <h2>The proposed quest has been rejected!</h2>
+            {/* <QuestVote /> */}
           </div>
+        }
 
-      } else {
-        voteResults =
-        <div>
-          <h2>The proposed quest has been rejected!</h2>
-          {/* <QuestVote /> */}
-        </div>
+      let redirect;
+        if (this.state.results === true){
+          redirect =
+          <form onSubmit={this.handleGoodSubmit} >
+            <label for="go on quest">Time to quest!</label>
+            <input ref="quest" type="submit" value="Go On Quest" name="GoOnQuest"/>
+          </form>
 
-      }
+        } else {
+          if (this.state.buttonShow) {
+            redirect =
+            <form onSubmit={this.handleBadSubmit}>
+              <label for="pick a new team">Pick new people to go on a quest!</label>
+              <input ref="quest" type="submit" value="Pick new quest members!" name="NewQuestTeam"/>
+              </form>
+            } else if (this.state.buttonShow === false){
+            redirect =
+            <SelectQuest updateGameStage={this.updateGameStage} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
+          }
+        }
 
       return(
         <div>
           {voteResults}
-          <ul>{
-	    	  this.state.members.map((user,i) => {
-	          return (
-	           <li>user.quest_id</li>
-	          )
-	        })
-	    	}</ul>
+          {
+	    	    this.state.members.map((user,i) => {
+	            return (<TeamVoteResult key={i} data={user}/>)
+	          })
+	    	  }
+        {redirect}
         </div>
       )
   }

@@ -33,11 +33,16 @@ class GamesController < ApplicationController
     currentGame = Game.find(params[:game_id])
     currentQuest = currentGame.rounds.last.quests.last
     #if else for end game
-    if QuestVote.find_by(user_id: currentUser.id, quest_id: currentQuest.id)
+    debugger
+    if params[:response]
+      @response = params[:response]
+    elsif QuestVote.find_by(user_id: currentUser.id, quest_id: currentQuest.id)
       @response = "questVoteDone"
     else
       @response = "questVoting"
     end
+
+    currentGame.update(stage: @response)
     render json: @response.to_json
   end
 
