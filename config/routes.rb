@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :users
     put '/games/:game_id/users/update', to: 'users#update'
     get '/status', to: 'games#status'
+    put '/status/', to: 'games#update'  #add here and controller
   end
   resources :quests do
     resources :quest_members

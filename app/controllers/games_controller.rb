@@ -8,6 +8,7 @@ class GamesController < ApplicationController
     @currentQuests = @currentUser.game.rounds.last.quests.last
     @countQuests = @currentUser.game.rounds.last.quests.count
     @gameUsers = @currentGame.users
+    @gameStage = @currentGame.stage
   end
 
   def new
@@ -27,19 +28,33 @@ class GamesController < ApplicationController
     end
   end
 
+  def update
+    currentUser = current_user || User.find(1)
+    currentGame = currentuser.game
+    currentQuest = currentGame.rounds.last.quests.last # this may be nill
+    p "params are"
+    p params[:response]
+    @response = params[:response]
+    currentGame.update(stage: @response)
+    render json: @response.to_json
+  end
+
+# split into a post and get status
 
   def status
     #eventually this will be dynamic
     currentUser = current_user || User.find(1)
-    currentGame = Game.find(params[:game_id])
-    currentQuest = currentGame.rounds.last.quests.last
-    #if else for end game
-    if QuestVote.find_by(user_id: currentUser.id, quest_id: currentQuest.id)
-      @response = "questVoteDone"
-    else
-      @response = "questVoting"
-    end
-    render json: @response.to_json
+    gameStage = currentUser.game.stage
+    # currentGame = currentuser.game # OR: Game.find(params[:game_id])
+    # currentQuest = currentGame.rounds.last.quests.last
+    # #if else for end game
+    # if QuestVote.find_by(user_id: currentUser.id, quest_id: currentQuest.id)
+    #   debugger
+    #   @response = "questVoteDone" # change this to a better term!
+    # else
+    #   @response = "questVoting"
+    # end
+    render json: gameStage.to_json
   end
 
   private
