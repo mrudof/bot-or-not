@@ -30,7 +30,7 @@ class GamesController < ApplicationController
 
   def update
     currentUser = current_user || User.find(1)
-    currentGame = currentuser.game
+    currentGame = currentUser.game
     currentQuest = currentGame.rounds.last.quests.last # this may be nill
     p "params are"
     p params[:response]
