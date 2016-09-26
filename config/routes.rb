@@ -8,9 +8,9 @@ Rails.application.routes.draw do
       resources :quests
     end
     resources :users
-    put '/games/:game_id/users/update', to: 'users#update'
+    put '/games/:game_id/users/update', to: 'users#update'  # do we need this??
     get '/status', to: 'games#status'
-    put '/status/', to: 'games#update'  #add here and controller
+    put '/status', to: 'games#update'
   end
   resources :quests do
     resources :quest_members
