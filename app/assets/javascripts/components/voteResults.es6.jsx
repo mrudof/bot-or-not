@@ -2,12 +2,12 @@ class VoteResults extends React.Component {
   constructor(){
     super()
     this.state = {
-      members: [],
-      results: ""
+      results: "",
+      votes: []
     }
   }
   componentWillMount() {
-    var gameID = this.props.currentGame.id
+    const gameID = this.props.currentGame.id
     //hardcoded this questID
     var questID = 1
     $.ajax({
@@ -15,26 +15,29 @@ class VoteResults extends React.Component {
       url: `/quests/${questID}/quest_votes`
     }).done((response) => {
         this.setState({
-          results: false
+          votes: response
         })
-      }.bind(this))
+    }.bind(this))
 
-        var falses = 0;
-        var membs = this.state.members;
-        for (var i=0; i < membs.length; i++) {
-          if (membs.passed === false) {
-            falses++
-          }
-        }
-        if (falses >= membs.length/2) {
-          this.setState({
-            results: false
-          })
-        } else {
-          this.setState({
-            results: true
-          })
-        }
+    console.log(this.state.votes)
+
+    let rejectedQuest = 0;
+    const gameUsers = this.props.gameUsers;
+    for (var i=0; i < gameUsers.length; i++) {
+      // we need to find which users voted to reject the quest members
+      if (gameUsers.passed === false) {
+        rejectedQuest++
+      }
+    }
+    if (rejectedQuest >= gameUsers.length/2) {
+      this.setState({
+        results: false
+      })
+    } else {
+      this.setState({
+        results: true
+      })
+    }
   }
 
 

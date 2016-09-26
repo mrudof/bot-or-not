@@ -6,7 +6,7 @@ class Game extends React.Component {
       cardShow: false,
       boardShow: false,
       rulesShow: false,
-      gameStage: "questVoting"
+      gameStage: ""
     }
     this.clickCard = this.clickCard.bind(this)
     this.clickBoard = this.clickBoard.bind(this)
@@ -68,7 +68,7 @@ class Game extends React.Component {
       if (this.state.gameStage === "questVoting" ) {
         tree = <SelectQuestSplits updateGameStage={this.updateGameStage} users={this.props.gameUsers} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
       } else if (this.state.gameStage === "questVoteDone") {
-        tree = <VoteResults updateGameStage={this.updateGameStage} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
+        tree = <VoteResults updateGameStage={this.updateGameStage} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} gameUsers={this.props.gameUsers} />
       }
       return(
       <div>
