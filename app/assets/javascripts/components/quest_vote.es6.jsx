@@ -4,7 +4,7 @@ class QuestVote extends React.Component {
     this.state = {
       show_button: true
     }
-    this.handleVoteSubmit = this.handleVoteSubmit.bind(this)
+    // this.handleVoteSubmit = this.handleVoteSubmit.bind(this)
   }
 
   handleVoteSubmit(event){
@@ -13,7 +13,7 @@ class QuestVote extends React.Component {
     $.ajax({
       url: `/quests/${questID}/quest_votes`,
       method: 'POST',
-      data: { vote: this.refs.vote.value}
+      data: { vote: event.action}
     }).done((response) => {
       // this.props.updateGameStage("questVoteDone")
       this.setState({
@@ -24,7 +24,7 @@ class QuestVote extends React.Component {
     const gameID = this.props.currentGame.id
     $.ajax({
       url: `/game/${gameID}/status`,
-      method: 'GET',
+      method: 'put',
       data: { response: 'questVoteDone' }
     })
 
@@ -44,12 +44,10 @@ class QuestVote extends React.Component {
               }
             </ul>
           <section>
-            <form onSubmit={this.handleVoteSubmit}>
-              <label htmlFor="approve">Approve</label>
-              <input ref="vote" type="submit" value="Approve" name="vote"/>
-              <label htmlFor="reject">Reject</label>
-              <input ref="vote" type="submit" value="Reject" name="vote"/>
-            </form>
+            {/*<form onSubmit={this.handleVoteSubmit}>*/}
+              <input ref="Approve" type="submit" value="Approve" name="vote" onClick={this.handleVoteSubmit.bind(this, {action: "Approve"})}/>
+              <input ref="Reject" type="submit" value="Reject" name="vote" onClick={this.handleVoteSubmit.bind(this, {action: "Reject"})}/>
+            {/*}</form>*/}
           </section>
         </div>
         )

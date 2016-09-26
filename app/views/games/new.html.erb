@@ -6,11 +6,11 @@
 
 <h5>Current number of players: <%= current_user.game.users.length%></h5><br>
 
-<% if current_user.creator == true && current_user.game.users.length < 5 %>
+<% if current_user.creator == true && current_user.game.users.length < 2 %>
 <h5>Waiting for players.<h5>
 <% end %>
 
-<% if current_user.creator == true && current_user.game.users.length > 4 %>
+<% if current_user.creator == true && current_user.game.users.length > 1 %>
 <form method="POST" id="start-game-form" action="/games/:game_id/users/update">
   <input type='hidden' name='_method' value='put'>
   <input type="submit" value="Start game">
