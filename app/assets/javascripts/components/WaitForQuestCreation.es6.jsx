@@ -17,7 +17,7 @@ class WaitForQuestCreation extends React.Component {
             method: 'get'
           })
           .done((response) => {
-        
+
             that.setState({
             members: response["members"],
             latestQuest: response["quest"]
@@ -42,7 +42,9 @@ class WaitForQuestCreation extends React.Component {
     }
 
     return (
+      <div>
       {renderQuestWait}
+      </div>
     )
   }
 }

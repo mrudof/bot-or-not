@@ -10,7 +10,13 @@ class RoundsController < ApplicationController
     @game = Game.find(params[:game_id])
     @round = Round.find(params[:round_id])
     @recent_quest = @round.quests.last
-    @recent_quest_members = @recent_quest.quest_members
+    if @recent_quest
+      @recent_quest_members = @recent_quest.quest_members
+    else
+      @recent_quest_members = ["hi", "hello"]
+      @recent_quest = "hi"
+    end
+
     hash = {quest: @recent_quest, members: @recent_quest_members}
     render json: hash.to_json
   end
