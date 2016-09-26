@@ -15,15 +15,23 @@ class Game extends React.Component {
   }
 
   componentDidMount() {
+
     var gameID = this.props.currentGame.id
-		$.ajax({
-			method: 'get',
-			url: `/games/${gameID}/status`
-		}).done((response) => {
-			this.setState({
-				gameStage: response
-			})}.bind(this))
-	}
+    var bigTimer = setInterval(() => {
+      console.log("I have a game id which is:", gameID)
+      console.log("The gameStage before ajax is:", this.state.gameStage)
+  		$.ajax({
+  			method: 'get',
+  			url: `/games/${gameID}/status`
+  		}).done((response) => {
+  			this.setState({
+  				gameStage: response
+  			})}.bind(this))
+      console.log("I just fired off an ajax and got this gamestage back:", this.state.gameStage)
+
+    }, 500);
+
+	   }
 
   clickCard() {
     this.setState({cardShow: !this.state.cardShow})
@@ -65,9 +73,9 @@ class Game extends React.Component {
       </button>
 
       let tree
-      if (this.state.gameStage === "questVoting" ) {
+      if (this.props.gameStage === "questVoting" ) {
         tree = <SelectQuestSplits updateGameStage={this.updateGameStage} users={this.props.gameUsers} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
-      } else if (this.state.gameStage === "questVoteDone") {
+      } else if (this.props.gameStage === "questVoteDone") {
         tree = <VoteResults updateGameStage={this.updateGameStage} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} gameUsers={this.props.gameUsers} />
       }
       return(

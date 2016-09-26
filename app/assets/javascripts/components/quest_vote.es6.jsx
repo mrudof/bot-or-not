@@ -27,7 +27,6 @@ class QuestVote extends React.Component {
       method: 'put',
       data: { response: 'questVoteDone' }
     })
-
   }
 
   render () {
