@@ -64,7 +64,6 @@ class Game extends React.Component {
         <span className="glyphicon glyphicon-book" aria-hidden="true"></span> See Rules
       </button>
 
-
       let tree
       if (this.state.gameStage === "questVoting" ) {
         tree = <SelectQuestSplits updateGameStage={this.updateGameStage} users={this.props.gameUsers} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
