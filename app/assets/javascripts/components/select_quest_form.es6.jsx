@@ -63,6 +63,7 @@ class SelectQuestForm extends React.Component {
       }
     return (
       <div className="create-quest">
+        <h3>Select {this.props.numberOnQuest} players to join the quest.</h3>
         {showForm}
       </div>
       )
