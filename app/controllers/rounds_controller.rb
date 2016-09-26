@@ -13,8 +13,8 @@ class RoundsController < ApplicationController
     if @recent_quest
       @recent_quest_members = @recent_quest.quest_members
     else
-      @recent_quest_members = ["hi", "hello"]
-      @recent_quest = "hi"
+      @recent_quest_members = ["not initialized"]
+      @recent_quest = "not initialized"
     end
 
     hash = {quest: @recent_quest, members: @recent_quest_members}
