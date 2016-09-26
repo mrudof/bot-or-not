@@ -13,24 +13,24 @@ class Game extends React.Component {
     this.clickRules = this.clickRules.bind(this)
     this.updateGameStage = this.updateGameStage.bind(this)
   }
-  componentDidMount() {
-
-    var gameID = this.props.currentGame.id
-    var bigTimer = setInterval(() => {
-      console.log("I have a game id which is:", gameID)
-      console.log("The gameStage before ajax is:", this.state.gameStage)
-  		$.ajax({
-  			method: 'get',
-  			url: `/games/${gameID}/status`
-  		}).done((response) => {
-  			this.setState({
-  				gameStage: response
-  			})}.bind(this))
-      console.log("I just fired off an ajax and got this gamestage back:", this.state.gameStage)
-
-    }, 500);
-
-	   }
+  // componentDidMount() {
+  //
+  //   var gameID = this.props.currentGame.id
+  //   var bigTimer = setInterval(() => {
+  //     console.log("I have a game id which is:", gameID)
+  //     console.log("The gameStage before ajax is:", this.state.gameStage)
+  // 		$.ajax({
+  // 			method: 'get',
+  // 			url: `/games/${gameID}/status`
+  // 		}).done((response) => {
+  // 			this.setState({
+  // 				gameStage: response
+  // 			})}.bind(this))
+  //     console.log("I just fired off an ajax and got this gamestage back:", this.state.gameStage)
+  //
+  //   }, 1000);
+  //
+	//    }
 
 
   clickCard() {

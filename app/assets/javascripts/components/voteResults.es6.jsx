@@ -39,7 +39,13 @@ class VoteResults extends React.Component {
     }
   }
 
-
+  //   <ul>{
+  //   this.state.members.map((user,i) => {
+  //     return (
+  //      <li>user.quest_id</li>
+  //     )
+  //   })
+  // }</ul>
 
   render(){
       let voteResults;
@@ -47,28 +53,20 @@ class VoteResults extends React.Component {
         voteResults =
           <div>
             <h2>The proposed quest has been approved!!</h2>
-            <OnQuestVoting/>
+            {/* <OnQuestVoting/> */}
           </div>
-
       } else {
         voteResults =
         <div>
           <h2>The proposed quest has been rejected!</h2>
           {/* <QuestVote /> */}
         </div>
-
       }
+
 
       return(
         <div>
           {voteResults}
-          <ul>{
-	    	  this.state.members.map((user,i) => {
-	          return (
-	           <li>user.quest_id</li>
-	          )
-	        })
-	    	}</ul>
         </div>
       )
   }
