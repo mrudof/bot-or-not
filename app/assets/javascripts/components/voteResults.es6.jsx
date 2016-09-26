@@ -9,7 +9,7 @@ class VoteResults extends React.Component {
   componentWillMount() {
     const gameID = this.props.currentGame.id
     //hardcoded this questID
-    var questID = 1
+    var questID = this.props.currentQuest.id
     $.ajax({
       method: 'get',
       url: `/quests/${questID}/quest_votes`
@@ -21,7 +21,7 @@ class VoteResults extends React.Component {
 
     console.log(this.state.votes)
     let rejectedQuest = 0;
-    const gameUsers = this.props.gameUsers;
+    const gameUsers = this.props.users;
     for (var i=0; i < gameUsers.length; i++) {
       // we need to find which users voted to reject the quest members
       if (gameUsers.passed === false) {

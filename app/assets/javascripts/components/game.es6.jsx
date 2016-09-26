@@ -13,7 +13,6 @@ class Game extends React.Component {
     this.clickRules = this.clickRules.bind(this)
     this.updateGameStage = this.updateGameStage.bind(this)
   }
-
   componentDidMount() {
 
     var gameID = this.props.currentGame.id
@@ -32,6 +31,7 @@ class Game extends React.Component {
     }, 500);
 
 	   }
+
 
   clickCard() {
     this.setState({cardShow: !this.state.cardShow})
@@ -72,12 +72,15 @@ class Game extends React.Component {
         <span className="glyphicon glyphicon-book" aria-hidden="true"></span> See Rules
       </button>
 
-      let tree
-      if (this.props.gameStage === "questVoting" ) {
-        tree = <SelectQuestSplits updateGameStage={this.updateGameStage} users={this.props.gameUsers} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
-      } else if (this.props.gameStage === "questVoteDone") {
-        tree = <VoteResults updateGameStage={this.updateGameStage} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} gameUsers={this.props.gameUsers} />
-      }
+
+      // let tree
+      // if (this.state.gameStage === "questVoting" ) {
+        let tree = <SelectQuestSplits updateGameStage={this.updateGameStage} users={this.props.gameUsers} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
+      // }
+      // else if (this.state.gameStage === "questVoteDone") {
+      //   tree = <VoteResults updateGameStage={this.updateGameStage} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} gameUsers={this.props.gameUsers} />
+      // }
+
       return(
       <div>
         <span onClick={this.clickCard}>{card}</span>
