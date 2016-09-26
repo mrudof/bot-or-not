@@ -7,6 +7,7 @@ class GamesController < ApplicationController
     @countRounds = @currentUser.game.rounds.count
     @currentQuests = @currentUser.game.rounds.last.quests.last
     @countQuests = @currentUser.game.rounds.last.quests.count
+    @gameUsers = @currentGame.users
   end
 
   def new
