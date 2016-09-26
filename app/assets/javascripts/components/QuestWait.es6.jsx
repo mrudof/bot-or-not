@@ -8,8 +8,8 @@ class QuestWait extends React.Component {
   }
 
   componentWillMount() {
-    //need to reset later to this.props.currentQuest.id;
-    questID = 36
+    //need to reset later to this.props.currentQuest.id !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    questID = 37
     var that = this
     var myTimer = setInterval(() => {
       if (that.state.members.length < that.props.numberOnQuest) {
@@ -29,7 +29,6 @@ class QuestWait extends React.Component {
         }
       }, 1000);
   }
-
 
   render () {
     let toDo
