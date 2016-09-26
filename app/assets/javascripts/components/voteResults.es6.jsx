@@ -9,6 +9,7 @@ class VoteResults extends React.Component {
   componentWillMount() {
     const gameID = this.props.currentGame.id
     var questID = this.props.currentQuest.id
+
     $.ajax({
       method: 'get',
       url: `/quests/${questID}/quest_votes`
@@ -26,7 +27,7 @@ class VoteResults extends React.Component {
           passed: response
         })
     }.bind(this))
-    }
+  }
     // console.log(this.state.votes)
     // let rejectedQuest = 0;
     // const gameVotes = this.state.votes;
@@ -60,13 +61,13 @@ class VoteResults extends React.Component {
         voteResults =
           <div>
             <h2>The proposed quest has been approved!!</h2>
-            {/* <OnQuestVoting/> */}
+            <OnQuestVoting currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.state.members} currentUser={this.props.currentUser} users={this.props.users}/>
           </div>
       } else if (this.state.passed === false){
         voteResults =
         <div>
           <h2>The proposed quest has been rejected!</h2>
-          {/* <QuestVote /> */}
+          <QuestVote currentUser={this.props.currentUser} />
         </div>
       }
 

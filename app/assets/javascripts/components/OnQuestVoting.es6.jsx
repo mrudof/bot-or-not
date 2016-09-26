@@ -9,6 +9,7 @@ class OnQuestVoting extends React.Component(){
   handleQuestVoteSubmit(event){
     event.preventDefault;
     const questID = this.props.currentQuest.id
+    const userID = this.props.currentUser.id
     $.ajax({
       url: `/quests/${questID}/quest_members/${id}`,
       method: 'PUT',
@@ -46,7 +47,7 @@ class OnQuestVoting extends React.Component(){
       }
     return(
       <div>
-        <h3>On quest voting: did the quest succeed or fail?!?</h3>
+        <h3>The Quest is happening!</h3>
         {succedQuest}
       </div>
     )
