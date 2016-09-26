@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :games do
     get '/users/choose', to: 'users#choose'
     resources :rounds do
+      get '/latest_quest', to: 'rounds#latest_quest'
       resources :quests
     end
     resources :users
