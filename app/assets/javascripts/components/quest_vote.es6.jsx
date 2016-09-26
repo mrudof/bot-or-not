@@ -21,12 +21,12 @@ class QuestVote extends React.Component {
       })
     })
 
-    // const gameID = this.props.currentGame.id
-    // $.ajax({
-    //   url: `/game/${gameID}/status`,
-    //   method: 'put',
-    //   data: { response: 'questVoteDone' }
-    // })
+    const gameID = this.props.currentGame.id
+    $.ajax({
+      url: `/game/${gameID}/status`,
+      method: 'put',
+      data: { response: 'questVoteDone' }
+    })
 
   }
 
@@ -45,9 +45,7 @@ class QuestVote extends React.Component {
             </ul>
           <section>
             {/*<form onSubmit={this.handleVoteSubmit}>*/}
-              <label htmlFor="approve">Approve</label>
               <input ref="Approve" type="submit" value="Approve" name="vote" onClick={this.handleVoteSubmit.bind(this, {action: "Approve"})}/>
-              <label htmlFor="reject">Reject</label>
               <input ref="Reject" type="submit" value="Reject" name="vote" onClick={this.handleVoteSubmit.bind(this, {action: "Reject"})}/>
             {/*}</form>*/}
           </section>
