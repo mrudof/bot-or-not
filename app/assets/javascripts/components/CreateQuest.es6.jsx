@@ -22,6 +22,7 @@ class CreateQuest extends React.Component {
    }
 
   render () {
+    // do we really need to have the create quest button, or can we show the select quest form directly?
     let showButton
       if (this.state.quest === "") {
         showButton =

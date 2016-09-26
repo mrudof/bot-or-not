@@ -28,7 +28,7 @@ class QuestVote extends React.Component {
       if (this.state.show_button === true){
         voteComplete = (
         <div>
-          <h1>Vote for quest</h1>
+          <h4>Vote for quest</h4>
             <ul>
               {
                 this.props.members.map((member, idx) => {
