@@ -2,7 +2,7 @@ class WaitForQuestCreation extends React.Component {
   constructor () {
     super ()
     this.state = {
-      members: ["hi", "hello", "help"],
+      members: ["not initialized"], 
       latestQuest: [],
       done: false
     }
