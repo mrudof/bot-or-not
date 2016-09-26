@@ -32,6 +32,7 @@ class QuestVote extends React.Component {
             <ul>
               {
                 this.props.members.map((member, idx) => {
+                  debugger
                   return (<QuestMember key={idx} data={member}/>)
                 })
               }
