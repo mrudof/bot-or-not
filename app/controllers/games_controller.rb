@@ -17,6 +17,12 @@ class GamesController < ApplicationController
     redirect_to "/games" if current_user.good != nil
   end
 
+  def update_board
+    game = Game.find(params[:game_id])
+    rounds = game.rounds
+    hash = {}
+  end
+
   def create
     @current_game = Game.create
 

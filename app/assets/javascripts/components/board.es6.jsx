@@ -11,7 +11,7 @@ class Board extends React.Component {
     var myBoardTimer = setInterval(() => {
       if (that.props.update) {
         $.ajax({
-            url: `/games/${gameID}/rounds`,
+            url: `/games/${gameID}/update_board`,
             method: 'get'
           }).done((response) => {
             that.setState({
@@ -47,8 +47,10 @@ class Board extends React.Component {
       <ul>
       {
         this.state.rounds.map((user ,i) => {
-          if (user.good === false && this.props.currentUser.id != user.id) {
-            return (<li key={i}>{user.name}</li>)
+          if (round.outcome != null) {
+            return (<div>
+              <li key={i}>{i+1}: {round.outcome}</li>
+              </div>)
           }
         })
       }
