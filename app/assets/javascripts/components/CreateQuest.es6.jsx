@@ -31,7 +31,7 @@ class CreateQuest extends React.Component {
         </form>
       } else {
         showButton =
-        <SelectQuestForm updateGameStage={this.props.updateGameStage} currentQuest={this.state.quest} numberOnQuest={1} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.props.users}/>
+        <SelectQuestForm updateGameStage={this.props.updateGameStage} currentGame={this.props.currentGame} currentQuest={this.state.quest} numberOnQuest={1} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.props.users}/>
 
       }
     return (

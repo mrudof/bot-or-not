@@ -59,7 +59,7 @@ class SelectQuestForm extends React.Component {
         showForm =
         // <p> you voted </p>
 
-        <QuestVote updateGameStage={this.props.updateGameStage} currentQuest={this.props.currentQuest} currentUser={this.props.currentUser} users={this.props.users} members={this.state.members}/>
+        <QuestVote updateGameStage={this.props.updateGameStage} currentGame= {this.props.currentGame} currentQuest={this.props.currentQuest} currentUser={this.props.currentUser} users={this.props.users} members={this.state.members}/>
       }
     return (
       <div className="create-quest">

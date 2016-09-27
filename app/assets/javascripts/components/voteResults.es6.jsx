@@ -2,13 +2,12 @@ class VoteResults extends React.Component {
   constructor(){
     super()
     this.state = {
-      results: "",
-      votes: []
+      votes: [],
+      passed: "initialized"
     }
   }
   componentWillMount() {
     const gameID = this.props.currentGame.id
-    //hardcoded this questID
     var questID = this.props.currentQuest.id
     $.ajax({
       method: 'get',
@@ -19,56 +18,70 @@ class VoteResults extends React.Component {
         })
     }.bind(this))
 
-    console.log(this.state.votes)
-    let rejectedQuest = 0;
-    const gameUsers = this.props.users;
-    for (var i=0; i < gameUsers.length; i++) {
-      // we need to find which users voted to reject the quest members
-      if (gameUsers.passed === false) {
-        rejectedQuest++
-      }
+    $.ajax({
+      method: 'get',
+      url: `/quests/${questID}/quest_votes/results`
+    }).done((response) => {
+        this.setState({
+          passed: response
+        })
+    }.bind(this))
     }
-    if (rejectedQuest >= gameUsers.length/2) {
-      this.setState({
-        results: false
-      })
-    } else {
-      this.setState({
-        results: true
-      })
-    }
-  }
+    // console.log(this.state.votes)
+    // let rejectedQuest = 0;
+    // const gameVotes = this.state.votes;
+    // for (var i=0; i < gameVotes.length; i++) {
+    //   // we need to find which users voted to reject the quest members
+    //   if (gameVotes.passed === false) {
+    //     rejectedQuest++
+    //   }
+    // }
+    // if (rejectedQuest >= gameVotes.length/2) {
+    //   this.setState({
+    //     results: false
+    //   })
+    // } else {
+    //   this.setState({
+    //     results: true
+    //   })
+    // }
 
-
+  //   <ul>{
+  //   this.state.members.map((user,i) => {
+  //     return (
+  //      <li>user.quest_id</li>
+  //     )
+  //   })
+  // }</ul>
 
   render(){
       let voteResults;
-      if (this.state.results === true){
+      if (this.state.passed === true){
         voteResults =
           <div>
             <h2>The proposed quest has been approved!!</h2>
-            <OnQuestVoting/>
+            {/* <OnQuestVoting/> */}
           </div>
-
-      } else {
+      } else if (this.state.passed === false){
         voteResults =
         <div>
           <h2>The proposed quest has been rejected!</h2>
           {/* <QuestVote /> */}
         </div>
-
       }
 
       return(
         <div>
           {voteResults}
-          <ul>{
-	    	  this.state.members.map((user,i) => {
-	          return (
-	           <li>user.quest_id</li>
-	          )
-	        })
-	    	}</ul>
+          <ul>
+          {
+            this.state.votes.map((vote ,i) => {
+
+              return (<QuestVoteMember key={i} data={vote} />)
+
+            })
+          }
+          </ul>
         </div>
       )
   }
