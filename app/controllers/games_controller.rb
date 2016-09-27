@@ -16,15 +16,18 @@ class GamesController < ApplicationController
   end
 
   def create
-    game = Game.create
+    @current_game = Game.create
 
-    round = Round.create(game_id: game.id)
+    round = Round.create(game_id: @current_game.id)
     # Creator is created here instead of in user controller.
 
-    user = User.new(name: params[:name], creator: params[:creator], game_id: game.id)
-    if user.save!
-      session[:user_id] = user.id
+    @user = User.new(name: params[:name], creator: params[:creator], game_id: @current_game.id)
+    if @user.save
+      session[:user_id] = @user.id
       redirect_to '/games/new'
+    else
+      @errors = @user.errors.full_messages
+      render 'pages/index'
     end
   end
 

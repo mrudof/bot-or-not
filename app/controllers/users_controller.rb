@@ -36,8 +36,9 @@ class UsersController < ApplicationController
     rand_array = (1..players.length).to_a.shuffle
     players = players.shuffle
 
+# hard coded for 5 players
     players.each_with_index do |player, i|
-      if (rand_array[i] < 3)
+      if (rand_array[i] <= 2)
         attrib = false
       else
         attrib = true
