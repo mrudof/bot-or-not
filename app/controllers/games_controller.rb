@@ -20,7 +20,15 @@ class GamesController < ApplicationController
   def update_board
     game = Game.find(params[:game_id])
     rounds = game.rounds
-    hash = {}
+    arr = []
+    rounds.each do |round|
+      if round.outcome == true
+        arr << "Good Prevails"
+      elsif round.outcome == false
+        arr << "Evil Won"
+      end
+    end
+    render json: arr.to_json
   end
 
   def create

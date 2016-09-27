@@ -2,7 +2,7 @@ class Board extends React.Component {
   constructor () {
     super ()
     this.state = {
-      rounds: []
+      boardDisplay: []
     }
   }
   componentWillMount() {
@@ -15,13 +15,13 @@ class Board extends React.Component {
             method: 'get'
           }).done((response) => {
             that.setState({
-              rounds: response
+              boardDisplay: response
             })
           }.bind(this))
         } else {
           clearInterval(myBoardTimer);
         }
-      }, 1000);
+      }, 100);
   }
   // <h1>Board</h1>
   // <p>Quests created: {this.props.countQuests} out of 5 </p>
@@ -43,18 +43,15 @@ class Board extends React.Component {
     console.log("this.props for Board are ", this.props)
     return(
       <div>
-      <p>Click to hide!</p>
+      <h2> Round outcome </h2>
       <ul>
       {
-        this.state.rounds.map((user ,i) => {
-          if (round.outcome != null) {
-            return (<div>
-              <li key={i}>{i+1}: {round.outcome}</li>
-              </div>)
-          }
+        this.state.boardDisplay.map((round,i) => {
+            return ( <li key={i}>Round {i+1}: {round}</li>)
         })
       }
       </ul>
+      <p>Click to hide!</p>
       </div>
     )
   }
