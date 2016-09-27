@@ -10,6 +10,7 @@ class RoundsController < ApplicationController
   end
   def show
     hash = {
+      2 => [1,2,2,1,1],
       5 => [2,3,2,3,3],
       6 => [2,3,4,3,4],
       7 => [2,3,3,4,4],
