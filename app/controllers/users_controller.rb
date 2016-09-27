@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    users = current_user.game.users
+    render json: users.to_json
+  end
 
   def create
     games = Game.all
@@ -50,6 +54,9 @@ class UsersController < ApplicationController
     redirect_to "/games"
 
   end
-
+  def show
+    user = User.find(params[:id])
+    render json: user.to_json
+  end
 
 end

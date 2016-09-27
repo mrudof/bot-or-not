@@ -12,6 +12,8 @@ class GamesController < ApplicationController
   end
 
   def new
+    @current_game = current_user.game
+    @current_user = current_user
     redirect_to "/games" if current_user.good != nil
   end
 

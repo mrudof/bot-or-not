@@ -6,23 +6,6 @@ class SelectQuestSplits extends React.Component {
     }
   }
 
-  componentWillMount() {
-    const gameID = this.props.currentGame.id
-
-    // returns the user whose turn it is to pick the quest
-    // const gameID = this.props.currentGame.id
-    // console.log(`the url: /games/${gameID}/users/choose`)
-
-    $.ajax({
-          url: `/games/${gameID}/users/choose`,
-          method: 'get'
-        })
-        .done((response) => {
-          this.setState({
-          questPicker: response
-          })
-        })
-  }
 
 
   render () {

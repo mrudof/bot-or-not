@@ -3,7 +3,7 @@ class Game extends React.Component {
   constructor() {
     super();
     this.state = {
-      cardShow: false,
+      cardShow: true,
       boardShow: false,
       rulesShow: false,
       gameStage: ""
@@ -69,6 +69,7 @@ class Game extends React.Component {
           <span className="glyphicon glyphicon-tasks" aria-hidden="true"></span> See Board
         </button>
       </div>
+
 
     const rules = this.state.rulesShow
     ? <Rules />
