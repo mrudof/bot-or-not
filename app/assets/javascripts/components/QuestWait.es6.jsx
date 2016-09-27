@@ -28,7 +28,7 @@ class QuestWait extends React.Component {
           clearInterval(myTimer);
         }
       }, 1000);
-  }
+  } 
 
   render () {
     let toDo

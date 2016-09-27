@@ -76,7 +76,7 @@ class VoteResults extends React.Component {
         </div>
       }
 
-      return(
+      return( 
         <div>
           {voteResults}
           <ul>

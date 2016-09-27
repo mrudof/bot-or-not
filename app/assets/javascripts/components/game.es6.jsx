@@ -56,21 +56,27 @@ class Game extends React.Component {
 
     const card = this.state.cardShow
     ? <Character currentUser={this.props.currentUser} />
-    : <button type="button" className="btn btn-default btn-lg">
-        <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span> See Card
-      </button>
+    : <div className="btn-group" role="group">
+        <button type="button" className="btn btn-default">
+          <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span> See Card
+        </button>
+      </div>
 
     const board = this.state.boardShow
     ? <Board currentRound={this.props.currentRound} countQuests={this.props.countQuests}/>
-    : <button type="button" className="btn btn-default btn-lg">
-        <span className="glyphicon glyphicon-tasks" aria-hidden="true"></span> See Board
-      </button>
+    : <div className="btn-group" role="group">
+        <button type="button" className="btn btn-default">
+          <span className="glyphicon glyphicon-tasks" aria-hidden="true"></span> See Board
+        </button>
+      </div>
 
     const rules = this.state.rulesShow
     ? <Rules />
-    : <button type="button" className="btn btn-default btn-lg">
-        <span className="glyphicon glyphicon-book" aria-hidden="true"></span> See Rules
-      </button>
+    : <div className="btn-group" role="group">
+        <button type="button" className="btn btn-default">
+          <span className="glyphicon glyphicon-book" aria-hidden="true"></span> See Rules
+        </button>
+      </div>
 
 
       // let tree
@@ -83,9 +89,23 @@ class Game extends React.Component {
 
       return(
       <div>
-        <span onClick={this.clickCard}>{card}</span>
-        <span onClick={this.clickBoard}>{board}</span>
-        <span onClick={this.clickRules}>{rules}</span>
+
+        <div className="bg-success">
+        Your username: {this.props.currentUser.name}<br/>
+        </div>
+        <div className="bg-danger">
+        Game stage: {this.props.gameStage}<br/>
+        Game id: {this.props.currentGame.id}<br/>
+        Current round: {this.props.currentRound.id}<br/>
+        Count rounds: {this.props.countRounds}<br/>
+        Count quests: {this.props.countQuests}<br/>
+        </div>
+
+        <div className="btn-group btn-group-justified" role="group" aria-label="...">
+          <span onClick={this.clickCard}>{card}</span>
+          <span onClick={this.clickBoard}>{board}</span>
+          <span onClick={this.clickRules}>{rules}</span>
+        </div>
         {tree}
 
         {/* <VoteQuest /> */}

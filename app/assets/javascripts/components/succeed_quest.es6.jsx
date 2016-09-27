@@ -21,7 +21,7 @@ class SucceedQuest extends React.Component {
       this.setState({
         votes: response
       })
-    }.bind(this))
+    }.bind(this)) 
 
     let failedQuest = 0;
     const questMembers = this.props.questMembers;
