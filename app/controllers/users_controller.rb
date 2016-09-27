@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    numberOfEvil = {5 => 2, 6 => 2, 7 => 3, 8=> 3, 9=> 3, 10=> 4}
+    numberOfEvil = {2 => 1, 3=> 1, 4=> 2, 5 => 2, 6 => 2, 7 => 3, 8=> 3, 9=> 3, 10=> 4}
     players = current_user.game.users
     numberOfPlayers = players.length
     rand_array = (1..players.length).to_a.shuffle

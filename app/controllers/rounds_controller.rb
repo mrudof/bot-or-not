@@ -8,6 +8,21 @@ class RoundsController < ApplicationController
     @game = Game.find(params[:game_id])
     @rounds = @game.rounds
   end
+  def show
+    hash = {
+      5 => [2,3,2,3,3],
+      6 => [2,3,4,3,4],
+      7 => [2,3,3,4,4],
+      8 => [3,4,4,5,5],
+      9 => [3,4,4,5,5],
+      10 => [3,4,4,5,5]
+    }
+    @game = Game.find(params[:game_id])
+    @currentRound = @game.rounds.length
+    @numOfPlayers = @game.users.length
+    @numOnQuest = hash[@numOfPlayers][@currentRound - 1]
+    render json: @numOnQuest.to_json
+  end
 
   def latest_quest
     #returns the latest quest of the round
