@@ -27,7 +27,7 @@ class CreateQuest extends React.Component {
       method: 'GET'
     }).done((response) => {
       this.setState({
-        numOnQuest: response
+        numberOnQuest: response
       })
     })
    }
