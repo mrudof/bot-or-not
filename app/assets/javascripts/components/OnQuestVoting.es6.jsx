@@ -30,23 +30,31 @@ class OnQuestVoting extends React.Component {
 
   }
 
+  // && this.props.members.find(this.props.currentUser.id)
 
-  function sameUser(element, index, array) {
-    var start = 2;
-    while (start <= Math.sqrt(element)) {
-      if (element % start++ < 1) {
-        return false;
-      }
-    }
-    return element > 1;
-  }
+
+  // function sameUser(element, index, array) {
+  //   var start = 2;
+  //   while (start <= Math.sqrt(element)) {
+  //     if (element % start++ < 1) {
+  //       return false;
+  //     }
+  //   }
+  //   return element > 1;
+  // }
+  //
+
 
 
   render(){
     console.log("the props for the OneQuestVoting are:", this.props)
-    debugger
+    const currentUser = this.props.currentUser
+    function isCurrentUser(member) {return member.user_id == currentUser.id}
+    const currentUserIsQuestMembersArray = this.props.members.filter(isCurrentUser)
+    // const CurrentUserIsMember = this.props.members.filter(isCurrentUser)
+    // debugger
     let succedQuest
-    if (this.state.show_button === true && this.props.members.find(this.props.currentUser.id)){
+    if (this.state.show_button === true && currentUserIsQuestMembersArray.length) {
       succedQuest = (
       <div>
         <h4>Succeed or Fail Quest!</h4>
@@ -57,7 +65,7 @@ class OnQuestVoting extends React.Component {
       </div>
       )
     } else {
-       succedQuest = <h3>Please wait while the quest members decide whether the quest succeeds or fails!</h3>
+       succedQuest = <h4>Please wait while the quest members decide whether the quest succeeds or fails!</h4>
     }
 
     return(
