@@ -2,7 +2,7 @@ class WaitForQuestCreation extends React.Component {
   constructor () {
     super ()
     this.state = {
-      members: ["not initialized"], 
+      members: ["not initialized"],
       latestQuest: [],
       done: false
     }
@@ -29,7 +29,7 @@ class WaitForQuestCreation extends React.Component {
           })
           clearInterval(myLittleTimer);
         }
-    }, 1000);
+    }, 200);
 
   }
 
