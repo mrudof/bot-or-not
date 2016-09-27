@@ -119,9 +119,6 @@ class VoteResults extends React.Component {
       <p>Waiting for quest members to vote</p>
     }
 
-
-    
-
     let voteResults
     if (this.state.passed === true){
       voteResults =

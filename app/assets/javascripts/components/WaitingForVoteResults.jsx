@@ -27,7 +27,7 @@ class WaitingForVoteResults extends React.Component {
             })
           clearInterval(yourNeighborhoodTimer);
         }
-      }, 1000);
+      }, 200);
   }
   render () {
     let toShow
