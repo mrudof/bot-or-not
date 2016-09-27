@@ -8,13 +8,8 @@ class VoteResults extends React.Component {
   }
   componentWillMount() {
     const gameID = this.props.currentGame.id
-<<<<<<< c83f72ab618701c6df957738e1ce6bb22dcd9146
     var questID = this.props.currentQuest.id
 
-=======
-    //hardcoded this questID
-    var questID = this.props.currentQuest.id
->>>>>>> working on questvoting and results
     $.ajax({
       method: 'get',
       url: `/quests/${questID}/quest_votes`
@@ -76,7 +71,7 @@ class VoteResults extends React.Component {
         </div>
       }
 
-      return( 
+      return(
         <div>
           {voteResults}
           <ul>
