@@ -2,9 +2,11 @@ class WaitingForVoteResults extends React.Component {
   constructor () {
     super ()
     this.state = {
+      members: []
       votes: [],
       done: false
     }
+
   }
 
   componentWillMount() {
@@ -40,6 +42,7 @@ class WaitingForVoteResults extends React.Component {
     } else {
       toShow =
       <p> waiting for quest results </p>
+
     }
     return (
       <div>
