@@ -10,7 +10,7 @@ class Character extends React.Component {
     if (isGood) {
       characterCard = <GoodCard />
     } else {
-      characterCard = <EvilCard />
+      characterCard = <EvilCard currentUser={this.props.currentUser} users={this.props.users}/>
     }
 
     return(

@@ -20,6 +20,4 @@ class QuestsController < ApplicationController
     render json: @quest
   end
 
-
-
 end

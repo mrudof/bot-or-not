@@ -2,10 +2,12 @@ class CreateQuest extends React.Component {
   constructor () {
     super ()
     this.state = {
-      quest: ""
+      quest: "",
+      numberOnQuest: ""
     }
      this.handleSubmit = this.handleSubmit.bind(this)
   }
+
   handleSubmit(event) {
     event.preventDefault()
     //creates the quest
@@ -17,6 +19,15 @@ class CreateQuest extends React.Component {
     }).done((response) => {
       this.setState({
         quest: response
+      })
+    })
+
+    $.ajax({
+      url: `/games/${gameID}/rounds/${roundID}`,
+      method: 'GET'
+    }).done((response) => {
+      this.setState({
+        numberOnQuest: response
       })
     })
    }
@@ -31,7 +42,7 @@ class CreateQuest extends React.Component {
         </form>
       } else {
         showButton =
-        <SelectQuestForm updateGameStage={this.props.updateGameStage} currentGame={this.props.currentGame} currentQuest={this.state.quest} numberOnQuest={1} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.props.users}/>
+        <SelectQuestForm updateGameStage={this.props.updateGameStage} currentGame={this.props.currentGame} currentQuest={this.state.quest} numberOnQuest={this.state.numberOnQuest} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.props.users}/>
 
       }
     return (

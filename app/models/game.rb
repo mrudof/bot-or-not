@@ -1,7 +1,6 @@
 class Game < ApplicationRecord
   has_many :users
   has_many :rounds
-
   before_save :generate_code
 
   def generate_code

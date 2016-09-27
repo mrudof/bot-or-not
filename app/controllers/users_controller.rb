@@ -20,7 +20,11 @@ class UsersController < ApplicationController
     if @current_game.users.length < 10
       @user = User.new(name: params[:name], creator: params[:creator], game_id: game_with_key_id)
     end
-    if @user.save
+
+    if @user.nil?
+      @errors = ["Max 10 players in a game"]
+      render 'pages/index'
+    elsif @user.save
       create_session @user
       redirect_to '/games/new'
     else
@@ -36,13 +40,14 @@ class UsersController < ApplicationController
   end
 
   def update
+    numberOfEvil = {2 => 1, 3=> 1, 4=> 2, 5 => 2, 6 => 2, 7 => 3, 8=> 3, 9=> 3, 10=> 4}
     players = current_user.game.users
+    numberOfPlayers = players.length
     rand_array = (1..players.length).to_a.shuffle
     players = players.shuffle
-
 # hard coded for 5 players
     players.each_with_index do |player, i|
-      if (rand_array[i] <= 2)
+      if (rand_array[i] <= numberOfEvil[numberOfPlayers])
         attrib = false
       else
         attrib = true

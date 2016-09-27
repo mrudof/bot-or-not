@@ -55,7 +55,7 @@ class Game extends React.Component {
     console.log("this.props for Game are ", this.props)
 
     const card = this.state.cardShow
-    ? <Character currentUser={this.props.currentUser} />
+    ? <Character currentUser={this.props.currentUser} users={this.props.gameUsers} />
     : <div className="btn-group" role="group">
          <button type="button" className="btn btn-default">
            <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span> See Card

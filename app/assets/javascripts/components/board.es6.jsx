@@ -27,6 +27,16 @@ class Board extends React.Component {
   // <p>Quests created: {this.props.countQuests} out of 5 </p>
   // <p>Round count: {this.props.currentRound.round_number} out of 5 </p>
   //
+  //
+  // <ul>
+  // {
+  //   this.state.rounds.map((user ,i) => {
+  //     if (user.good === false && this.props.currentUser.id != user.id) {
+  //       return (<li key={i}>{user.name}</li>)
+  //     }
+  //   })
+  // }
+  // </ul>
 
 
   render () {
@@ -34,6 +44,15 @@ class Board extends React.Component {
     return(
       <div>
       <p>Click to hide!</p>
+      <ul>
+      {
+        this.state.rounds.map((user ,i) => {
+          if (user.good === false && this.props.currentUser.id != user.id) {
+            return (<li key={i}>{user.name}</li>)
+          }
+        })
+      }
+      </ul>
       </div>
     )
   }

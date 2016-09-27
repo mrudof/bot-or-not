@@ -21,7 +21,7 @@ class StartGame extends React.Component {
           }.bind(this))
       }, 1000);
   }
-  
+
   render () {
   let showForm
   if (this.props.user.creator && this.state.users.length >= 2) {
