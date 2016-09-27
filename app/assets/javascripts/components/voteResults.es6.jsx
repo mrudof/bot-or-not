@@ -90,7 +90,7 @@ class VoteResults extends React.Component {
                                                 //     )
                                                 // }
 
-  handleRejectButton(event) {
+  handleQuestRejectedButton(event) {
     event.preventDefault()
     location.reload()
    }
@@ -102,9 +102,10 @@ class VoteResults extends React.Component {
   //ensure that QuestMember's are being created and passed in to the next component
   //ensure that next component is updating the succeeded column after voting whether it succeeds or fails
 
-  render(){
-    let
 
+
+
+  render(){
     let questStart
     if (this.props.members) {
       questStart =
@@ -118,6 +119,9 @@ class VoteResults extends React.Component {
       <p>Waiting for quest members to vote</p>
     }
 
+
+    
+
     let voteResults
     if (this.state.passed === true){
       voteResults =
@@ -130,7 +134,7 @@ class VoteResults extends React.Component {
       <div>
         <h2>The proposed quest has been rejected!</h2>
 
-        <form onSubmit={this.handleRejectButton}>
+        <form onSubmit={this.handleQuestRejectedButton}>
           <input value="Go back to create quest" type="submit"/>
         </form>
 

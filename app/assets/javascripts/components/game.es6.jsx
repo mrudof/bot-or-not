@@ -89,9 +89,7 @@ class Game extends React.Component {
 
       return(
       <div>
-        <span onClick={this.clickCard}>{card}</span>
-        <span onClick={this.clickBoard}>{board}</span>
-        <span onClick={this.clickRules}>{rules}</span>
+
         <div className="bg-success">
           Your username: {this.props.currentUser.name}<br/>
         </div>
