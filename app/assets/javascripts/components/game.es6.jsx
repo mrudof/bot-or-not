@@ -63,12 +63,13 @@ class Game extends React.Component {
        </div>
 
     const board = this.state.boardShow
-    ? <Board currentRound={this.props.currentRound} countQuests={this.props.countQuests}/>
+    ? <Board currentRound={this.props.currentRound} currentGame={this.props.currentGame} countQuests={this.props.countQuests}/>
     : <div className="btn-group" role="group">
         <button type="button" className="btn btn-default">
           <span className="glyphicon glyphicon-tasks" aria-hidden="true"></span> See Board
         </button>
       </div>
+
 
     const rules = this.state.rulesShow
     ? <Rules />

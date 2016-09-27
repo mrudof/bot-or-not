@@ -6,6 +6,7 @@ class SelectQuestSplits extends React.Component {
     }
   }
 
+
   componentWillMount() {
     const gameID = this.props.currentGame.id
 
@@ -39,7 +40,6 @@ class SelectQuestSplits extends React.Component {
       }
     return (
       <div>
-        <h2>Selecting quest</h2>
         {startQuestSelection}
       </div>
       )

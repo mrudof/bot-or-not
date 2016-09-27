@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    users = current_user.game.users
+    render json: users.to_json
+  end
 
   def create
     games = Game.all
@@ -16,9 +20,12 @@ class UsersController < ApplicationController
     if @current_game.users.length < 10
       @user = User.new(name: params[:name], creator: params[:creator], game_id: game_with_key_id)
     end
-    if @user.save!
+    if @user.save
       create_session @user
       redirect_to '/games/new'
+    else
+      @errors = @user.errors.full_messages
+      render 'pages/index'
     end
   end
 
@@ -33,8 +40,9 @@ class UsersController < ApplicationController
     rand_array = (1..players.length).to_a.shuffle
     players = players.shuffle
 
+# hard coded for 5 players
     players.each_with_index do |player, i|
-      if (rand_array[i] < 3)
+      if (rand_array[i] <= 2)
         attrib = false
       else
         attrib = true
@@ -42,10 +50,13 @@ class UsersController < ApplicationController
       player.update(good: attrib)
       player.update(order: (i + 1))
     end
-    if current_user.good != nil
-    redirect_to "/games"
-    end
-  end
 
+    redirect_to "/games"
+
+  end
+  def show
+    user = User.find(params[:id])
+    render json: user.to_json
+  end
 
 end
