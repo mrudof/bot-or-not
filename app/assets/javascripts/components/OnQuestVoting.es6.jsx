@@ -30,10 +30,23 @@ class OnQuestVoting extends React.Component {
 
   }
 
+
+  function sameUser(element, index, array) {
+    var start = 2;
+    while (start <= Math.sqrt(element)) {
+      if (element % start++ < 1) {
+        return false;
+      }
+    }
+    return element > 1;
+  }
+
+
   render(){
     console.log("the props for the OneQuestVoting are:", this.props)
+    debugger
     let succedQuest
-    if (this.state.show_button === true){
+    if (this.state.show_button === true && this.props.members.find(this.props.currentUser.id)){
       succedQuest = (
       <div>
         <h4>Succeed or Fail Quest!</h4>
