@@ -35,7 +35,7 @@ class WaitingForVoteResults extends React.Component {
       toShow =
       <div>
         <h5>Here are the vote results:</h5>
-        <VoteResults currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.state.members} currentUser={this.props.currentUser} users={this.props.users}/>
+        <VoteResults currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users}/>
       </div>
     } else {
       toShow =
