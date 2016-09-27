@@ -16,9 +16,12 @@ class UsersController < ApplicationController
     if @current_game.users.length < 10
       @user = User.new(name: params[:name], creator: params[:creator], game_id: game_with_key_id)
     end
-    if @user.save!
+    if @user.save
       create_session @user
       redirect_to '/games/new'
+    else
+      @errors = @user.errors.full_messages
+      render 'pages/index'
     end
   end
 
@@ -42,9 +45,9 @@ class UsersController < ApplicationController
       player.update(good: attrib)
       player.update(order: (i + 1))
     end
-    if current_user.good != nil
+
     redirect_to "/games"
-    end
+
   end
 
 

@@ -45,6 +45,7 @@ class SelectQuestForm extends React.Component {
       if (this.state.displayForm) {
         showForm =
           <section>
+          <h3>Select {this.props.numberOnQuest} players to join the quest.</h3>
             <form onSubmit={this.handleSubmit}>
               {this.props.users.map((user) =>
                 <label key={user.id}>{user.name}
@@ -63,7 +64,7 @@ class SelectQuestForm extends React.Component {
       }
     return (
       <div className="create-quest">
-        <h3>Select {this.props.numberOnQuest} players to join the quest.</h3>
+
         {showForm}
       </div>
       )

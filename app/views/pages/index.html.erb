@@ -1,10 +1,17 @@
 <h2> Welcome to Project Mama </h2>
 
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <form method='POST' action="/games/:game_id/users">
 <label>Join game with code:</label><br>
-  <input type="text" name="key_code" placeholder="Enter Game Code"><br>
-  <input type="text" name="name" placeholder="Enter Username"><br>
+  <input type="text" name="key_code" placeholder="Enter Game Code" value="<%= @current_game.try(:key_code) %>"><br>
+  <input type="text" name="name" placeholder="Enter Username" value="<%= @user.try(:name) %>"><br>
   <input type="submit" value="JOIN GAME">
 </form><br>OR<br><br>
 

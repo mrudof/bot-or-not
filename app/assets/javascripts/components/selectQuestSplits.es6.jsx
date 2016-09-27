@@ -39,7 +39,6 @@ class SelectQuestSplits extends React.Component {
       }
     return (
       <div>
-        <h2>Selecting quest</h2>
         {startQuestSelection}
       </div>
       )
