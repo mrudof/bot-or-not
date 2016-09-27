@@ -24,7 +24,7 @@ class StartGame extends React.Component {
 
   render () {
   let showForm
-  if (this.props.user.creator && this.state.users.length >= 5) {
+  if (this.props.user.creator && this.state.users.length >= 2) {
     showForm =
     <form method="POST" id="start-game-form" action="/games/:game_id/users/update">
       <input type='hidden' name='_method' value='put'/>
