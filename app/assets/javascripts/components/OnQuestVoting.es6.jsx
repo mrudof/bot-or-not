@@ -40,7 +40,7 @@ class OnQuestVoting extends React.Component {
       succedQuest =
       <div>
         <p>You are not on a quest</p>
-        <YourFriendsLeftYouToQuest/>
+        <WaitingForQuestResult currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users} />
       </div>
     }
 

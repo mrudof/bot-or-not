@@ -31,7 +31,6 @@ class QuestResults extends React.Component {
         numSuccess++
       } else if (this.state.questResults[i] === false) {
         numFails++
-        debugger
       }
     }
 
