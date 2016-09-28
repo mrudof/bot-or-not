@@ -1,5 +1,10 @@
 class CreateRound extends React.Component {
-
+  constructor () {
+    super ()
+    this.state = {
+      done: false
+    }
+  }
   componentWillMount() {
     gameID = this.props.currentGame.id
     currentUser = this.props.currentUser
@@ -9,7 +14,7 @@ class CreateRound extends React.Component {
         url: `/games/${gameID}/rounds`
       })
     }
-    var yourUltimateTimer = setInterval(() => {
+    var yourUltimateTimer = setTimeout(() => {
       location.reload()
     }, 1000);
 
