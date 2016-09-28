@@ -108,8 +108,7 @@ class Game extends React.Component {
         </div>
 
         <SelectQuestSplits updateGameStage={this.updateGameStage} users={this.props.gameUsers} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
-        <GameResult currentGame={this.props.currentGame}/>
-
+        <GameResult currentGame={this.props.currentGame} />
       </div>
     )
   }
