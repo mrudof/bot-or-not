@@ -1,10 +1,4 @@
 class CreateRound extends React.Component {
-  constructor () {
-    super ()
-    this.state = {
-      done: false
-    }
-  }
   componentWillMount() {
     gameID = this.props.currentGame.id
     currentUser = this.props.currentUser
