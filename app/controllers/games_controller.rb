@@ -17,6 +17,20 @@ class GamesController < ApplicationController
     redirect_to "/games" if current_user.good != nil
   end
 
+  def update_board
+    game = Game.find(params[:game_id])
+    rounds = game.rounds
+    arr = []
+    rounds.each do |round|
+      if round.outcome == true
+        arr << "Good Prevails"
+      elsif round.outcome == false
+        arr << "Evil Won"
+      end
+    end
+    render json: arr.to_json
+  end
+
   def create
     @current_game = Game.create
 

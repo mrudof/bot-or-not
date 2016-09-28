@@ -4,6 +4,9 @@ class RoundsController < ApplicationController
     rounds = game.rounds
     render json: rounds.to_json
   end
+
+
+
   def new
     @game = Game.find(params[:game_id])
     @rounds = @game.rounds

@@ -10,12 +10,14 @@ Rails.application.routes.draw do
     resources :users
     get '/status', to: 'games#status'
     put '/status', to: 'games#update'
+    get '/update_board', to: 'games#update_board'
   end
   resources :quests do
     get '/quest_votes/results', to: 'quest_votes#results'
     resources :quest_members
     resources :quest_votes
     #route to update quests_chosen for a user
+
   end
 
 end
