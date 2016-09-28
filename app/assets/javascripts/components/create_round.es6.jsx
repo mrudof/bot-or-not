@@ -10,13 +10,14 @@ class CreateRound extends React.Component {
     }
     var yourUltimateTimer = setTimeout(() => {
       location.reload()
-    }, 1000);
+    }, 2000);
 
   }
   render () {
     return (
       <div>
         <p> you are creating a round here </p>
+        <CountdownTimer secondsRemaining="2" />
       </div>
 
     )
