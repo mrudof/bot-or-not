@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160922221818) do
   create_table "users", force: :cascade do |t|
     t.string   "name",                         null: false
     t.boolean  "good"
+    t.string   "character"
     t.boolean  "creator",      default: false
     t.integer  "order"
     t.integer  "quest_chosen", default: 0
