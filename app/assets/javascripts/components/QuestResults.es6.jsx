@@ -6,6 +6,7 @@ class QuestResults extends React.Component {
     }
   }
   componentWillMount() {
+    questID = this.props.currentQuest.id
     $.ajax({
       method: 'get',
       url: `/quests/${questID}/quest_members/results`
@@ -15,6 +16,7 @@ class QuestResults extends React.Component {
         })
     }.bind(this))
   }
+
 
   render(){
 
@@ -53,6 +55,7 @@ class QuestResults extends React.Component {
       <div>
         <p>The outcome of the quest is................</p>
         {questOutcome}
+        <CreateRound currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users}/>
       </div>
     )
   }

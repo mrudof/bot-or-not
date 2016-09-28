@@ -11,6 +11,28 @@ class RoundsController < ApplicationController
     @game = Game.find(params[:game_id])
     @rounds = @game.rounds
   end
+
+  def create
+    @game = Game.find(params[:game_id])
+    @completed_round = @game.rounds.last
+    @quest_members = @completed_round.quests.last.quest_members
+    fails = 0
+    @quest_members.each do |qm|
+      if qm.succeeded == false
+        fails+=1
+      end
+    end
+    if fails > 0
+      updated_outcome = false
+    else
+      updated_outcome = true
+    end
+      @completed_round.update(outcome: updated_outcome)
+      Round.create(game_id: @game.id)
+  end
+
+
+
   def show
     hash = {
       2 => [1,2,2,1,1],
