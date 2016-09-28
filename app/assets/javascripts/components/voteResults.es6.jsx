@@ -27,83 +27,12 @@ class VoteResults extends React.Component {
           })
       }.bind(this))
     }
-    // console.log(this.state.votes)
-    // let rejectedQuest = 0;
-    // const gameVotes = this.state.votes;
-    // for (var i=0; i < gameVotes.length; i++) {
-    //   // we need to find which users voted to reject the quest members
-    //   if (gameVotes.passed === false) {
-    //     rejectedQuest++
-    //   }
-    // }
-    // if (rejectedQuest >= gameVotes.length/2) {
-    //   this.setState({
-    //     results: false
-    //   })
-    // } else {
-    //   this.setState({
-    //     results: true
-    //   })
-    // }
 
-  //   <ul>{
-  //   this.state.members.map((user,i) => {
-  //     return (
-  //      <li>user.quest_id</li>
-  //     )
-  //   })
-  // }</ul>
-
-
-                                                // handleSubmit(event) {
-                                                //   event.preventDefault()
-                                                //   //creates the quest
-                                                //   const gameID = this.props.currentGame.id
-                                                //   const roundID = this.props.currentRound.id
-                                                //   $.ajax({
-                                                //     url: `/games/${gameID}/rounds/${roundID}/quests`,
-                                                //     method: 'POST'
-                                                //   }).done((response) => {
-                                                //     this.setState({
-                                                //       quest: response
-                                                //     })
-                                                //   })
-                                                //  }
-                                                //
-                                                // render () {
-                                                //   // do we really need to have the create quest button, or can we show the select quest form directly?
-                                                //   let showButton
-                                                //     if (this.state.quest === "") {
-                                                //       showButton =
-                                                //       <form onSubmit={this.handleSubmit}>
-                                                //         <input value="Go to next " type="submit"/>
-                                                //       </form>
-                                                //     } else {
-                                                //       showButton =
-                                                //       <SelectQuestForm updateGameStage={this.props.updateGameStage} currentGame={this.props.currentGame} currentQuest={this.state.quest} numberOnQuest={1} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.props.users}/>
-                                                //
-                                                //     }
-                                                //   return (
-                                                //     <div>
-                                                //       {showButton}
-                                                //     </div>
-                                                //     )
-                                                // }
-
-  handleQuestRejectedButton(event) {
-    event.preventDefault()
-    location.reload()
-   }
-
-  // handleApproveButton(event) {
-  //   event.preventDefault()
-  // }
-
-  //ensure that QuestMember's are being created and passed in to the next component
-  //ensure that next component is updating the succeeded column after voting whether it succeeds or fails
-
-
-
+  componentDidMount() {
+    setTimeout(function(){
+      location.reload()
+    }, 2000);
+  }
 
   render(){
     let questStart
@@ -130,17 +59,12 @@ class VoteResults extends React.Component {
       voteResults =
       <div>
         <h2>The proposed quest has been rejected!</h2>
-
-        <form onSubmit={this.handleQuestRejectedButton}>
-          <input value="Go back to create quest" type="submit"/>
-        </form>
-
+        <CountdownTimer secondsRemaining="2" />
       </div>
     }
 
     return(
       <div>
-
         <ul>
         {
           this.state.votes.map((vote ,i) => {
@@ -149,7 +73,6 @@ class VoteResults extends React.Component {
         }
         </ul>
         {voteResults}
-
       </div>
     )
   }
