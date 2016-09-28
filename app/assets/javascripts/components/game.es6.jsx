@@ -109,11 +109,6 @@ class Game extends React.Component {
 
         {tree}
 
-        {/* <VoteQuest /> */}
-        {/* <SucceedQuest /> */}
-
-        {/* <QuestResults/> */}
-        {/* <GameOver /> */}
 
       </div>
     )

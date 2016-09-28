@@ -4,6 +4,15 @@ class QuestMembersController < ApplicationController
     @quest_members = @quest.quest_members
     render json: @quest_members.as_json(include: :user)
   end
+  def results
+    @quest = Quest.find(params[:quest_id])
+    @quest_members = @quest.quest_members
+    arr = []
+    @quest_members.each do |qm|
+      arr << qm.succeeded
+    end
+      render json: arr.to_json    
+  end
 
   def new
   end
@@ -27,10 +36,12 @@ class QuestMembersController < ApplicationController
 
   def update
     if params[:vote] == 'Succeed'
-        @quest_member = QuestMember.update(succeeded: true)
+        QuestMember.find(params[:id]).update(succeeded: true)
     elsif params[:vote] == 'Fail'
-        @quest_member = QuestMember.update(succeeded: false)
+        QuestMember.find(params[:id]).update(succeeded: false)
     end
+    @quest_member = QuestMember.find(params[:id])
+    render json: @quest_member.as_json
   end
 
 end
