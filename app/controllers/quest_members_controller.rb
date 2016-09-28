@@ -4,6 +4,7 @@ class QuestMembersController < ApplicationController
     @quest_members = @quest.quest_members
     render json: @quest_members.as_json(include: :user)
   end
+
   def results
     @quest = Quest.find(params[:quest_id])
     @quest_members = @quest.quest_members
