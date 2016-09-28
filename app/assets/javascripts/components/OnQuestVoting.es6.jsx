@@ -1,28 +1,5 @@
 class OnQuestVoting extends React.Component {
 
-    // const gameID = this.props.currentGame.id
-    // $.ajax({
-    //   url: `/game/${gameID}/status`,
-    //   method: 'PUT',
-    //   data: { response: 'questVoteDone' }
-    // })
-
-
-  // && this.props.members.find(this.props.currentUser.id)
-
-
-  // function sameUser(element, index, array) {
-  //   var start = 2;
-  //   while (start <= Math.sqrt(element)) {
-  //     if (element % start++ < 1) {
-  //       return false;
-  //     }
-  //   }
-  //   return element > 1;
-  // }
-  //
-
-
   render () {
     console.log("the props for the OnQuestVoting are:", this.props)
     const currentUser = this.props.currentUser
