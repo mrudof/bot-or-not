@@ -21,7 +21,7 @@ class Board extends React.Component {
         } else {
           clearInterval(myBoardTimer);
         }
-      }, 2000)  // no reason to have this be very often, right?
+      }, 100)  // no reason to have this be very often, right?
   }
 
 
