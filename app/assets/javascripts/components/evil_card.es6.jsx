@@ -1,7 +1,7 @@
 class EvilCard extends React.Component {
 
   render () {
-
+    showName = <p> You are {this.props.currentUser.character}!</p>
     return(
       <div>
         <h2>... is EVIL!!</h2>
@@ -14,6 +14,7 @@ class EvilCard extends React.Component {
             }
           })
         }
+        {showName}
         </ul>
       </div>
     )
