@@ -4,7 +4,7 @@ class Game < ApplicationRecord
   before_save :generate_code
 
   def generate_code
-    self.key_code = SecureRandom.urlsafe_base64(2) unless self.key_code
+    self.key_code = [*('a'..'z')].sample(4).join unless self.key_code
   end
 
   def next_up
