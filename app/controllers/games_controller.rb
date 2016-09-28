@@ -21,6 +21,7 @@ class GamesController < ApplicationController
     game = Game.find(params[:game_id])
     rounds = game.rounds
     arr = []
+    # if we edit the text here make sure to also update the GameResult component
     rounds.each do |round|
       if round.outcome == true
         arr << "Good Prevails"
