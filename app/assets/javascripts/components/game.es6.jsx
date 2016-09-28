@@ -82,7 +82,7 @@ class Game extends React.Component {
 
       // let tree
       // if (this.state.gameStage === "questVoting" ) {
-        let tree = <SelectQuestSplits updateGameStage={this.updateGameStage} users={this.props.gameUsers} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
+
       // }
       // else if (this.state.gameStage === "questVoteDone") {
       //   tree = <VoteResults updateGameStage={this.updateGameStage} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} gameUsers={this.props.gameUsers} />
@@ -107,8 +107,8 @@ class Game extends React.Component {
           <span onClick={this.clickRules}>{rules}</span>
         </div>
 
-        {tree}
-
+        <SelectQuestSplits updateGameStage={this.updateGameStage} users={this.props.gameUsers} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} />
+        <GameResult currentGame={this.props.currentGame}/>
 
       </div>
     )
