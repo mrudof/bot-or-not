@@ -3,13 +3,14 @@ class YouAreOnAQuest extends React.Component {
   constructor(){
     super()
     this.state = {
-      show_button: true
+      show_button: true,
+      member: ""
     }
+    // this.handleOnQuestVote = this.handleOnQuestVote.bind(this)
   }
 
   handleOnQuestVote(event){
     event.preventDefault
-    // debugger
     const questID = this.props.currentQuest.id
     const memberID = this.props.memberID
     $.ajax({
@@ -17,9 +18,11 @@ class YouAreOnAQuest extends React.Component {
       method: 'PUT',
       data: { vote: event.action }
     }).done((response) => {
+    // debugger 
       // this.props.updateGameStage("questVoteDone")
       this.setState({
-        show_button: false
+        show_button: false,
+        member: response
       })
     })
   }
@@ -28,7 +31,6 @@ class YouAreOnAQuest extends React.Component {
     // debugger
     // in order to hide button, check for this in whatever is returned:
     // if (this.state.show_button === true
-
     let questComplete
     if (this.state.show_button === true){
       questComplete =
@@ -41,7 +43,7 @@ class YouAreOnAQuest extends React.Component {
         </div>
     } else {
       questComplete =
-       <p>QUEST COMPLETED!</p>
+       <WaitingForQuestResult memberID={this.state.member.id} currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users}/>
     }
 
     return(
