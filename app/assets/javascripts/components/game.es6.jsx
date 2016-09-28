@@ -97,7 +97,7 @@ class Game extends React.Component {
         <div className="bg-danger">
           Game stage: {this.props.gameStage}<br/>
           Game id: {this.props.currentGame.id}<br/>
-          Current round: {this.props.currentRound.id}<br/>
+          Current round id: {this.props.currentRound.id}<br/>
           Count rounds: {this.props.countRounds}<br/>
           Count quests: {this.props.countQuests}<br/>
         </div>

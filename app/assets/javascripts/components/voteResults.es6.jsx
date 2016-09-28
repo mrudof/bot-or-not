@@ -28,12 +28,6 @@ class VoteResults extends React.Component {
       }.bind(this))
     }
 
-  componentDidMount() {
-    setTimeout(function(){
-      location.reload()
-    }, 2000);
-  }
-
   render(){
     let questStart
     if (this.props.members) {
