@@ -8,9 +8,9 @@ class CreateRound extends React.Component {
         url: `/games/${gameID}/rounds`
       })
     }
-    var yourUltimateTimer = setTimeout(() => {
-      location.reload()
-    }, 2000);
+    // var yourUltimateTimer = setTimeout(() => {
+    //   location.reload()
+    // }, 2000);
 
   }
   render () {
