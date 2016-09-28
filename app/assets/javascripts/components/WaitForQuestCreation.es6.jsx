@@ -27,9 +27,9 @@ class WaitForQuestCreation extends React.Component {
           that.setState({
             done: true
           })
-          clearInterval(myLittleTimer);
+          clearInterval(myLittleTimer)
         }
-    }, 200);
+    }, 2000);
 
   }
 

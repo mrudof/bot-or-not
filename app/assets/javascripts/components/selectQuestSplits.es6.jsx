@@ -36,7 +36,7 @@ class SelectQuestSplits extends React.Component {
       else {
         startQuestSelection =
         // startQuestSelection = <p>Waiting for {this.state.questPicker.name} to select the members of the quest.</p>
-        <WaitForQuestCreation currentRound={this.props.currentRound} currentGame= {this.props.currentGame} currentUser= {this.props.currentUser} users={this.props.users} />
+        <WaitForQuestCreation currentRound={this.props.currentRound} currentGame= {this.props.currentGame} currentUser= {this.props.currentUser} users={this.props.users} questPicker={this.state.questPicker} />
       }
     return (
       <div>

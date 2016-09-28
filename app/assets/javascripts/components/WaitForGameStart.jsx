@@ -18,7 +18,7 @@ class WaitForGameStart extends React.Component {
                 current_user: response
               })
             }.bind(this))
-        }, 1000);
+        }, 2000);
     }
   render () {
     if (this.state.current_user.order) {

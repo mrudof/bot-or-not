@@ -19,7 +19,7 @@ class CountdownTimer extends React.Component {
     this.interval = setInterval(this.tick, 1000)
     setTimeout(() => {
       location.reload()
-    }, 2000)
+    }, 3000)
   }
 
   componentWillUnmount() {

@@ -19,7 +19,7 @@ class StartGame extends React.Component {
               users: response
             })
           }.bind(this))
-      }, 1000);
+      }, 2000);
   }
 
   render () {
