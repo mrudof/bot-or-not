@@ -37,9 +37,12 @@ class CreateQuest extends React.Component {
     let showButton
       if (this.state.quest === "") {
         showButton =
-        <form className="hide-at-end" onSubmit={this.handleSubmit}>
-          <input value="Create Quest" type="submit" className="btn btn-success"/>
-        </form>
+        <div>
+          <br/>
+          <form className="hide-at-end" onSubmit={this.handleSubmit}>
+            <input value="Create Quest" type="submit" className="btn btn-success"/>
+          </form>
+        </div>
       } else {
         showButton =
         <SelectQuestForm updateGameStage={this.props.updateGameStage} currentGame={this.props.currentGame} currentQuest={this.state.quest} numberOnQuest={this.state.numberOnQuest} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.props.users}/>
