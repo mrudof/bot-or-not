@@ -36,7 +36,11 @@ class QuestWait extends React.Component {
       // (<QuestVote/>)
     }
     else {
-      toDo = <p>We are waiting for {this.props.questPicker.name} to pick the quest.</p>
+      toDo =
+      <div>
+        <br/>
+        <p>We are waiting for {this.props.questPicker.name} to pick the quest.</p>
+      </div>
     }
     return (
       <div>

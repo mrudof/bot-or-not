@@ -38,7 +38,10 @@ class WaitingForVoteResults extends React.Component {
       </div>
     } else {
       toShow =
-      <p>Waiting for mission results.</p>
+      <div>
+        <br/>
+        <p>Waiting for mission results.</p>
+      </div>
     }
     return (
       <div>
