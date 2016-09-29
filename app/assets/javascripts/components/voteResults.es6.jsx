@@ -33,14 +33,13 @@ class VoteResults extends React.Component {
     if (this.props.members) {
       questStart =
       <div>
-        <p>Quest members! Please vote now!!!</p>
         <OnQuestVoting currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users}/>
       </div>
     }
-    else {
-      questStart =
-      <p>Waiting for quest members to vote</p>
-    }
+    // else {
+    //   questStart =
+    //   <p>Waiting for quest members to vote</p>
+    // }
 
     let voteResults
     if (this.state.passed === true){
@@ -53,7 +52,7 @@ class VoteResults extends React.Component {
       voteResults =
       <div>
         <h2>The proposed quest has been rejected!</h2>
-        <CountdownTimer secondsRemaining="2"/>
+        <CountdownTimer secondsRemaining="4"/>
       </div>
     }
 
