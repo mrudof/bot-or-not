@@ -53,7 +53,7 @@ class VoteResults extends React.Component {
       voteResults =
       <div>
         <h2>The proposed quest has been rejected!</h2>
-        <CountdownTimer secondsRemaining="2" />
+        <CountdownTimer secondsRemaining="2"/>
       </div>
     }
 
