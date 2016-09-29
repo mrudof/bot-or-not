@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// div {
-//   text-align: center;
-// }
-
 .board-list {
     list-style-type: none;
     margin: 0;
@@ -20,5 +16,8 @@
   border-radius: 15px;
   border-style: solid;
   border-width: 2px;
-  text-align: center;
+}
+
+.container-fluid {
+  font-family: 'EB Garamond', serif;
 }

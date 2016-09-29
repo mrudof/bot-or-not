@@ -36,14 +36,15 @@ class QuestVote extends React.Component {
       if (this.state.show_button === true){
         voteComplete = (
         <div>
-          <h4>Vote for quest</h4>
-            <ul>
+          <h2>Do you approve the mission with these members?</h2>
+            <p>
               {
                 this.props.members.map((member, idx) => {
                   return (<QuestMember key={idx} data={member}/>)
                 })
               }
-            </ul>
+            </p>
+            <br/>
           <section>
             {/*<form onSubmit={this.handleVoteSubmit}>*/}
               <input className='btn btn-success' ref="Approve" type="submit" value="Approve" name="vote" onClick={this.handleVoteSubmit.bind(this, {action: "Approve"})}/>
