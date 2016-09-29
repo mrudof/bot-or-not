@@ -52,7 +52,6 @@ class Game extends React.Component {
   }
 
   render () {
-    console.log("this.props for Game are ", this.props)
 
     const card = this.state.cardShow
     ? <Character currentUser={this.props.currentUser} users={this.props.gameUsers} />
@@ -87,20 +86,20 @@ class Game extends React.Component {
       // else if (this.state.gameStage === "questVoteDone") {
       //   tree = <VoteResults updateGameStage={this.updateGameStage} currentUser={this.props.currentUser} currentGame={this.props.currentGame} currentRound={this.props.currentRound} gameUsers={this.props.gameUsers} />
       // }
-
+      // <div className="bg-success">
+      //   Your username: {this.props.currentUser.name}<br/>
+      // </div>
+      // <div className="bg-danger">
+      //   Game stage: {this.props.gameStage}<br/>
+      //   Game id: {this.props.currentGame.id}<br/>
+      //   Current round id: {this.props.currentRound.id}<br/>
+      //   Count rounds: {this.props.countRounds}<br/>
+      //   Count quests: {this.props.countQuests}<br/>
+      // </div>
       return(
       <div>
 
-        <div className="bg-success">
-          Your username: {this.props.currentUser.name}<br/>
-        </div>
-        <div className="bg-danger">
-          Game stage: {this.props.gameStage}<br/>
-          Game id: {this.props.currentGame.id}<br/>
-          Current round id: {this.props.currentRound.id}<br/>
-          Count rounds: {this.props.countRounds}<br/>
-          Count quests: {this.props.countQuests}<br/>
-        </div>
+
         <div className="btn-group btn-group-justified" role="group" aria-label="...">
           <span onClick={this.clickCard}>{card}</span>
           <span onClick={this.clickBoard}>{board}</span>

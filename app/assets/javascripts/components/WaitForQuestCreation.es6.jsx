@@ -36,9 +36,9 @@ class WaitForQuestCreation extends React.Component {
   render () {
     let renderQuestWait;
     if (this.state.done) {
-          renderQuestWait = <QuestWait currentQuest={this.state.latestQuest} currentRound={this.props.currentRound} currentGame= {this.props.currentGame} currentUser= {this.props.currentUser} users={this.props.users} numberOnQuest={1}/>
+          renderQuestWait = <QuestWait questPicker={this.props.questPicker} currentQuest={this.state.latestQuest} currentRound={this.props.currentRound} currentGame= {this.props.currentGame} currentUser= {this.props.currentUser} users={this.props.users} numberOnQuest={1}/>
     } else {
-      renderQuestWait = <p> We are waiting for somebody to create a quest </p>
+      renderQuestWait = <p> We are waiting for {this.props.questPicker.name} to create a quest </p>
     }
 
     return (

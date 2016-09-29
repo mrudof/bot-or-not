@@ -1,7 +1,6 @@
 class OnQuestVoting extends React.Component {
 
   render () {
-    console.log("the props for the OnQuestVoting are:", this.props)
     const currentUser = this.props.currentUser
     function isCurrentUser(member) {return member.user_id == currentUser.id}
     const currentUserIsQuestMembersArray = this.props.members.filter(isCurrentUser)

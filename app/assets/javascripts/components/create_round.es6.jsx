@@ -10,16 +10,13 @@ class CreateRound extends React.Component {
     }
     setTimeout(() => {
       location.reload()
-    }, 2000)
+    }, 5000)
   }
 
   render () {
     return (
       <div>
-        <p> you are creating a round here </p>
-        {/* <CountdownTimer secondsRemaining="2" /> */}
       </div>
-
     )
   }
 }

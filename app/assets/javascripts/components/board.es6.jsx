@@ -43,7 +43,6 @@ class Board extends React.Component {
 
 
   render () {
-    console.log("this.props for Board are ", this.props)
     return(
       <div>
       <h2> Round outcome </h2>

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     games = Game.all
     game_with_key_id = ""
-    user_key_code = params[:key_code]
+    user_key_code = params[:key_code].downcase
     @current_game = ""
 
     games.each do |game|
