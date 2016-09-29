@@ -42,8 +42,13 @@ class GameResult extends React.Component {
     if (goodCount >= 3) {
       $('.hide-at-end').hide()
       displayVictory =
-      <div> <h3>The Humans Win!</h3>
-      The Robots were: {robotUsers} </div>
+      <div>
+        <h3>The Humans win!</h3>
+        <strong>...unless the Terminator can find who Sarah Connor is!</strong>
+        <br/>
+        <p>The Robots were:</p>
+        {robotUsers}
+      </div>
     } else if (evilCount >= 3) {
       $('.hide-at-end').hide()
       displayVictory =

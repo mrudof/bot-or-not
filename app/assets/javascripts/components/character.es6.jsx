@@ -15,7 +15,7 @@ class Character extends React.Component {
 
     return(
       <div className="jumbotron">
-        <h1>{this.props.currentUser.name}</h1>
+        <h2>{this.props.currentUser.name}</h2>
         {characterCard}
         <div className="btn-group">
           <button type="button" className="btn btn-success">OK</button>

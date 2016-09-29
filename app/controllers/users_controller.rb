@@ -41,8 +41,8 @@ class UsersController < ApplicationController
 
   def update
     numberOfEvil = {2 => 1, 3=> 1, 4=> 2, 5 => 2, 6 => 2, 7 => 3, 8=> 3, 9=> 3, 10=> 4}
-    goodPlayerArr = ["Loyal Servant", "Loyal Servant", "Loyal Servant", "Loyal Servant", "Merlin", "Percival"]
-    evilPlayerArr = ["Mordred", "Minion", "Assassin", "Morgana"]
+    goodPlayerArr = ["Pan", "Generic Human", "Adama", "Ripley", "Deckard", "Sarah Connor"]
+    evilPlayerArr = ["Boomer", "Ash", "The Terminator", "Rachael"]
     players = current_user.game.users
     numberOfPlayers = players.length
     rand_array = (1..players.length).to_a.shuffle
