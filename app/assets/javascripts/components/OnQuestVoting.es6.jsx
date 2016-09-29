@@ -9,7 +9,7 @@ class OnQuestVoting extends React.Component {
     if (currentUserIsQuestMembersArray.length) {
       succedQuest =
       <div>
-   
+
         <YouAreOnAQuest memberID={currentUserIsQuestMembersArray[0].id} currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users} />
       </div>
     } else {
@@ -22,6 +22,7 @@ class OnQuestVoting extends React.Component {
 
     return(
       <div>
+        {/* <h2>The proposed mission was approved!</h2> */}
         {succedQuest}
       </div>
     )

@@ -41,7 +41,6 @@ class VoteResults extends React.Component {
     if (this.state.passed === true){
       voteResults =
         <div>
-          <h2>The proposed mission was approved!</h2>
           {questStart}
         </div>
     } else if (this.state.passed === false){
@@ -54,13 +53,12 @@ class VoteResults extends React.Component {
 
     return(
       <div>
-        <ul>
+        <h2>Here are the vote results:</h2>
         {
           this.state.votes.map((vote ,i) => {
             return (<QuestVoteMember key={i} data={vote} />)
           })
         }
-        </ul>
         {voteResults}
       </div>
     )

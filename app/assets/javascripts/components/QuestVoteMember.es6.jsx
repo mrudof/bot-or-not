@@ -2,12 +2,12 @@ class QuestVoteMember extends React.Component {
     render(){
       let voteDecision;
       if (this.props.data.passed) {
-        voteDecision = <p> approved </p>
+        voteDecision = <strong>approved</strong>
       } else {
-        voteDecision = <p> rejected </p>
+        voteDecision = <strong>rejected</strong>
       }
       return(
-        <li>{this.props.data.user.name}: {voteDecision}</li>
+        <p>{this.props.data.user.name}: {voteDecision}</p>
       )
     }
   }

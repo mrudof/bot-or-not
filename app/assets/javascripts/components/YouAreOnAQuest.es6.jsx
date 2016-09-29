@@ -36,16 +36,21 @@ class YouAreOnAQuest extends React.Component {
     let showFailButtonToEvil
     if (this.props.currentUser.good === false) {
       showFailButtonToEvil =
-      <input ref="Failed" type="submit" value="Fail" name="vote" onClick={this.handleOnQuestVote.bind(this, {action: "Fail"})}/>
+      <div className="btn-group">
+        <button ref="Failed" className="btn btn-danger" type="submit" name="vote" onClick={this.handleOnQuestVote.bind(this, {action: "Fail"})}>Fail</button>
+      </div>
     }
 
     let questComplete
     if (this.state.show_button === true) {
       questComplete =
         <div>
-          <h4>Succeed or Fail Quest!</h4>
+          <h3>The proposed mission was approved!</h3>
+          <p>You are on the mission! Do you want it to succeed or fail?</p>
           <section>
-              <input ref="Succeed" type="submit" value="Succeed" name="vote" onClick={this.handleOnQuestVote.bind(this, {action: "Succeed"})}/>
+              <div className="btn-group">
+                <button ref="Succeed" className="btn btn-success" type="submit" name="vote" onClick={this.handleOnQuestVote.bind(this, {action: "Succeed"})}>Succeed</button>
+              </div>
               {showFailButtonToEvil}
           </section>
         </div>
