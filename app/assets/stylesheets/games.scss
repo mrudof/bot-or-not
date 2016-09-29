@@ -6,6 +6,19 @@
 //   text-align: center;
 // }
 
-.container-fluid {
-  font-family: 'EB Garamond', serif;
+.board-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.each-mission {
+  padding: 1px;
+  margin: 1px;
+  float: left;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 2px;
+  text-align: center;
 }
