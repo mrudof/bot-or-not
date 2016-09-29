@@ -4,12 +4,12 @@ class Game extends React.Component {
     super();
     this.state = {
       cardShow: false,
-      boardShow: false,
+      // boardShow: false,
       rulesShow: false,
       gameStage: ""
     }
     this.clickCard = this.clickCard.bind(this)
-    this.clickBoard = this.clickBoard.bind(this)
+    // this.clickBoard = this.clickBoard.bind(this)
     this.clickRules = this.clickRules.bind(this)
     this.updateGameStage = this.updateGameStage.bind(this)
   }
@@ -37,9 +37,9 @@ class Game extends React.Component {
     this.setState({cardShow: !this.state.cardShow})
   }
 
-  clickBoard() {
-    this.setState({boardShow: !this.state.boardShow})
-  }
+  // clickBoard() {
+  //   this.setState({boardShow: !this.state.boardShow})
+  // }
 
   clickRules() {
     this.setState({rulesShow: !this.state.rulesShow})
@@ -61,13 +61,13 @@ class Game extends React.Component {
          </button>
        </div>
 
-    const board = this.state.boardShow
-    ? <Board update={this.state.boardShow} currentRound={this.props.currentRound} currentGame={this.props.currentGame} countQuests={this.props.countQuests}/>
-    : <div className="btn-group" role="group">
-        <button type="button" className="btn btn-info btn-block">
-          <span className="glyphicon glyphicon-tasks" aria-hidden="true"></span> See Board
-        </button>
-      </div>
+    // const board = this.state.boardShow
+    // ? <Board update={this.state.boardShow} currentRound={this.props.currentRound} currentGame={this.props.currentGame} countQuests={this.props.countQuests}/>
+    // : <div className="btn-group" role="group">
+    //     <button type="button" className="btn btn-info btn-block">
+    //       <span className="glyphicon glyphicon-tasks" aria-hidden="true"></span> See Board
+    //     </button>
+    //   </div>
 
 
     const rules = this.state.rulesShow
@@ -102,7 +102,7 @@ class Game extends React.Component {
 
         <div className="btn-group btn-group-justified" role="group" aria-label="...">
           <span onClick={this.clickCard}>{card}</span>
-          <span onClick={this.clickBoard}>{board}</span>
+          {/*<span onClick={this.clickBoard}>{board}</span>*/}
           <span onClick={this.clickRules}>{rules}</span>
         </div>
 

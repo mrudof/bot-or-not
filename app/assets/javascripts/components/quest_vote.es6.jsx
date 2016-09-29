@@ -61,8 +61,6 @@ class QuestVote extends React.Component {
         <div>
           {voteComplete}
         </div>
-        // render YourFriendsLeftYouToQuest
-        // OR render OnQuestVoting
     )
   }
 }
