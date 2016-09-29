@@ -40,14 +40,14 @@ class QuestResults extends React.Component {
     if (numFails > 0){
       questOutcome =
        <div>
-         <h2>The quest has failed!!</h2>
-         <p> {numFails} / {numFails + numSuccess} failed the quest!</p>
+         <h2>The mission has failed! The robots won this one.</h2>
+         <p> {numFails} / {numFails + numSuccess} failed the mission!</p>
        </div>
     } else {
       questOutcome =
       <div>
-        <h2>Good has prevailed!!</h2>
-        <p> All {numFails + numSuccess} members succeeded the quest!</p>
+        <h2>The humans have prevailed!</h2>
+        <p> All {numFails + numSuccess} members succeeded the mission!</p>
       </div>
     }
 
