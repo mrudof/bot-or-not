@@ -31,9 +31,11 @@ class GameResult extends React.Component {
     }
     var displayVictory
     if (goodCount >= 3) {
+      $('.hide-at-end').hide()
       displayVictory = <h3> Good wins unless the assassin can guess who Merlin is</h3>
     } else if (evilCount >= 3) {
       displayVictory = <h3>EVIL HAS WON AND TAKEN OVER THE WORLD!</h3>
+      $('.hide-at-end').hide()
     }
     return(
       <div>

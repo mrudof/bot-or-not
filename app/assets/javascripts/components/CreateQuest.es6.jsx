@@ -37,7 +37,7 @@ class CreateQuest extends React.Component {
     let showButton
       if (this.state.quest === "") {
         showButton =
-        <form onSubmit={this.handleSubmit}>
+        <form className="hide-at-end" onSubmit={this.handleSubmit}>
           <input value="Create Quest" type="submit"/>
         </form>
       } else {
