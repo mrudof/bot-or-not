@@ -1,9 +1,14 @@
-// Place all the styles related to the quests controller here.
+// Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1, h2, h3 {
-  color: white;
+#title {
+  font-size: 650%;
+}
+
+.welcome {
+  color: cornsilk;
+  font-family: 'EB Garamond', serif;
 }
 
 video#bgvid {

@@ -1,6 +1,7 @@
 <div class="container-fluid">
 
-  <h2>Welcome to Project Mama</h2>
+
+  <h1 id="title" class="welcome">Faction.</h1>
 
   <% if @errors %>
   <div class="alert alert-danger" role="alert">
@@ -12,7 +13,9 @@
   </div>
   <% end %>
 
-  <h3>Join game with code</h3><br>
+  <p class="welcome">A group of people in your party trying to usurp the leadership. The members of faction all appear to be in support of your party's cause. Yet they are secretly sabotaging your political campgaigns.</p>
+
+  <h3 class="welcome">Join a game</h3>
 
   <form method='POST' action="/games/:game_id/users">
     <div class="form-group">
@@ -26,28 +29,25 @@
     <button type="submit" class="btn btn-success">Join Game</button>
   </form>
 
-  <br>
-  <h3 style="text-align:center" class="">
-    OR
-  </h3>
-  <br>
 
-  <h3>Get a game code</h3>
+  <p style="text-align:center" class="welcome">OR</p>
+
+  <h3 class="welcome">Start a game of your own</h3>
 
   <form method="POST" action="/games">
     <div class="form-group">
       <!-- <label for="Enter your name">Enter your name</label> -->
-      <input type="text" class="form-control" name="name" placeholder="Name" aria-describedby="sizing-addon1"/>
+      <input type="text" class="form-control" name="name" placeholder="Your Name" aria-describedby="sizing-addon1"/>
       <input type="hidden" name="creator" value="true" />
     </div>
     <input type="submit" class="btn btn-success" value="Create game code">
   </form>
 
 
-  <video id="bgvid" playsinline autoplay muted loop width="300" height="150">
+  <video id="bgvid" playsinline autoplay muted loop>
     <source src="media/demo.mp4" type="video/mp4" />
     <!-- <source src="media/demo.ogv" type="video/ogg" />
     <source src="media/demo.webm" type="video/webm" /> -->
-  Your browser doesn't support HTML5 video. Here's a <a href="#">link</a> to download the video.</video>
+  Your browser doesn't support HTML5 video. Please use a modern browser</video>
 
 </div>

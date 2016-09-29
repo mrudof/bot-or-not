@@ -56,7 +56,7 @@ class Game extends React.Component {
     const card = this.state.cardShow
     ? <Character currentUser={this.props.currentUser} users={this.props.gameUsers} />
     : <div className="btn-group" role="group">
-         <button type="button" className="btn btn-default">
+         <button type="button" className="btn btn-info btn-block">
            <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span> See Card
          </button>
        </div>
@@ -64,7 +64,7 @@ class Game extends React.Component {
     const board = this.state.boardShow
     ? <Board update={this.state.boardShow} currentRound={this.props.currentRound} currentGame={this.props.currentGame} countQuests={this.props.countQuests}/>
     : <div className="btn-group" role="group">
-        <button type="button" className="btn btn-default">
+        <button type="button" className="btn btn-info btn-block">
           <span className="glyphicon glyphicon-tasks" aria-hidden="true"></span> See Board
         </button>
       </div>
@@ -73,7 +73,7 @@ class Game extends React.Component {
     const rules = this.state.rulesShow
     ? <Rules />
     : <div className="btn-group" role="group">
-        <button type="button" className="btn btn-default">
+        <button type="button" className="btn btn-info btn-block">
           <span className="glyphicon glyphicon-book" aria-hidden="true"></span> See Rules
         </button>
       </div>
@@ -97,7 +97,7 @@ class Game extends React.Component {
       //   Count quests: {this.props.countQuests}<br/>
       // </div>
       return(
-      <div>
+      <div className="container-fluid">
 
 
         <div className="btn-group btn-group-justified" role="group" aria-label="...">
