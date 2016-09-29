@@ -1,31 +1,26 @@
 <div class="container-fluid">
 
-  <h3>Your game code is:</h3>
+  <h1>Welcome <%= current_user.name %>!</h1>
 
-  <h1><%= current_user.game.key_code %></h1>
+  <% if @current_user.creator == true %>
+  <h2>Your game code is <strong><em><%= current_user.game.key_code %></em></strong></h2>
+  <% end %>
 
-  <h3>Name: <%= current_user.name %></h3>
+  <br/>
 
-  <!-- <h5>Current number of players: <%= current_user.game.users.length%></h5><br> -->
+  <% if @current_user.creator == true && @current_user.game.users.length <= 4 %>
+  <div class="alert alert-info" role="alert">
+    Waiting for players to join.
+  </div>
+  <% end %>
+
+  <% if @current_user.creator != true %>
+  <div class="alert alert-info" role="alert">
+    Waiting for the game to begin.
+  </div>
+  <% end %>
 
   <%= react_component 'StartGame', game: @current_game, user: @current_user%>
   <%= react_component 'WaitForGameStart', game: @current_game, user: @current_user%>
-  <!-- needs to be updated for dynamic game size -->
-  <% if @current_user.creator == true && @current_user.game.users.length <= 4 %>
-  <h5>Waiting for players.<h5>
-  <% end %>
-
-  <!-- <% if @current_user.creator == true && @current_user.game.users.length >= 2 %>
-  <form method="POST" id="start-game-form" action="/games/:game_id/users/update">
-    <input type='hidden' name='_method' value='put'>
-    <input type="submit" value="Start game">
-  </form>
-  <% end %> -->
-
-  <% if @current_user.creator != true %>
-  <h5>Waiting for the game to begin.<h5>
-  <% end %>
-
-
 
 </div>

@@ -39,7 +39,7 @@ class WaitingForVoteResults extends React.Component {
       </div>
     } else {
       toShow =
-      <p> waiting for quest results </p>
+      <p>Waiting for mission results.</p>
     }
     return (
       <div>

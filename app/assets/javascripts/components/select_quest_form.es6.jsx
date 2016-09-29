@@ -45,7 +45,7 @@ class SelectQuestForm extends React.Component {
       if (this.state.displayForm) {
         showForm =
           <section>
-          <h3>Select {this.props.numberOnQuest} player(s) to go the quest.</h3>
+          <h3>Select {this.props.numberOnQuest} players to go the mission.</h3>
             <form onSubmit={this.handleSubmit}>
               {this.props.users.map((user) =>
                 <div key={user.id} className="checkbox">

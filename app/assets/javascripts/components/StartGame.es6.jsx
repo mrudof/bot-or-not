@@ -19,19 +19,19 @@ class StartGame extends React.Component {
               users: response
             })
           }.bind(this))
-      }, 2000);
+      }, 2000)
   }
 
   render () {
   let showForm
   if (this.props.user.creator && this.state.users.length >= 2) {
     showForm =
-    <div class='form-group'>
-    <form method="POST" id="start-game-form" action="/games/:game_id/users/update">
-      <input type='hidden' name='_method' value='put'/>
-      <input type="submit" value="Start game"/>
-    </form>
-    </div>
+      <form method="POST" id="start-game-form" action="/games/:game_id/users/update">
+        <div className='btn-group'>
+          <input type='hidden' name='_method' value='put'/>
+        </div>
+        <button type="submit" className="btn btn-success">Start game</button>
+      </form>
   }
 var usersEntering =
   <ul> {
