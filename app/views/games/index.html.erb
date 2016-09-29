@@ -1,8 +1,10 @@
 
-<div style='text-align:right'>
-  <a href='/'>😱 RESTART</a>
-</div>
+
 <div class="container-fluid">
+<div style='text-align:right'>
+    <a href='/'>😱 RESTART</a>
+  </div>
+<%= react_component 'NavHeaders', gameUsers: @gameUsers, currentUser: @currentUser, currentGame: @currentGame %>
   <%= render "board"%>
 
   <%= react_component 'Game', gameStage: @gameStage, gameUsers: @gameUsers, currentUser: @currentUser, currentGame: @currentGame, currentRound: @currentRound, countRounds: @countRounds, countQuests: @countQuests %>
