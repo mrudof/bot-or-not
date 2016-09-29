@@ -41,7 +41,7 @@ class WaitForQuestCreation extends React.Component {
       renderQuestWait =
       <div>
         <br/>
-        <p className="hide-at-end"> We are waiting for {this.props.questPicker.name} to create a quest </p>
+        <p className="hide-at-end"> We are waiting for {this.props.questPicker.name} to create a mission.</p>
       </div>
     }
 

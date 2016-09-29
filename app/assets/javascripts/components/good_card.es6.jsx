@@ -7,7 +7,7 @@ class GoodCard extends React.Component {
     let showText
     showPic = <img src={`/${this.props.currentUser.character}.jpg`} className="img-responsive img-rounded" />
 
-    showName = <p> You are {this.props.currentUser.character}!</p>
+    showName = <p> You are {this.props.currentUser.character}.</p>
 
     if (this.props.currentUser.character === "Sarah Connor") {
 
@@ -16,7 +16,7 @@ class GoodCard extends React.Component {
         showChar =
         this.props.users.map((user ,i) => {
         if (user.good === false && user.character != "Boomer") {
-          return (<li key={i}>{user.name}</li>)
+          return (<p key={i}>{user.name}</p>)
         }
       })
     } else if ((this.props.currentUser.character === "Deckard")) {
@@ -25,19 +25,17 @@ class GoodCard extends React.Component {
 
       showChar = this.props.users.map((user ,i) => {
       if (user.character === "Sarah Connor" || user.character === "Rachael") {
-        return (<li key={i}>{user.name}</li>)
+        return (<p key={i}>{user.name}</p>)
       }
     })
     }
     return(
       <div>
         {showPic}
-        {showName} <h2>a human.</h2>
-        <ul>
-
+        {showName}
+        <h2>A human.</h2>
         {showText}
         {showChar}
-        </ul>
       </div>
     )
   }

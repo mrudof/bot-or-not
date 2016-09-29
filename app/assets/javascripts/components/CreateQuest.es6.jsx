@@ -33,14 +33,13 @@ class CreateQuest extends React.Component {
    }
 
   render () {
-    // do we really need to have the create quest button, or can we show the select quest form directly?
     let showButton
       if (this.state.quest === "") {
         showButton =
         <div>
           <br/>
           <form className="hide-at-end" onSubmit={this.handleSubmit}>
-            <input value="Create Quest" type="submit" className="btn btn-success"/>
+            <input value="Create Mission" type="submit" className="btn btn-success"/>
           </form>
         </div>
       } else {
