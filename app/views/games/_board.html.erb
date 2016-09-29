@@ -5,11 +5,11 @@
     <%if @rounds[i].nil? %>
      style="background-color:gray;"
     <%elsif @rounds[i].outcome%>
-      style="background-color:blue;"
+      style="background-color:  #ADD8E6;"
     <%elsif @rounds[i].outcome == false%>
-      style="background-color:red;"
+      style="background-color: #CD5C5C;"
     <% else %>
-      background-color="white"
+      style="border-color: gray;"
     <%end%>
     >
     Mission <%=i+1%>
@@ -17,4 +17,4 @@
   <%=@quest_hash[@gameUsers.length][i]%></li>
   <%i +=1%>
   <%end%>
-<ul>
+</ul>
