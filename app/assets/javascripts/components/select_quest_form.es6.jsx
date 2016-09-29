@@ -17,10 +17,15 @@ class SelectQuestForm extends React.Component {
     votes = this.boxes.filter((box) => box.checked).map((box) => box.name)
     votes = votes.filter(function(item, pos) { return votes.indexOf(item) == pos; })
 
-    if (votes.length < this.props.numberOnQuest) {
-      $('.create-quest').append(`<p class="error-message">Please select ${this.props.numberOnQuest}</p>`)
-    } else if (votes.length > this.props.numberOnQuest) {
-      $('.create-quest').append(`<p class="error-message">Please select ${this.props.numberOnQuest}</p>`)
+    if (votes.length != this.props.numberOnQuest) {
+      $('.create-quest').append(`
+        <br/>
+        <div class="alert alert-danger error-message" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+          Please select ${this.props.numberOnQuest} players.
+        </div>
+        `)
     } else {
         var questID = this.props.currentQuest.id;
         var currentUserID = this.props.currentUser.id;

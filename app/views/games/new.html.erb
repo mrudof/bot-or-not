@@ -2,9 +2,7 @@
 
   <h1>Welcome <%= current_user.name %>!</h1>
 
-  <% if @current_user.creator == true %>
   <h2>Your game code is <strong><em><%= current_user.game.key_code %></em></strong></h2>
-  <% end %>
 
   <br/>
 

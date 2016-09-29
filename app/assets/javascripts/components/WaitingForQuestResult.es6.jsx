@@ -37,7 +37,11 @@ class WaitingForQuestResult extends React.Component {
     if (this.state.done) {
        timeForResults = <QuestResults currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users}/>
     } else {
-      timeForResults = <p> Waiting for ALL results of quest </p>
+      timeForResults =
+      <div>
+        <h3>The proposed mission was approved!</h3>
+        <p>Waiting for ALL results of quest.</p>
+      </div>
     }
     // debugger
     return(

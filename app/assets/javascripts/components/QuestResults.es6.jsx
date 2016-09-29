@@ -53,7 +53,6 @@ class QuestResults extends React.Component {
 
     return(
       <div>
-        <p>The outcome of the quest is................</p>
         {questOutcome}
         <CreateRound currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users}/>
       </div>

@@ -54,6 +54,7 @@ class Board extends React.Component {
       }
       </ul>
       <p>Click to hide!</p>
+
       </div>
     )
   }
