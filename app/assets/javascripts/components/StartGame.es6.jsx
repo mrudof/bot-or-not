@@ -26,14 +26,16 @@ class StartGame extends React.Component {
   let showForm
   if (this.props.user.creator && this.state.users.length >= 2) {
     showForm =
+    <div class='form-group'>
     <form method="POST" id="start-game-form" action="/games/:game_id/users/update">
       <input type='hidden' name='_method' value='put'/>
       <input type="submit" value="Start game"/>
     </form>
+    </div>
   }
 
     return (
-    <div>
+    <div class="row">
       <h5>Current number of players: {this.state.users.length}</h5><br></br>
       {showForm}
     </div>

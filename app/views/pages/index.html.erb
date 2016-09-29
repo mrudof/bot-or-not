@@ -1,24 +1,53 @@
-<h2> Welcome to Project Mama </h2>
+<div class="container-fluid">
 
-<% if @errors %>
-  <ul>
+  <h2>Welcome to Project Mama</h2>
+
+  <% if @errors %>
+  <div class="alert alert-danger" role="alert">
     <% @errors.each do |error| %>
-      <li><%= error %></li>
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    <%= error %>
     <% end %>
-  </ul>
-<% end %>
+  </div>
+  <% end %>
 
-<form method='POST' action="/games/:game_id/users">
-<label>Join game with code:</label><br>
-  <input type="text" name="key_code" placeholder="Enter Game Code" value="<%= @current_game.try(:key_code) %>"><br>
-  <input type="text" name="name" placeholder="Enter Username" value="<%= @user.try(:name) %>"><br>
-  <input type="submit" value="JOIN GAME">
-</form><br>OR<br><br>
+  <h3>Join game with code</h3><br>
 
-<form method="POST" action="/games">
-  <label>Generate game code:</label><br>
-    <input type="text" name="name" placeholder="Enter Username">
-    <input type="hidden" name="creator" value="true" ><br>
-    <input type="submit" value="CREATE GAME">
-<!-- <a href="/games/new">Create a new game code</a> -->
-</form>
+  <form method='POST' action="/games/:game_id/users">
+    <div class="form-group">
+      <!-- <label for="Enter Game Code">Enter game code</label> -->
+      <input type="text" class="form-control" name="key_code" placeholder="Game Code" value="<%= @current_game.try(:key_code) %>" aria-describedby="sizing-addon1" />
+    </div>
+    <div class="form-group">
+      <!-- <label for="Enter Username">Enter your name</label> -->
+      <input type="text" class="form-control" name="name" placeholder="Your Name" value="<%= @user.try(:name) %>"/>
+    </div>
+    <button type="submit" class="btn btn-success">Join Game</button>
+  </form>
+
+  <br>
+  <h3 style="text-align:center" class="">
+    OR
+  </h3>
+  <br>
+
+  <h3>Get a game code</h3>
+
+  <form method="POST" action="/games">
+    <div class="form-group">
+      <!-- <label for="Enter your name">Enter your name</label> -->
+      <input type="text" class="form-control" name="name" placeholder="Name" aria-describedby="sizing-addon1"/>
+      <input type="hidden" name="creator" value="true" />
+    </div>
+    <input type="submit" class="btn btn-success" value="Create game code">
+  </form>
+
+
+  <video id="bgvid" playsinline autoplay muted loop width="300" height="150">
+    <source src="media/demo.mp4" type="video/mp4" />
+    <!-- <source src="media/demo.ogv" type="video/ogg" />
+    <source src="media/demo.webm" type="video/webm" /> -->
+  Your browser doesn't support HTML5 video. Here's a <a href="#">link</a> to download the video.</video>
+
+</div>
