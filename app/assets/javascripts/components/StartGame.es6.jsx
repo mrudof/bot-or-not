@@ -33,10 +33,25 @@ class StartGame extends React.Component {
     </form>
     </div>
   }
+var usersEntering =
+  <ul> {
+      this.state.users.map((member, idx) => {
+      if (this.props.user.id != member.id) {
+      return(<li>{member.name} has joined.</li>)
+      }
+    })
+  }
+  </ul>
+
 
     return (
     <div class="row">
       <h5>Current number of players: {this.state.users.length}</h5><br></br>
+
+
+        {usersEntering}
+
+
       {showForm}
     </div>
     )
