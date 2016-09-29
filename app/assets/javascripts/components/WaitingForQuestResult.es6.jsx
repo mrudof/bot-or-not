@@ -40,7 +40,7 @@ class WaitingForQuestResult extends React.Component {
       timeForResults =
       <div>
         <h3>The proposed mission was approved!</h3>
-        <p>Waiting for ALL results of quest.</p>
+        <p>Now we wait.</p>
       </div>
     }
     // debugger
