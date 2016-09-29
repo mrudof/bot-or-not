@@ -1,0 +1,20 @@
+<ul class="board-list">
+  <%i = 0 %>
+  <% while i < 5 %>
+  <li class="each-mission"
+    <%if @rounds[i].nil? %>
+     style="background-color:gray;"
+    <%elsif @rounds[i].outcome%>
+      style="background-color:blue;"
+    <%elsif @rounds[i].outcome == false%>
+      style="background-color:red;"
+    <% else %>
+      background-color="white"
+    <%end%>
+    >
+    Mission <%=i+1%>
+    <br>
+  <%=@quest_hash[@gameUsers.length][i]%></li>
+  <%i +=1%>
+  <%end%>
+<ul>

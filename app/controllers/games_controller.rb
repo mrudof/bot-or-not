@@ -4,11 +4,22 @@ class GamesController < ApplicationController
     @currentUser = current_user # || User.find(1) # uncomment to debug
     @currentGame = @currentUser.game
     @currentRound = @currentUser.game.rounds.last
+    @rounds = @currentUser.game.rounds
     @countRounds = @currentUser.game.rounds.count
     @currentQuests = @currentUser.game.rounds.last.quests.last
     @countQuests = @currentUser.game.rounds.last.quests.count
     @gameUsers = @currentGame.users
     @gameStage = @currentGame.stage
+
+    @quest_hash = {
+      2 => [1,2,2,1,1],
+      5 => [2,3,2,3,3],
+      6 => [2,3,4,3,4],
+      7 => [2,3,3,4,4],
+      8 => [3,4,4,5,5],
+      9 => [3,4,4,5,5],
+      10 => [3,4,4,5,5]
+    }
   end
 
   def new
