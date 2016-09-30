@@ -45,7 +45,7 @@ class NavHeaders extends React.Component {
 
     return (
       <div className="container-fluid">
-        <h1 id='logo'>Bot or not.</h1>
+      <h1 id='logo'>Bot or not.</h1>
         <div className="btn-group btn-group-justified" role="group" aria-label="...">
           <span onClick={this.clickCard}>{card}</span>
           {/*<span onClick={this.clickBoard}>{board}</span>*/}

@@ -5,12 +5,16 @@
 h1.welcome {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  font-size: 550%;
-  color: #FA343C;
+  font-size: 500%;
+  color: #FA343C; // robot orange
   font-family: 'Bungee Shade', cursive;
   // font-family: 'Press Start 2P', cursive;
   // font-family: 'Bungee', cursive;
   // font-family: 'EB Garamond', serif;
+}
+
+svg path {
+  fill: #FA343C; // robot orange
 }
 
 input[type="text"] {
