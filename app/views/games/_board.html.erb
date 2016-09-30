@@ -3,18 +3,18 @@
   <% while i < 5 %>
   <li class="each-mission"
     <%if @rounds[i].nil? %>
-     style="background-color:gray;"
+     style="background-color: #C2C5BB;"
     <%elsif @rounds[i].outcome%>
-      style="background-color:  #ADD8E6;"
+      style="background-color: #499F68;"
     <%elsif @rounds[i].outcome == false%>
-      style="background-color: #CD5C5C;"
+      style="background-color: #BC381E;"
     <% else %>
-      style="border-color: gray;"
+      style="border-color: #C2C5BB;"
     <%end%>
     >
     Mission <%=i+1%>
     <br>
-  <%=@quest_hash[@gameUsers.length][i]%>
+  <small><%=@quest_hash[@gameUsers.length][i]%> members</small>
   </li>
   <%i +=1%>
   <%end%>
