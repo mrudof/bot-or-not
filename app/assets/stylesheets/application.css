@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+  .btn-robot {
+    background-color: #499F68; /* Green */
+    border: 0;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+
+  .btn-robot:hover {
+    background-color: #BC381E; /* Orange */
+    border: 0;
+  }

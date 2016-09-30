@@ -3,8 +3,8 @@ class Rules extends React.Component {
     return(
       <div>
         <h1>The Rules of the game</h1>
-        <p>Robots that are indistinguashable from humans have infiltrated humanity. They are still in the minority and are secretly sabotaging human's missions.</p>
-        <p>Humans win by successfully completing three missions. Robots win by sabotaging three missions.</p>
+        <p>Robots that are indistinguishable from humans have infiltrated humanity. They are plotting against us. While they are in the minority, they have one powerful asset: they know who each other are.</p>
+        <p>Humans must complete three missions in order to prevail. Robots win by sabotaging three missions.</p>
       </div>
     )
   }
