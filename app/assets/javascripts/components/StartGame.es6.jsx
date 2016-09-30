@@ -10,7 +10,6 @@ class StartGame extends React.Component {
     var gameID = this.props.game.id
     var that = this
     var myTimer = setInterval(() => {
-
         $.ajax({
             url: `/games/${gameID}/users`,
             method: 'get'
@@ -33,25 +32,21 @@ class StartGame extends React.Component {
         <button type="submit" className="btn btn-success">Start game</button>
       </form>
   }
-var usersEntering =
-  <ul> {
-      this.state.users.map((member, idx) => {
-      if (this.props.user.id != member.id) {
-      return(<li>{member.name} has joined.</li>)
-      }
-    })
-  }
-  </ul>
-
+  let usersEntering =
+    <ul> {
+        this.state.users.map((member, idx) => {
+        if (this.props.user.id != member.id) {
+        return(<li>{member.name} has joined.</li>)
+        }
+      })
+    }
+    </ul>
 
     return (
     <div class="row">
-      <h5>Current number of players: {this.state.users.length}</h5><br></br>
-
-
-        {usersEntering}
-
-
+      <h5>Current number of players: {this.state.users.length}</h5>
+      <br/>
+      {usersEntering}
       {showForm}
     </div>
     )

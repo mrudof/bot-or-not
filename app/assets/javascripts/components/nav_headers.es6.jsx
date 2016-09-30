@@ -45,18 +45,13 @@ class NavHeaders extends React.Component {
 
     return (
       <div className="container-fluid">
-
-
         <div className="btn-group btn-group-justified" role="group" aria-label="...">
           <span onClick={this.clickCard}>{card}</span>
           {/*<span onClick={this.clickBoard}>{board}</span>*/}
           <span onClick={this.clickRules}>{rules}</span>
         </div>
-
-        <br/>
         <br/>
       </div>
       )
   }
 }
-
