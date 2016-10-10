@@ -17,9 +17,11 @@ class WaitingForQuestResult extends React.Component {
             method: 'get'
           }).done((response) => {
             if (response[0] != null) {
-              console.log(`${this.props.members}`, `${response}`)
+              function isNull(item) {return item != null}
+              const notNullResponse = response.filter(isNull)
+              console.log(`${this.props.members}`, `${notNullResponse}`)
             that.setState({
-              results : response
+              results : notNullResponse
             })
           }
           }.bind(this))
