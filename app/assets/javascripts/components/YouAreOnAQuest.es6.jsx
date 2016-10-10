@@ -10,7 +10,7 @@ class YouAreOnAQuest extends React.Component {
   }
 
   handleOnQuestVote(event){
-    event.preventDefault
+    // event.preventDefault
     const questID = this.props.currentQuest.id
     const memberID = this.props.memberID
     $.ajax({

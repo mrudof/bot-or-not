@@ -17,6 +17,7 @@ class WaitingForQuestResult extends React.Component {
             method: 'get'
           }).done((response) => {
             if (response[0] != null) {
+              console.log(`${this.props.members}`, `${response}`)
             that.setState({
               results : response
             })
