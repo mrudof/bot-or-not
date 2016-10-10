@@ -17,11 +17,16 @@ class UsersController < ApplicationController
         end
     end
 
-    if @current_game.users.length < 10
-      @user = User.new(name: params[:name], creator: params[:creator], game_id: game_with_key_id)
+    if @current_game != ""
+      if @current_game.users.length < 10
+        @user = User.new(name: params[:name], creator: params[:creator], game_id: game_with_key_id)
+      end
     end
 
-    if @user.nil?
+    if @current_game == ""
+      @errors= ["Wrong game code!"]
+      render 'pages/index'
+    elsif @user.nil?
       @errors = ["Max 10 players in a game"]
       render 'pages/index'
     elsif @user.save
