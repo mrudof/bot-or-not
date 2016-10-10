@@ -43,7 +43,6 @@ class WaitingForQuestResult extends React.Component {
         <p>Now we wait.</p>
       </div>
     }
-    // debugger
     return(
       <div>{timeForResults}</div>
     )
