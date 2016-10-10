@@ -31,8 +31,6 @@ class RoundsController < ApplicationController
       Round.create(game_id: @game.id)
   end
 
-
-
   def show
     hash = {
       2 => [1,2,2,1,1],

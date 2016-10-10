@@ -4,12 +4,21 @@ class WaitForQuestCreation extends React.Component {
     this.state = {
       members: ["not initialized"],
       latestQuest: [],
-      done: false
+      done: false,
+      numberOnQuest: 0
     }
   }
   componentWillMount() {
     var gameID = this.props.currentGame.id
     var roundID = this.props.currentRound.id
+    $.ajax({
+      url: `/games/${gameID}/rounds/${roundID}`,
+      method: 'GET'
+    }).done((response) => {
+      this.setState({
+        numberOnQuest: response
+      })
+    })
     var that = this
     var myLittleTimer = setInterval(() => {
       $.ajax({
@@ -36,7 +45,7 @@ class WaitForQuestCreation extends React.Component {
   render () {
     let renderQuestWait;
     if (this.state.done) {
-          renderQuestWait = <QuestWait questPicker={this.props.questPicker} currentQuest={this.state.latestQuest} currentRound={this.props.currentRound} currentGame= {this.props.currentGame} currentUser= {this.props.currentUser} users={this.props.users} numberOnQuest={1}/>
+          renderQuestWait = <QuestWait questPicker={this.props.questPicker} currentQuest={this.state.latestQuest} currentRound={this.props.currentRound} currentGame= {this.props.currentGame} currentUser= {this.props.currentUser} users={this.props.users} numberOnQuest={this.state.numberOnQuest}/>
     } else {
       renderQuestWait =
       <div>
