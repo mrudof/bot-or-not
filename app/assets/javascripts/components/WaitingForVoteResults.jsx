@@ -34,7 +34,7 @@ class WaitingForVoteResults extends React.Component {
     if (this.state.done === true) {
       toShow =
       <div>
-        <VoteResults currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users}/>
+        <VoteResults currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users} countRounds={this.props.countRounds}/>
       </div>
     } else {
       toShow =

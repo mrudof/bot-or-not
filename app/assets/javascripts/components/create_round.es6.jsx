@@ -2,7 +2,7 @@ class CreateRound extends React.Component {
   componentWillMount() {
     gameID = this.props.currentGame.id
     currentUser = this.props.currentUser
-    if (currentUser.id === this.props.users[0].id) {
+    if (currentUser.creator) {
       $.ajax({
         method: 'post',
         url: `/games/${gameID}/rounds`
