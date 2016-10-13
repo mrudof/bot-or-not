@@ -4,15 +4,14 @@
   <div class="each-mission"
     <%if @rounds[i].nil? %>
      id = "image-dim"
+    <%elsif @rounds[i] == @rounds.last %>
+    id = "image-show"
     <%elsif @rounds[i].outcome%>
       id = "image-green"
     <%elsif @rounds[i].outcome == false%>
       id = "image-red"
-    <% else %>
-      id = "image-show"
     <%end%>
     >
-    <br>
     <span class="board-words"> Mission <%=i+1%></span>
     <br>
   <p class="board-words" style="font-size:xx-small"><%=@quest_hash[@gameUsers.length][i]%> members

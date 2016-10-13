@@ -34,26 +34,40 @@ h1#logo {
   overflow: hidden;
 }
 #image-dim {
-  background-image: url(motherboard.jpg);
-    filter: grayscale(100%);
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ), url(boardrobots.jpg);
+    color: white;
 }
 
 #image-show {
-  background-image: url(motherboard.jpg);
+  background-image: linear-gradient(
+      rgba(0, 0, 0.8, 0.2),
+      rgba(0, 0, 0.8, 0.2)
+    ), url(boardrobots.jpg);
+}
+
+#image-show > .board-words {
+  opacity: 1;
+  color: white;
+  font-weight: bold;
 }
 
 #image-red {
 background-image: linear-gradient(
       rgba(255, 0, 0, 0.2),
       rgba(255, 0, 0, 0.2)
-    ), url(motherboard.jpg);
+    ), url(boardrobots.jpg);
+    color: transparent;
 }
 
 #image-green {
 background-image: linear-gradient(
       rgba(0, 215, 20, 0.2),
       rgba(0, 215, 20, 0.2)
-    ), url(motherboard.jpg);
+    ), url(boardrobots.jpg);
+    color: transparent;
 }
 
 
@@ -71,9 +85,7 @@ background-image: linear-gradient(
   height: 65px;
   width: 62px;
 }
-.board-words {
-  color: white;
-}
+
 
 .container-fluid {
   // font-family: 'EB Garamond', serif;
