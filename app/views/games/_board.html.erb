@@ -1,21 +1,26 @@
-<ul class="board-list">
+<div class="board-list">
   <%i = 0 %>
   <% while i < 5 %>
-  <li class="each-mission"
+  <div class="each-mission"
     <%if @rounds[i].nil? %>
-     style="background-color: #C2C5BB;"
+     id = "image-dim"
     <%elsif @rounds[i].outcome%>
-      style="background-color: #499F68;"
+      id = "image-green"
     <%elsif @rounds[i].outcome == false%>
-      style="background-color: #BC381E;"
+      id = "image-red"
     <% else %>
-      style="border-color: #C2C5BB;"
+      id = "image-show"
     <%end%>
     >
-    Mission <%=i+1%>
     <br>
-  <small><%=@quest_hash[@gameUsers.length][i]%> members</small>
-  </li>
+    <span class="board-words"> Mission <%=i+1%></span>
+    <br>
+  <p class="board-words" style="font-size:xx-small"><%=@quest_hash[@gameUsers.length][i]%> members
+  <% if @gameUsers.length > 1 && i == 3 %>
+    <br> *Requires 2 fails </p>
+  <% end %>
+  </div>
   <%i +=1%>
   <%end%>
-</ul>
+</div>
+
