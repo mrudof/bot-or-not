@@ -25,6 +25,7 @@ h1#logo {
   background-color: #499F68; /* Green */
 }
 
+
 .board-list {
   list-style-type: none;
   margin: 0;
@@ -32,18 +33,59 @@ h1#logo {
   padding: 0;
   overflow: hidden;
 }
+#image-dim {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ), url(boardrobots.jpg);
+    color: white;
+}
+
+#image-show {
+  background-image: linear-gradient(
+      rgba(0, 0, 0.8, 0.2),
+      rgba(0, 0, 0.8, 0.2)
+    ), url(boardrobots.jpg);
+}
+
+#image-show > .board-words {
+  opacity: 1;
+  color: white;
+  font-weight: bold;
+}
+
+#image-red {
+background-image: linear-gradient(
+      rgba(255, 0, 0, 0.2),
+      rgba(255, 0, 0, 0.2)
+    ), url(boardrobots.jpg);
+    color: transparent;
+}
+
+#image-green {
+background-image: linear-gradient(
+      rgba(0, 215, 20, 0.2),
+      rgba(0, 215, 20, 0.2)
+    ), url(boardrobots.jpg);
+    color: transparent;
+}
+
 
 .each-mission {
+  background-size: cover;
+  overflow: hidden;
   padding: 1px;
   margin: 1px;
   float: left;
-
+  font-size: small;
   border-style: solid;
-  // border-width: 2px;
+  border-width: 2px;
   border-color: #F2F4ED;
   text-align: center;
-
+  height: 65px;
+  width: 62px;
 }
+
 
 .container-fluid {
   // font-family: 'EB Garamond', serif;
