@@ -14,21 +14,30 @@ class RoundsController < ApplicationController
 
   def create
     @game = Game.find(params[:game_id])
+    @user_count = @game.users.length
     @completed_round = @game.rounds.last
+    @current_round = @game.rounds.length
     @quest_members = @completed_round.quests.last.quest_members
     fails = 0
+    if @current_round == 4 && @user_count > 6
+      maxfail = 1
+    else
+      maxfail = 0
+    end
+
     @quest_members.each do |qm|
       if qm.succeeded == false
         fails+=1
       end
     end
-    if fails > 0
+    if fails > maxfail
       updated_outcome = false
     else
       updated_outcome = true
     end
-      @completed_round.update(outcome: updated_outcome)
-      Round.create(game_id: @game.id)
+    @completed_round.update(outcome: updated_outcome)
+    Round.create(game_id: @game.id)
+    
   end
 
   def show

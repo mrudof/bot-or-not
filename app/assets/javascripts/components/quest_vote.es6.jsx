@@ -20,15 +20,6 @@ class QuestVote extends React.Component {
         show_button: false
       })
     })
-
-
-    // const gameID = this.props.currentGame.id
-    // $.ajax({
-    //   url: `/game/${gameID}/status`,
-    //   method: 'put',
-    //   data: { response: 'questVoteDone' }
-    // })
-
   }
 
   render () {
@@ -54,7 +45,7 @@ class QuestVote extends React.Component {
         </div>
         )
       } else {
-         voteComplete = <WaitingForVoteResults currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users}/>
+         voteComplete = <WaitingForVoteResults currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users} countRounds={this.props.countRounds}/>
       }
 
       return(

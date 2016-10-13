@@ -33,7 +33,7 @@ class VoteResults extends React.Component {
     if (this.props.members) {
       questStart =
       <div>
-        <OnQuestVoting currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users}/>
+        <OnQuestVoting currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users} countRounds={this.props.countRounds}/>
       </div>
     }
 

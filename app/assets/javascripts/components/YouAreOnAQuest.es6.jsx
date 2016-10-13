@@ -56,7 +56,7 @@ class YouAreOnAQuest extends React.Component {
         </div>
     } else {
       questComplete =
-       <WaitingForQuestResult memberID={this.state.member.id} currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users}/>
+       <WaitingForQuestResult memberID={this.state.member.id} currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users} countRounds={this.props.countRounds}/>
     }
 
     return(

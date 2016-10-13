@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :games do
     get '/users/choose', to: 'users#choose'
+    get '/current_round', to: 'games#current_round'
     resources :rounds do
       get '/latest_quest', to: 'rounds#latest_quest'
       resources :quests
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
     put '/status', to: 'games#update'
     get '/update_board', to: 'games#update_board'
   end
+
   resources :quests do
     get '/quest_votes/results', to: 'quest_votes#results'
     get '/quest_members/results', to: 'quest_members#results'

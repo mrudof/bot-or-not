@@ -89,6 +89,12 @@ class GamesController < ApplicationController
     render json: gameStage.to_json
   end
 
+  def current_round
+    @game = Game.find(params[:game_id])
+    @currentRound = @game.rounds.length
+    render json: @currentRound.to_json
+  end
+
   private
 
 end

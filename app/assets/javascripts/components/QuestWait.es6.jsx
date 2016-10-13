@@ -32,7 +32,7 @@ class QuestWait extends React.Component {
   render () {
     let toDo
     if (this.state.done === true) {
-      toDo = <QuestVote currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.state.members} currentUser={this.props.currentUser} users={this.props.users}/>
+      toDo = <QuestVote currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.state.members} currentUser={this.props.currentUser} users={this.props.users} countRounds={this.props.countRounds}/>
       // (<QuestVote/>)
     }
     else {

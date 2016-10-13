@@ -44,7 +44,7 @@ class CreateQuest extends React.Component {
         </div>
       } else {
         showButton =
-        <SelectQuestForm currentGame={this.props.currentGame} currentQuest={this.state.quest} numberOnQuest={this.state.numberOnQuest} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.props.users}/>
+        <SelectQuestForm currentGame={this.props.currentGame} currentQuest={this.state.quest} numberOnQuest={this.state.numberOnQuest} currentRound={this.props.currentRound} currentUser= {this.props.currentUser} users={this.props.users} countRounds={this.props.countRounds}/>
 
       }
     return (
