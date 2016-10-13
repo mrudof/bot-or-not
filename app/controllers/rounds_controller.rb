@@ -19,7 +19,7 @@ class RoundsController < ApplicationController
     @current_round = @game.rounds.length
     @quest_members = @completed_round.quests.last.quest_members
     fails = 0
-    if @current_round == 4 && @user_count > 3
+    if @current_round == 4 && @user_count > 6
       maxfail = 1
     else
       maxfail = 0

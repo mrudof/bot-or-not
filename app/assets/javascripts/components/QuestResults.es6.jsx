@@ -39,7 +39,7 @@ class QuestResults extends React.Component {
 
     // make it so that later quests with more players requires more fails.
     // i.e., set length to be 2 when over 7 users.
-    if  (this.props.countRounds === 4 && this.props.users.length > 3) {
+    if  (this.props.countRounds === 4 && this.props.users.length > 6) {
       var maxFails = 1
     }
     else { 
