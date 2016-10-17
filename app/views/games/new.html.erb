@@ -1,24 +1,27 @@
 <div class="container-fluid">
 
-  <h1>Welcome <%= current_user.name %>!</h1>
+  <h1 class="welcome container-fluid start_game_text">Welcome <%= current_user.name %>!</h1>
 
-  <h2>Your game code is <strong><em><%= current_user.game.key_code %></em></strong></h2>
+  <h2 class="welcome container-fluid intro-text">Your game code is</h2>
+  <h1 class="welcome container-fluid centered_large_text"><strong><em><%= current_user.game.key_code %></em></strong></h1>
 
   <br/>
 
   <% if @current_user.creator == true && @current_user.game.users.length <= 4 %>
-  <div class="alert alert-info" role="alert">
+  <div class="pink_box">
     Waiting for players to join.
   </div>
   <% end %>
 
   <% if @current_user.creator != true %>
-  <div class="alert alert-info" role="alert">
+  <div class="pink_box">
     Waiting for the game to begin.
   </div>
+
   <% end %>
 
   <%= react_component 'StartGame', game: @current_game, user: @current_user%>
   <%= react_component 'WaitForGameStart', game: @current_game, user: @current_user%>
+
 
 </div>

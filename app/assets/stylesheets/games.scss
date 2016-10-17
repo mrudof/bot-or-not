@@ -3,7 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background-color: #F2F4ED;
+
+  background: linear-gradient(to right,#1a2c44 , #2a3f5b, #172333);
+
 }
 
 h1#logo {
@@ -18,7 +20,7 @@ h1#logo {
 }
 
 .robot-color {
-  background-color: white; /* Orange */
+  background-color: #BC381E; /* Orange */
 }
 
 .human-color {

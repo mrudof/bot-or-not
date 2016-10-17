@@ -55,6 +55,13 @@ input[type="text"] {
   @media (min-width: 340px) { font-size: 24px; }
   @media (min-width: 768px) { font-size: 50px; }
 }
+.centered_large_text {
+
+  font-size: 30px;
+  @media (min-width: 340px) { font-size: 40px; }
+  @media (min-width: 768px) { font-size: 60px; }
+}
+
 .welcome {
   // color: #FA343C;
   // color: cornsilk;
@@ -66,6 +73,21 @@ input[type="text"] {
 
   position: relative;
   // font-family: 'EB Garamond', serif;
+}
+
+.pink_box {
+  border: solid #2190FF 1px;
+  width:fit-content;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: 15px;
+
+  background-image: -webkit-linear-gradient(#FF0FF8 0%,  #F9F9F7 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2 2 3px black;
 }
 
 video#bgvid {
