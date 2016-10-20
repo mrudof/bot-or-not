@@ -43,6 +43,13 @@ class WaitForQuestCreation extends React.Component {
   }
 
   render () {
+    let checkCard
+    console.log(this.props)
+    if (this.props.countGameQuests === 0) {
+      checkCard = <p><strong> Please remember to check your card! </strong></p>
+    } else {
+    checkCard = <p></p>
+    }
     let renderQuestWait;
     if (this.state.done) {
           renderQuestWait = <QuestWait questPicker={this.props.questPicker} currentQuest={this.state.latestQuest} currentRound={this.props.currentRound} currentGame= {this.props.currentGame} currentUser= {this.props.currentUser} users={this.props.users} numberOnQuest={this.state.numberOnQuest} countRounds={this.props.countRounds}/>
@@ -50,6 +57,7 @@ class WaitForQuestCreation extends React.Component {
       renderQuestWait =
       <div>
         <br/>
+        {checkCard}
         <p className="hide-at-end"> We are waiting for {this.props.questPicker.name} to create a mission.</p>
       </div>
     }

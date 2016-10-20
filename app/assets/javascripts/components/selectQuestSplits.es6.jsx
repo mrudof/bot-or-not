@@ -31,13 +31,14 @@ class SelectQuestSplits extends React.Component {
     let currentUserID = this.props.currentUser.id
       if (currentUserID === this.state.questPicker.id) {
         // numberOnQuest hardcoded for now
-        startQuestSelection = <CreateQuest questPicker={this.state.questPicker} currentRound={this.props.currentRound} currentGame= {this.props.currentGame} currentUser= {this.props.currentUser} users={this.props.users} countRounds={this.props.countRounds}/>
+        startQuestSelection = <CreateQuest questPicker={this.state.questPicker} currentRound={this.props.currentRound} currentGame= {this.props.currentGame} currentUser= {this.props.currentUser} users={this.props.users} countRounds={this.props.countRounds} countGameQuests={this.props.countGameQuests}/>
       }
       else {
         startQuestSelection =
         // startQuestSelection = <p>Waiting for {this.state.questPicker.name} to select the members of the quest.</p>
-        <WaitForQuestCreation currentRound={this.props.currentRound} currentGame= {this.props.currentGame} currentUser= {this.props.currentUser} users={this.props.users} questPicker={this.state.questPicker} countRounds={this.props.countRounds}/>
+        <WaitForQuestCreation currentRound={this.props.currentRound} currentGame= {this.props.currentGame} currentUser= {this.props.currentUser} users={this.props.users} questPicker={this.state.questPicker} countRounds={this.props.countRounds} countGameQuests={this.props.countGameQuests}/>
       }
+
     return (
       <div>
         {startQuestSelection}

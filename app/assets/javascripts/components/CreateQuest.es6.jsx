@@ -33,10 +33,17 @@ class CreateQuest extends React.Component {
    }
 
   render () {
+    let checkCard
+    if (this.props.countGameQuests === 0) {
+      checkCard = <p><strong> Please remember to check your card! </strong></p>
+    } else {
+      checkCard = <p></p>
+    }
     let showButton
       if (this.state.quest === "") {
         showButton =
         <div>
+          {checkCard}
           <br/>
           <form className="hide-at-end" onSubmit={this.handleSubmit}>
             <input value="Create Mission" type="submit" className="btn btn-success"/>
