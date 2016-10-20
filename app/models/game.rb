@@ -1,6 +1,7 @@
 class Game < ApplicationRecord
   has_many :users
   has_many :rounds
+  has_many :quests, through: :rounds
   before_save :generate_code
 
   def generate_code

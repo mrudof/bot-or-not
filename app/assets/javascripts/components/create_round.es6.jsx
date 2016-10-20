@@ -8,14 +8,15 @@ class CreateRound extends React.Component {
         url: `/games/${gameID}/rounds`
       })
     }
-    setTimeout(() => {
-      location.reload()
-    }, 10000)
+    // setTimeout(() => {
+    //   location.reload()
+    // }, 10000)
   }
 
   render () {
     return (
       <div>
+        <CountdownTimer secondsRemaining="9"/>
       </div>
     )
   }

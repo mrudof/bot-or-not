@@ -16,9 +16,20 @@ class GameResult extends React.Component {
             this.setState({
               roundResults: response
             })
+            var goodCount = 0
+            var evilCount = 0
+            for (var i=0; i < this.state.roundResults.length; i++) {
+              if (this.state.roundResults[i] === "Good Prevails") {
+                goodCount++
+              } else {
+                evilCount++
+              }
+            }
+            if (goodCount >= 3 || evilCount >= 3) {
+              $('.hide-at-end').hide()
+            }
           }.bind(this))
   }
-
   render() {
     var robotUsers =
     <ul> { this.props.users.map((user, idx) => {
@@ -27,8 +38,6 @@ class GameResult extends React.Component {
           }
         })}
     </ul>
-
-
     var goodCount = 0
     var evilCount = 0
     for (var i=0; i < this.state.roundResults.length; i++) {
@@ -40,7 +49,6 @@ class GameResult extends React.Component {
     }
     var displayVictory
     if (goodCount >= 3) {
-      $('.hide-at-end').hide()
       displayVictory =
       <div>
         <h3>The Humans win!</h3>
@@ -48,12 +56,16 @@ class GameResult extends React.Component {
         <br/>
         <p>The Robots were:</p>
         {robotUsers}
+        <a href="/">Play again!</a>
       </div>
     } else if (evilCount >= 3) {
       $('.hide-at-end').hide()
       displayVictory =
-      <div> <h3>THE ROBOTS HAVE WON AND TAKEN OVER THE WORLD!</h3>
-      The Robots were: {robotUsers} </div>
+      <div>
+      <h3>THE ROBOTS HAVE WON AND TAKEN OVER THE WORLD!</h3>
+      The Robots were: {robotUsers}
+      <a href="/"><strong>Play again!</strong></a>
+      </div>
     }
 
     return(

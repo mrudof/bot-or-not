@@ -36,7 +36,7 @@ class NavHeaders extends React.Component {
        </div>
 
     const rules = this.state.rulesShow
-    ? <Rules />
+    ? <Rules users={this.props.gameUsers}/>
     : <div className="btn-group" role="group">
         <button type="button" className="btn btn-info btn-robot">
           <span className="glyphicon glyphicon-book" aria-hidden="true"></span> See Rules

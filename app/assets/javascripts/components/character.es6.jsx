@@ -13,10 +13,17 @@ class Character extends React.Component {
       characterCard = <EvilCard currentUser={this.props.currentUser} users={this.props.users}/>
     }
 
+    totalUsers = this.props.users.length
+    function isRobot(user) {
+      return user.good === false;
+    }
+    totalRobots = this.props.users.filter(isRobot).length
+
     return(
       <div className="jumbotron">
         <h2>{this.props.currentUser.name}</h2>
         {characterCard}
+         <p><strong>You are playing with {totalUsers} total players. There are {totalRobots} robots among you.</strong></p>
         <div className="btn-group">
           <button type="button" className="btn btn-success">OK</button>
         </div>
