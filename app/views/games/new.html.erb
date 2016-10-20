@@ -1,20 +1,20 @@
 <div class="container-fluid">
 
-  <h1 class="welcome container-fluid start_game_text">Welcome <%= current_user.name %>!</h1>
+  <h1 class="welcome current_players_text indented_text">Welcome <%= current_user.name %>!</h1>
 
   <h2 class="welcome container-fluid intro-text">Your game code is</h2>
-  <h1 class="welcome container-fluid centered_large_text"><strong><em><%= current_user.game.key_code %></em></strong></h1>
+  <h1 class="container-fluid white_text large_text"><strong><em><%= current_user.game.key_code %></em></strong></h1>
 
   <br/>
 
   <% if @current_user.creator == true && @current_user.game.users.length <= 4 %>
-  <div class="pink_box">
+  <div class="welcome indented_text">
     Waiting for players to join.
   </div>
   <% end %>
 
   <% if @current_user.creator != true %>
-  <div class="pink_box">
+  <div class="welcome indented_text">
     Waiting for the game to begin.
   </div>
 

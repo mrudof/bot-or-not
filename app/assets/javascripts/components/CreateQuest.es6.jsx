@@ -45,8 +45,8 @@ class CreateQuest extends React.Component {
         <div>
           {checkCard}
           <br/>
-          <form className="hide-at-end" onSubmit={this.handleSubmit}>
-            <input value="Create Mission" type="submit" className="btn btn-success"/>
+          <form className="hide-at-end pushed_left_less" onSubmit={this.handleSubmit}>
+            <input value="Create Mission" type="submit" className="btn btn-success btn-robot"/>
           </form>
         </div>
       } else {

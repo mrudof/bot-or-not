@@ -29,24 +29,27 @@ class StartGame extends React.Component {
         <div className='btn-group'>
           <input type='hidden' name='_method' value='put'/>
         </div>
-        <button type="submit" className="btn btn-success">Start game</button>
+        <button type="submit" className="btn btn-success btn-robot container-fluid">Start game</button>
       </form>
   }
   let usersEntering =
     <ul> {
         this.state.users.map((member, idx) => {
         if (this.props.user.id != member.id) {
-        return(<li>{member.name} has joined.</li>)
+        return(<li className="start_game_text white_text pushed_left">{member.name} has joined.</li>)
         }
       })
     }
     </ul>
 
     return (
-    <div class="row">
-      <h5>Current number of players: {this.state.users.length}</h5>
+    <div>
+
+    <br/>
+      <h3 className="welcome current_players_text indented_text">Current number of players: {this.state.users.length}</h3>
       <br/>
       {usersEntering}
+      <br/>
       {showForm}
     </div>
     )

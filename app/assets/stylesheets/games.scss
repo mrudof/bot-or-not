@@ -9,14 +9,30 @@ body {
 }
 
 h1#logo {
-  margin-top: 0.0em;
-  // margin-bottom: 0.0em;
-  font-size: 250%;
-  color: #BC381E; /* Orange */
-  font-family: 'Bungee Shade', cursive;
-  // font-family: 'Press Start 2P', cursive;
-  // font-family: 'Bungee', cursive;
-  // font-family: 'EB Garamond', serif;
+  padding-bottom: 10px;
+  @media (min-width: 768px) { padding-bottom: 85px; }
+
+  font-size: 300%;
+  @media (min-width: 350px) { font-size: 400%; }
+  @media (min-width: 768px) { font-size: 800%; }
+  font-family: 'Permanent Marker', cursive;
+  font-variant:small-caps;
+  margin: auto;
+  text-align: center;
+  background-image: -webkit-linear-gradient(#FF0FF8 0%,  #F9F9F7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  -webkit-filter: drop-shadow(6px 6px 30px #f008b7);
+}
+
+
+#logo-v {
+  position: relative;
+  background-image: -webkit-linear-gradient(#FF0FF8 0%,  #F9F9F7 100%);
+  -webkit-background-clip: text;
+  padding-right: 18px;
+  margin-right: -18px;
 }
 
 .robot-color {
