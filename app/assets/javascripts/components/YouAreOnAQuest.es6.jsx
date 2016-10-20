@@ -39,6 +39,11 @@ class YouAreOnAQuest extends React.Component {
       <div className="btn-group">
         <button ref="Failed" className="btn btn-danger" type="submit" name="vote" onClick={this.handleOnQuestVote.bind(this, {action: "Fail"})}>Fail</button>
       </div>
+    } else {
+      showFailButtonToEvil =
+      <div className="btn-group">
+        <button disabled="true" className="btn btn-danger">Fail</button>
+      </div>
     }
 
     let questComplete
