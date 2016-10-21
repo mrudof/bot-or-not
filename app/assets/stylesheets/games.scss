@@ -8,6 +8,18 @@ body {
 
 }
 
+.card_style {
+  background: black;
+  text-align: center;
+}
+
+.centered {
+
+  margin-left: auto;
+  margin-right: auto
+}
+
+
 h1#logo {
   padding-bottom: 10px;
   @media (min-width: 768px) { padding-bottom: 85px; }

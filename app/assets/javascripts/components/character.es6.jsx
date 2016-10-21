@@ -20,12 +20,12 @@ class Character extends React.Component {
     totalRobots = this.props.users.filter(isRobot).length
 
     return(
-      <div className="jumbotron">
-        <h2>{this.props.currentUser.name}</h2>
+      <div className="card_style">
+        <h2 className="welcome">{this.props.currentUser.name}</h2>
         {characterCard}
-         <p><strong>You are playing with {totalUsers} total players. There are {totalRobots} robots among you.</strong></p>
+         <p><strong className="intro-text welcome">You are playing with {totalUsers} total players. There are {totalRobots} robots among you.</strong></p>
         <div className="btn-group">
-          <button type="button" className="btn btn-success">OK</button>
+          <button type="button" className="btn btn-success btn-robot container-fluid">OK</button>
         </div>
 
       </div>
