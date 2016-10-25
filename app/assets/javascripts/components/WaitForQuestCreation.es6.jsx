@@ -46,7 +46,7 @@ class WaitForQuestCreation extends React.Component {
     let checkCard
     console.log(this.props)
     if (this.props.countGameQuests === 0) {
-      checkCard = <p><strong> Please remember to check your card! </strong></p>
+      checkCard = <p className="white_text"><strong> Please remember to check your card! </strong></p>
     } else {
     checkCard = <p></p>
     }

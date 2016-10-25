@@ -9,8 +9,8 @@ class QuestResults extends React.Component {
 
   componentWillMount() {
     questID = this.props.currentQuest.id
-    gameID = this.props.currentGame.id 
-    
+    gameID = this.props.currentGame.id
+
     $.ajax({
       method: 'get',
       url: `/quests/${questID}/quest_members/results`
@@ -21,7 +21,7 @@ class QuestResults extends React.Component {
     }.bind(this))
 
     // $.ajax({
-    //   method: 'get', 
+    //   method: 'get',
     //   url: `/games/${gameID}/current_round`
     // }).done((response) => {
     //   // debugger
@@ -29,7 +29,7 @@ class QuestResults extends React.Component {
     //     currentRound: response
     //   })
     // }.bind(this))
-     
+
   }
 
   render(){
@@ -42,7 +42,7 @@ class QuestResults extends React.Component {
     if  (this.props.countRounds === 4 && this.props.users.length > 6) {
       var maxFails = 1
     }
-    else { 
+    else {
       var maxFails = 0
     }
     var numFails = 0
@@ -58,20 +58,20 @@ class QuestResults extends React.Component {
     if (numFails > maxFails){
       questOutcome =
        <div>
-         <h2>The mission has failed! The robots won this one.</h2>
-         <p> {numFails} / {numFails + numSuccess} failed the mission!</p>
+         <h2 className="welcome">The mission has failed! The robots won this one.</h2>
+         <p className="white_text"> {numFails} / {numFails + numSuccess} failed the mission!</p>
        </div>
     } else {
       questOutcome =
       <div>
-        <h2>The humans have prevailed!</h2>
-        <p> {numSuccess} / {numFails + numSuccess} members succeeded the mission!</p>
+        <h2 className="welcome">The humans have prevailed!</h2>
+        <p className="white_text"> {numSuccess} / {numFails + numSuccess} members succeeded the mission!</p>
       </div>
     }
 
     let roundReady =
     // if (this.state.currentRound != 0){
-    //   roundReady = 
+    //   roundReady =
       <CreateRound currentGame={this.props.currentGame} currentQuest={this.props.currentQuest} members={this.props.members} currentUser={this.props.currentUser} users={this.props.users} countRounds={this.props.countRounds}/>
     // }
 

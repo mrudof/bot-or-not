@@ -52,6 +52,18 @@ input[type="text"] {
   background-color: #F2F4ED; // isabelline
 }
 
+.welcome {
+  // color: #FA343C;
+  // color: cornsilk;
+  line-height: 90%;
+  @media (min-width: 340px) { line-height: 100%; }
+  -webkit-filter: drop-shadow(8px 8px 40px #f008b7);
+  text-shadow: 0 0 3px #2190FF;
+  color: #2190FF; // isabelline
+
+  position: relative;
+  // font-family: 'EB Garamond', serif;
+}
 
 .intro-text {
 
@@ -87,6 +99,9 @@ input[type="text"] {
 .pushed_left {
   margin-left: -25px;
 }
+.bumped_up {
+    margin-top: -10px;
+}
 .pushed_left_less {
   margin-left: -17px;
 }
@@ -95,18 +110,6 @@ input[type="text"] {
   padding-left: 0px;
 }
 
-.welcome {
-  // color: #FA343C;
-  // color: cornsilk;
-  line-height: 90%;
-  @media (min-width: 340px) { line-height: 100%; }
-  -webkit-filter: drop-shadow(8px 8px 40px #f008b7);
-  text-shadow: 0 0 3px #2190FF;
-  color: #2190FF; // isabelline
-
-  position: relative;
-  // font-family: 'EB Garamond', serif;
-}
 .pink_letters {
   @media (min-width: 340px) { font-size: 20px; }
   @media (min-width: 768px) { font-size: 40px; }

@@ -2,7 +2,7 @@ class EvilCard extends React.Component {
 
   render () {
     showPic = <img src={`/${this.props.currentUser.character}.jpg`} className="img-responsive img-rounded centered" />
-    showName = <p className="white_text start_game_text">You are {this.props.currentUser.character}... A ROBOT</p>
+    showName = <p className="white_text start_game_text">You are {this.props.currentUser.character}... ROBOT</p>
     return(
       <div>
         {showPic}

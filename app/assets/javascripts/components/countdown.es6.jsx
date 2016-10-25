@@ -28,7 +28,7 @@ class CountdownTimer extends React.Component {
 
   render() {
     return (
-      <span>New mission will start in {this.state.secondsRemaining} seconds</span>
+      <span className="pink_letters">New mission will start in {this.state.secondsRemaining} seconds</span>
     );
   }
 }

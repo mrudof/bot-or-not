@@ -42,8 +42,8 @@ class WaitingForQuestResult extends React.Component {
     } else {
       timeForResults =
       <div>
-        <h3>The proposed mission was approved!</h3>
-        <p>Now we wait.</p>
+        <h3 className="welcome">The proposed mission was approved!</h3>
+        <p className="pink_letters">Now we wait.</p>
       </div>
     }
     return(

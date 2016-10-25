@@ -35,7 +35,7 @@ class CreateQuest extends React.Component {
   render () {
     let checkCard
     if (this.props.countGameQuests === 0) {
-      checkCard = <p><strong> Please remember to check your card! </strong></p>
+      checkCard = <p className="white_text"><strong> Please remember to check your card! </strong></p>
     } else {
       checkCard = <p></p>
     }

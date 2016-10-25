@@ -7,7 +7,7 @@ class QuestVoteMember extends React.Component {
         voteDecision = <strong>rejected</strong>
       }
       return(
-        <p>{this.props.data.user.name}: {voteDecision}</p>
+        <p className="white_text">{this.props.data.user.name}: {voteDecision}</p>
       )
     }
   }

@@ -34,7 +34,7 @@ class GameResult extends React.Component {
     var robotUsers =
     <ul> { this.props.users.map((user, idx) => {
           if (user.good === false) {
-            return(<li>{user.name} was {user.character}</li>)
+            return(<li className="white_text">{user.name} was {user.character}</li>)
           }
         })}
     </ul>
@@ -51,20 +51,20 @@ class GameResult extends React.Component {
     if (goodCount >= 3) {
       displayVictory =
       <div>
-        <h3>The Humans win!</h3>
-        <strong>...unless the Terminator can find who Sarah Connor is!</strong>
+        <h3 className="welcome">The Humans win!</h3>
+        <strong className="pink_letters">...unless the Terminator can find who Sarah Connor is!</strong>
         <br/>
-        <p>The Robots were:</p>
+        <p className="welcome">The Robots were:</p>
         {robotUsers}
         <a href="/">Play again!</a>
       </div>
     } else if (evilCount >= 3) {
       $('.hide-at-end').hide()
       displayVictory =
-      <div>
+      <div className="welcome">
       <h3>THE ROBOTS HAVE WON AND TAKEN OVER THE WORLD!</h3>
       The Robots were: {robotUsers}
-      <a href="/"><strong>Play again!</strong></a>
+      <a href="/"><strong className="pink_letters pink_box">Play again!</strong></a>
       </div>
     }
 
