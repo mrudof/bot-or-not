@@ -3,18 +3,48 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background-color: #F2F4ED;
+
+  background: linear-gradient(to right,#1a2c44 , #2a3f5b, #172333);
+
 }
 
+.card_style {
+  background: black;
+  text-align: center;
+}
+
+.centered {
+
+  margin-left: auto;
+  margin-right: auto
+}
+
+
 h1#logo {
-  margin-top: 0.0em;
-  // margin-bottom: 0.0em;
-  font-size: 250%;
-  color: #BC381E; /* Orange */
-  font-family: 'Bungee Shade', cursive;
-  // font-family: 'Press Start 2P', cursive;
-  // font-family: 'Bungee', cursive;
-  // font-family: 'EB Garamond', serif;
+  padding-bottom: 10px;
+  @media (min-width: 768px) { padding-bottom: 85px; }
+
+  font-size: 300%;
+  @media (min-width: 350px) { font-size: 400%; }
+  @media (min-width: 768px) { font-size: 800%; }
+  font-family: 'Permanent Marker', cursive;
+  font-variant:small-caps;
+  margin: auto;
+  text-align: center;
+  background-image: -webkit-linear-gradient(#FF0FF8 0%,  #F9F9F7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  -webkit-filter: drop-shadow(6px 6px 30px #f008b7);
+}
+
+
+#logo-v {
+  position: relative;
+  background-image: -webkit-linear-gradient(#FF0FF8 0%,  #F9F9F7 100%);
+  -webkit-background-clip: text;
+  padding-right: 18px;
+  margin-right: -18px;
 }
 
 .robot-color {
@@ -34,18 +64,16 @@ h1#logo {
   overflow: hidden;
 }
 #image-dim {
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ), url(boardrobots.jpg);
-    color: white;
+  color: #2190FF;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #2190FF;
 }
 
 #image-show {
-  background-image: linear-gradient(
-      rgba(0, 0, 0.8, 0.2),
-      rgba(0, 0, 0.8, 0.2)
-    ), url(boardrobots.jpg);
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
 }
 
 #image-show > .board-words {
@@ -55,21 +83,20 @@ h1#logo {
 }
 
 #image-red {
-background-image: linear-gradient(
-      rgba(255, 0, 0, 0.2),
-      rgba(255, 0, 0, 0.2)
-    ), url(boardrobots.jpg);
+background-image: url(pinkeye.png);
     color: transparent;
+      border-style: solid;
+  border-width: 2px;
+  border-color: #2190FF;
 }
 
 #image-green {
-background-image: linear-gradient(
-      rgba(0, 215, 20, 0.2),
-      rgba(0, 215, 20, 0.2)
-    ), url(boardrobots.jpg);
+background-image: url(blueye.png);
     color: transparent;
+      border-style: solid;
+  border-width: 2px;
+  border-color: #2190FF;
 }
-
 
 .each-mission {
   background-size: cover;
@@ -78,9 +105,6 @@ background-image: linear-gradient(
   margin: 1px;
   float: left;
   font-size: small;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #F2F4ED;
   text-align: center;
   height: 65px;
   width: 62px;

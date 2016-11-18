@@ -1,17 +1,48 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
+h1.victory {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  padding-bottom: 35px;
+  padding-top: 28px;
+  @media (min-width: 340px) {
+    margin-top: 0px;
+    margin-bottom: 25px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+  @media (min-width: 768px) {
+    padding-bottom: 85px;
+    padding-top: 50px;
+  }
 
-h1.welcome {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  font-size: 500%;
-  color: #FA343C; // robot orange
-  font-family: 'Bungee Shade', cursive;
-  // font-family: 'Press Start 2P', cursive;
-  // font-family: 'Bungee', cursive;
-  // font-family: 'EB Garamond', serif;
+  font-size: 300%;
+  @media (min-width: 350px) { font-size: 400%; }
+  @media (min-width: 768px) { font-size: 750%; }
+  font-family: 'Permanent Marker', cursive;
+  font-variant:small-caps;
+  -webkit-transform: skew(-15deg,-15deg);
+  margin: auto;
+  text-align: center;
+
+  background-image: -webkit-linear-gradient(#FF0FF8 0%,  #F9F9F7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  -webkit-filter: drop-shadow(2px 2px 20px #f008b7);
 }
+
+
+.victory-v {
+  position: relative;
+  background-image: -webkit-linear-gradient(#FF0FF8 0%,  #F9F9F7 100%);
+  -webkit-background-clip: text;
+  padding-right: 18px;
+  margin-right: -18px;
+}
+
 
 svg path {
   fill: #FA343C; // robot orange
@@ -24,8 +55,82 @@ input[type="text"] {
 .welcome {
   // color: #FA343C;
   // color: cornsilk;
-  color: #F2F4ED; // isabelline
+  line-height: 90%;
+  @media (min-width: 340px) { line-height: 100%; }
+  -webkit-filter: drop-shadow(8px 8px 40px #f008b7);
+  text-shadow: 0 0 3px #2190FF;
+  color: #2190FF; // isabelline
+
+  position: relative;
   // font-family: 'EB Garamond', serif;
+}
+
+.intro-text {
+
+  @media (min-width: 340px) { padding-top: 5px; }
+  font-size: 14px;
+  @media (min-width: 340px) { font-size: 18px; }
+  @media (min-width: 768px) { font-size: 30px; }
+}
+.start_game_text {
+  font-size: 15px;
+  @media (min-width: 340px) { font-size: 24px; }
+  @media (min-width: 768px) { font-size: 50px; }
+}
+.large_text {
+  color: white;
+  font-size: 30px;
+  @media (min-width: 340px) { font-size: 40px; }
+  @media (min-width: 768px) { font-size: 60px; }
+}
+.white_text {
+  color: white;
+}
+
+.current_players_text {
+  font-size: 20px;
+  @media (min-width: 340px) { font-size: 27px; }
+  @media (min-width: 768px) { font-size: 50px; }
+}
+
+.indented_text {
+  margin-left: 15px;
+}
+.pushed_left {
+  margin-left: -25px;
+}
+.bumped_up {
+    margin-top: -10px;
+}
+.pushed_left_less {
+  margin-left: -17px;
+}
+
+.less_padding {
+  padding-left: 0px;
+}
+
+.pink_letters {
+  @media (min-width: 340px) { font-size: 20px; }
+  @media (min-width: 768px) { font-size: 40px; }
+  background-image: -webkit-linear-gradient(#FF0FF8 0%,  #F9F9F7 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2 2 3px black;
+}
+.pink_box {
+  border: solid #2190FF 1px;
+  width:fit-content;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: 15px;
+
+  background-image: -webkit-linear-gradient(#FF0FF8 0%,  #F9F9F7 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2 2 3px black;
 }
 
 video#bgvid {

@@ -39,7 +39,7 @@ class QuestWait extends React.Component {
       toDo =
       <div>
         <br/>
-        <p>We are waiting for {this.props.questPicker.name} to pick the mission.</p>
+        <p className="welcome current_players_text">We are waiting for {this.props.questPicker.name} to pick the mission.</p>
       </div>
     }
     return (

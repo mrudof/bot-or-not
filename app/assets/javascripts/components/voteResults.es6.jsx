@@ -46,14 +46,14 @@ class VoteResults extends React.Component {
     } else if (this.state.passed === false){
       voteResults =
       <div>
-        <h2>The proposed mission was rejected!</h2>
+        <h2 className="welcome start_game_text">The proposed mission was rejected!</h2>
         <CountdownTimer secondsRemaining="9"/>
       </div>
     }
 
     return(
-      <div>
-        <h2>Here are the vote results:</h2>
+      <div className="white_text">
+        <h2 className="welcome">Here are the vote results:</h2>
         {
           this.state.votes.map((vote ,i) => {
             return (<QuestVoteMember key={i} data={vote} />)

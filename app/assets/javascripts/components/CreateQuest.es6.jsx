@@ -35,7 +35,7 @@ class CreateQuest extends React.Component {
   render () {
     let checkCard
     if (this.props.countGameQuests === 0) {
-      checkCard = <p><strong> Please remember to check your card! </strong></p>
+      checkCard = <p className="white_text"><strong> Please remember to check your card! </strong></p>
     } else {
       checkCard = <p></p>
     }
@@ -45,8 +45,8 @@ class CreateQuest extends React.Component {
         <div>
           {checkCard}
           <br/>
-          <form className="hide-at-end" onSubmit={this.handleSubmit}>
-            <input value="Create Mission" type="submit" className="btn btn-success"/>
+          <form className="hide-at-end pushed_left_less" onSubmit={this.handleSubmit}>
+            <input value="Create Mission" type="submit" className="btn btn-success btn-robot"/>
           </form>
         </div>
       } else {

@@ -50,17 +50,17 @@ class SelectQuestForm extends React.Component {
       if (this.state.displayForm) {
         showForm =
           <section>
-          <h3>Select {this.props.numberOnQuest} players to go the mission.</h3>
+          <h3 className="welcome start_game_text">Select {this.props.numberOnQuest} players to go the mission.</h3>
             <form onSubmit={this.handleSubmit}>
               {this.props.users.map((user) =>
                 <div key={user.id} className="checkbox">
-                  <label>
+                  <label className="white_text">
                     <input ref={(self) => this.boxes.push(self)} type='checkbox' name={user.name} />
                     {user.name}
                   </label>
                 </div>
               )}
-            <input className='btn btn-success' value='Submit' type='submit'/>
+            <input className="btn btn-success btn-robot" value='Submit' type='submit'/>
             </form>
           </section>
       } else {

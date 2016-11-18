@@ -15,13 +15,28 @@
  */
 
   .btn-robot {
-    background-color: #499F68; /* Green */
-    border: 0;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
+    margin-left: 15px;
+    background-image: -webkit-linear-gradient(#FF0FF8 0%,  #F9F9F7 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2 2 3px black;
+    border-style: solid;
+    border-color: #fd5ff8;
+
   }
 
-  .btn-robot:hover {
-    background-color: #BC381E; /* Orange */
+ /* .btn-robot:hover {
+    background-color: #fd5ff8;
     border: 0;
+  }*/
+
+  .btn-blue {
+    font-size: 280%
+    margin-left: 15px;
+    background-image: -webkit-linear-gradient(#2190FF 0%,  #F9F9F7 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2 2 3px black;
+    border-style: solid;
+    border-color: #2190FF;
   }

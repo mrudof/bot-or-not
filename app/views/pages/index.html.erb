@@ -1,3 +1,4 @@
+<head>  </head>
 <script>
 $( document ).ready(function() {
   $("#click-once").submit(function(){
@@ -13,11 +14,9 @@ $( document ).ready(function() {
 <div class="container-fluid">
 
 
-  <h1 id="title" class="welcome"><svg width="80" height="50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-    <g>
-      <path id='logo' d="M53.816,1.399c-14.601,0-28.064,10.963-30.86,23.037c-0.621,2.683-1.324,9.695-1.324,9.695l-8.264,16.361   c-0.134,0.301-0.199,0.649-0.199,1.007c0,1.429,1.153,2.59,2.589,2.59h5.873v9.556c0,7.476,3.26,12.573,12.68,12.573h2.233v13.671   h7.726V100h3.247V89.889h5.652V100h3.247V89.889h5.649V100h3.246V89.889h8.372V60.672c7.487-5.886,12.303-16.831,12.303-27.092   C85.988,15.804,71.592,1.399,53.816,1.399z M29.01,40.538c-1.732,0-3.137-1.405-3.137-3.137s1.405-3.136,3.137-3.136   c1.733,0,3.137,1.404,3.137,3.136S30.744,40.538,29.01,40.538z M45.981,84.506c-1.235,0-2.237-1.003-2.237-2.237   c0-1.236,1.002-2.238,2.237-2.238c1.236,0,2.238,1.002,2.238,2.238C48.219,83.503,47.217,84.506,45.981,84.506z M54.904,84.506   c-1.234,0-2.236-1.003-2.236-2.237c0-1.236,1.002-2.238,2.236-2.238c1.236,0,2.238,1.002,2.238,2.238   C57.143,83.503,56.141,84.506,54.904,84.506z M63.825,84.506c-1.235,0-2.237-1.003-2.237-2.237c0-1.236,1.002-2.238,2.237-2.238   c1.236,0,2.238,1.002,2.238,2.238C66.063,83.503,65.062,84.506,63.825,84.506z M69.06,48.569c-1.248,4.354-4.891,7.276-8.663,7.276   c-0.664,0-1.33-0.09-1.989-0.278c-0.625-0.179-0.985-0.83-0.807-1.455c0.178-0.624,0.828-0.988,1.454-0.808   c3.154,0.907,6.634-1.51,7.744-5.383c0.51-1.778,0.891-4.298-0.188-6.211c-0.668-1.181-1.849-2.007-3.51-2.455   c-1.364-0.366-2.843,0.117-3.96,1.298c-0.446,0.473-1.189,0.493-1.662,0.047c-0.472-0.446-0.493-1.19-0.047-1.663   c1.72-1.822,4.073-2.553,6.281-1.954c2.293,0.618,3.956,1.819,4.945,3.569C69.83,42.628,69.969,45.401,69.06,48.569z"/>
-    </g>
-  </svg>Bot or not.</h1>
+<h1 class="victory" ><span class="victory-v">B</span>ot or <span class="victory-v">N</span>ot</h1>
+</div>
+<div class="container-fluid">
 
   <% if @errors %>
   <div class="alert alert-danger" role="alert">
@@ -29,35 +28,33 @@ $( document ).ready(function() {
   </div>
   <% end %>
 
-  <p class="welcome lead">Robots that are indistinguishable from humans have infiltrated humanity. They are plotting against us. While they are in the minority, they have one powerful asset: they know who each other are.</p>
-
-  <h3 class="welcome">Join a game</h3>
+  <p class="welcome lead intro-text container-fluid">Bots have infiltrated humanity with sabotage on their digital minds. Who can you trust?</p>
+  <p class="welcome intro_text container-fluid">5 to 10 players</p>
+  <h3 class="welcome start_game_text container-fluid">Join a game</h3>
 
   <form method='POST' action="/games/:game_id/users" id="click-once">
-    <div class="form-group">
+    <div class="form-group container-fluid">
       <!-- <label for="Enter Game Code">Enter game code</label> -->
       <input type="text" class="form-control" name="key_code" placeholder="Game Code" aria-describedby="sizing-addon1" />
     </div>
-    <div class="form-group">
+    <div class="form-group container-fluid">
       <!-- <label for="Enter Username">Enter your name</label> -->
       <input type="text" class="form-control" name="name" placeholder="Your Name" />
     </div>
-    <button type="submit" class="btn btn-success btn-robot">Join Game</button>
+    <button type="submit" class="btn btn-success btn-robot container-fluid">Join Existing Game</button>
   </form>
 
   <br />
 
-  <p style="text-align:center" class="welcome">OR</p>
-
-  <h3 class="welcome">Start a game of your own</h3>
+  <h3 class="welcome start_game_text container-fluid"> Start New Game</h3>
 
   <form method="POST" action="/games">
-    <div class="form-group">
+    <div class="form-group container-fluid">
       <!-- <label for="Enter your name">Enter your name</label> -->
       <input type="text" class="form-control" name="name" placeholder="Your Name" aria-describedby="sizing-addon1"/>
       <input type="hidden" name="creator" value="true" />
     </div>
-    <input type="submit" class="btn btn-success btn-robot" value="Create game code">
+    <input type="submit" class="btn btn-success btn-robot container-fluid" value="Create game code">
   </form>
 
 

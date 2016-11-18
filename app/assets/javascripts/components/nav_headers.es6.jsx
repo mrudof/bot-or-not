@@ -30,7 +30,7 @@ class NavHeaders extends React.Component {
     const card = this.state.cardShow
     ? <Character currentUser={this.props.currentUser} users={this.props.gameUsers} />
     : <div className="btn-group" role="group">
-         <button type="button" className="btn btn-info btn-robot">
+         <button type="button" className="btn btn-info btn-robot less_padding">
            <span className="glyphicon glyphicon-eye-open" aria-hidden="true"></span> See Card
          </button>
        </div>
@@ -38,7 +38,7 @@ class NavHeaders extends React.Component {
     const rules = this.state.rulesShow
     ? <Rules users={this.props.gameUsers}/>
     : <div className="btn-group" role="group">
-        <button type="button" className="btn btn-info btn-robot">
+        <button type="button" className="btn btn-info btn-robot less_padding">
           <span className="glyphicon glyphicon-book" aria-hidden="true"></span> See Rules
         </button>
       </div>

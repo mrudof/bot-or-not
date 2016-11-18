@@ -26,8 +26,8 @@ class QuestVote extends React.Component {
     let voteComplete;
       if (this.state.show_button === true){
         voteComplete = (
-        <div>
-          <h2>Do you approve the mission with these members?</h2>
+        <div className="white_text">
+          <h2 className="welcome start_game_text">Do you approve the mission with these members?</h2>
             <p>
               {
                 this.props.members.map((member, idx) => {
@@ -38,8 +38,8 @@ class QuestVote extends React.Component {
             <br/>
           <section>
             {/*<form onSubmit={this.handleVoteSubmit}>*/}
-              <input className='btn btn-success' ref="Approve" type="submit" value="Approve" name="vote" onClick={this.handleVoteSubmit.bind(this, {action: "Approve"})}/>
-              <input className='btn btn-danger' ref="Reject" type="submit" value="Reject" name="vote" onClick={this.handleVoteSubmit.bind(this, {action: "Reject"})}/>
+              <input className='btn btn-blue' ref="Approve" type="submit" value="Approve" name="vote" onClick={this.handleVoteSubmit.bind(this, {action: "Approve"})}/>
+              <input className='btn btn-robot' ref="Reject" type="submit" value="Reject" name="vote" onClick={this.handleVoteSubmit.bind(this, {action: "Reject"})}/>
             {/*}</form>*/}
           </section>
         </div>

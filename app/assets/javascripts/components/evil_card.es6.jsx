@@ -1,18 +1,17 @@
 class EvilCard extends React.Component {
 
   render () {
-    showPic = <img src={`/${this.props.currentUser.character}.jpg`} className="img-responsive" />
-    showName = <p>You are {this.props.currentUser.character}!</p>
+    showPic = <img src={`/${this.props.currentUser.character}.jpg`} className="img-responsive img-rounded centered" />
+    showName = <p className="white_text start_game_text">You are {this.props.currentUser.character}... ROBOT</p>
     return(
       <div>
         {showPic}
         {showName}
-        <h2>Secretly a robot.</h2>
-        <p>Other robots:</p>
+        <p className="welcome">Other robots:</p>
         {
           this.props.users.map((user ,i) => {
             if (user.good === false && this.props.currentUser.id != user.id) {
-              return (<p key={i}>{user.name}</p>)
+              return (<p className="white_text intro-text" key={i}>{user.name}</p>)
             }
           })
         }
