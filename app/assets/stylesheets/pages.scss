@@ -113,10 +113,8 @@ input[type="text"] {
 .pink_letters {
   @media (min-width: 340px) { font-size: 20px; }
   @media (min-width: 768px) { font-size: 40px; }
-  background-image: -webkit-linear-gradient(#FF0FF8 0%,  #F9F9F7 80%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 2 2 3px black;
+  color: white;
+  background-color: transparent;
 }
 .pink_box {
   border: solid #2190FF 1px;
