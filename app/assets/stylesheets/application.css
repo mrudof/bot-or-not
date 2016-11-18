@@ -15,11 +15,13 @@
  */
 
   .btn-robot {
+    color: white;
+    background-color: transparent;
     margin-left: 15px;
-    background-image: -webkit-linear-gradient(#FF0FF8 0%,  #F9F9F7 80%);
+/*    background-image: linear-gradient(#FF0FF8 0%,  #F9F9F7 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 2 2 3px black;
+    text-shadow: 2 2 3px black;*/
     border-style: solid;
     border-color: #fd5ff8;
 
@@ -31,12 +33,13 @@
   }*/
 
   .btn-blue {
-    font-size: 280%;
+   /* font-size: 280%;*/
     margin-left: 15px;
-    background-image: -webkit-linear-gradient(#2190FF 0%,  #F9F9F7 80%);
+/*    background-image: -webkit-linear-gradient(#2190FF 0%,  #F9F9F7 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 2 2 3px black;
+    text-shadow: 2 2 3px black;*/
     border-style: solid;
     border-color: #2190FF;
+    background-color: transparent;
   }
