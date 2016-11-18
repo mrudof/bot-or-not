@@ -20,13 +20,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 2 2 3px black;
+    border-style: solid;
+    border-color: #fd5ff8;
 
   }
 
-  .btn-robot:hover {
-    background-color: #BC381E; /* Orange */
+ /* .btn-robot:hover {
+    background-color: #fd5ff8;
     border: 0;
-  }
+  }*/
 
   .btn-blue {
     font-size: 280%
@@ -35,5 +37,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 2 2 3px black;
-
+    border-style: solid;
+    border-color: #2190FF;
   }

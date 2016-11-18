@@ -64,18 +64,16 @@ h1#logo {
   overflow: hidden;
 }
 #image-dim {
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ), url(boardrobots.jpg);
-    color: white;
+  color: #2190FF;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #2190FF;
 }
 
 #image-show {
-  background-image: linear-gradient(
-      rgba(0, 0, 0.8, 0.2),
-      rgba(0, 0, 0.8, 0.2)
-    ), url(boardrobots.jpg);
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
 }
 
 #image-show > .board-words {
@@ -85,19 +83,19 @@ h1#logo {
 }
 
 #image-red {
-background-image: linear-gradient(
-      rgba(255, 0, 0, 0.2),
-      rgba(255, 0, 0, 0.2)
-    ), url(boardrobots.jpg);
+background-image: url(pinkeye.png);
     color: transparent;
+      border-style: solid;
+  border-width: 2px;
+  border-color: #2190FF;
 }
 
 #image-green {
-background-image: linear-gradient(
-      rgba(0, 215, 20, 0.2),
-      rgba(0, 215, 20, 0.2)
-    ), url(boardrobots.jpg);
+background-image: url(blueye.png);
     color: transparent;
+      border-style: solid;
+  border-width: 2px;
+  border-color: #2190FF;
 }
 
 .each-mission {
@@ -107,9 +105,6 @@ background-image: linear-gradient(
   margin: 1px;
   float: left;
   font-size: small;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #F2F4ED;
   text-align: center;
   height: 65px;
   width: 62px;

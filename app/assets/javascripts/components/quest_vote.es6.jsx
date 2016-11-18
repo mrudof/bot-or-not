@@ -38,8 +38,8 @@ class QuestVote extends React.Component {
             <br/>
           <section>
             {/*<form onSubmit={this.handleVoteSubmit}>*/}
-              <input className='btn btn-success btn-blue' ref="Approve" type="submit" value="Approve" name="vote" onClick={this.handleVoteSubmit.bind(this, {action: "Approve"})}/>
-              <input className='btn btn-danger btn-robot' ref="Reject" type="submit" value="Reject" name="vote" onClick={this.handleVoteSubmit.bind(this, {action: "Reject"})}/>
+              <input className='btn btn-blue' ref="Approve" type="submit" value="Approve" name="vote" onClick={this.handleVoteSubmit.bind(this, {action: "Approve"})}/>
+              <input className='btn btn-robot' ref="Reject" type="submit" value="Reject" name="vote" onClick={this.handleVoteSubmit.bind(this, {action: "Reject"})}/>
             {/*}</form>*/}
           </section>
         </div>
